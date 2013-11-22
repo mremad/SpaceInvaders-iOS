@@ -21,6 +21,8 @@
 		D96AABAC183FA596005E39C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AAB8E183FA596005E39C6 /* UIKit.framework */; };
 		D96AABB4183FA596005E39C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D96AABB2183FA596005E39C6 /* InfoPlist.strings */; };
 		D96AABB6183FA596005E39C6 /* SpaceInvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D96AABB5183FA596005E39C6 /* SpaceInvadersTests.m */; };
+		D96AABC1183FE8B8005E39C6 /* goldcoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96AABC0183FE8B8005E39C6 /* goldcoin.jpg */; };
+		D96AABC3183FE967005E39C6 /* silvercoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96AABC2183FE967005E39C6 /* silvercoin.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		D96AABB1183FA596005E39C6 /* SpaceInvadersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceInvadersTests-Info.plist"; sourceTree = "<group>"; };
 		D96AABB3183FA596005E39C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D96AABB5183FA596005E39C6 /* SpaceInvadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceInvadersTests.m; sourceTree = "<group>"; };
+		D96AABC0183FE8B8005E39C6 /* goldcoin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goldcoin.jpg; sourceTree = "<group>"; };
+		D96AABC2183FE967005E39C6 /* silvercoin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silvercoin.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 		D96AAB7E183FA596005E39C6 = {
 			isa = PBXGroup;
 			children = (
+				D96AABBF183FE8B8005E39C6 /* images */,
 				D96AAB90183FA596005E39C6 /* SpaceInvaders */,
 				D96AABAF183FA596005E39C6 /* SpaceInvadersTests */,
 				D96AAB89183FA596005E39C6 /* Frameworks */,
@@ -150,6 +155,16 @@
 				D96AABB2183FA596005E39C6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D96AABBF183FE8B8005E39C6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D96AABC2183FE967005E39C6 /* silvercoin.jpg */,
+				D96AABC0183FE8B8005E39C6 /* goldcoin.jpg */,
+			);
+			name = images;
+			path = SpaceInvaders/images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D96AABA3183FA596005E39C6 /* Images.xcassets in Resources */,
+				D96AABC3183FE967005E39C6 /* silvercoin.jpg in Resources */,
 				D96AAB95183FA596005E39C6 /* InfoPlist.strings in Resources */,
+				D96AABC1183FE8B8005E39C6 /* goldcoin.jpg in Resources */,
 				D96AAB9E183FA596005E39C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
