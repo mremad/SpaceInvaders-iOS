@@ -52,15 +52,8 @@ Invaders</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qw-ep-RDF">
-                                <rect key="frame" x="116" y="445" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take me out!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.76062057144113959" green="0.86247130271002292" blue="0.91900900139999997" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90346376997880695" green="0.91900900139999997" blue="0.89917163407685574" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="WlK-NU-F5L"/>
                 </viewController>
@@ -104,7 +97,7 @@ Invaders</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tz2-in-j7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1218" y="112"/>
+            <point key="canvasLocation" x="1209" y="44"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SmO-rG-wHc">
@@ -180,7 +173,7 @@ Invaders</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EY-xw-0f2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1627" y="112"/>
+            <point key="canvasLocation" x="1645" y="44"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jqa-TD-c3x">
@@ -198,7 +191,7 @@ Invaders</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npt-5Y-bFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-86" y="142"/>
+            <point key="canvasLocation" x="364" y="44"/>
         </scene>
     </scenes>
     <resources>
