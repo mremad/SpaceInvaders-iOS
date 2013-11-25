@@ -1,0 +1,4 @@
+FirstName,LastName,MatriculationNumber,INeedToBorrowAniPhoneForFutureAssignment
+Mohamed,Emad,000000,YES
+Mohamed,ElSherif,298840,IfPossible
+Ravi,Kanth,000000,NO
