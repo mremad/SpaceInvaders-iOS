@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D915A6381845582B0084CE6D /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = D915A6371845582B0084CE6D /* Spaceship.png */; };
+		D915A63B1845584F0084CE6D /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D915A63A1845584F0084CE6D /* MyScene.m */; };
+		D92DF013184506B9001DB25B /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92DF012184506B9001DB25B /* SpriteKit.framework */; };
 		D96AAB8B183FA596005E39C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AAB8A183FA596005E39C6 /* Foundation.framework */; };
 		D96AAB8D183FA596005E39C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AAB8C183FA596005E39C6 /* CoreGraphics.framework */; };
 		D96AAB8F183FA596005E39C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AAB8E183FA596005E39C6 /* UIKit.framework */; };
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D915A6371845582B0084CE6D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		D915A6391845584F0084CE6D /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		D915A63A1845584F0084CE6D /* MyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		D92DF012184506B9001DB25B /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		D96AAB87183FA596005E39C6 /* SpaceInvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceInvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96AAB8A183FA596005E39C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D96AAB8C183FA596005E39C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D92DF013184506B9001DB25B /* SpriteKit.framework in Frameworks */,
 				D96AAB8D183FA596005E39C6 /* CoreGraphics.framework in Frameworks */,
 				D96AAB8F183FA596005E39C6 /* UIKit.framework in Frameworks */,
 				D96AAB8B183FA596005E39C6 /* Foundation.framework in Frameworks */,
@@ -106,6 +114,7 @@
 		D96AAB89183FA596005E39C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D92DF012184506B9001DB25B /* SpriteKit.framework */,
 				D96AAB8A183FA596005E39C6 /* Foundation.framework */,
 				D96AAB8C183FA596005E39C6 /* CoreGraphics.framework */,
 				D96AAB8E183FA596005E39C6 /* UIKit.framework */,
@@ -117,6 +126,9 @@
 		D96AAB90183FA596005E39C6 /* SpaceInvaders */ = {
 			isa = PBXGroup;
 			children = (
+				D915A6391845584F0084CE6D /* MyScene.h */,
+				D915A63A1845584F0084CE6D /* MyScene.m */,
+				D915A6371845582B0084CE6D /* Spaceship.png */,
 				D96AAB99183FA596005E39C6 /* AppDelegate.h */,
 				D96AAB9A183FA596005E39C6 /* AppDelegate.m */,
 				D96AAB9C183FA596005E39C6 /* Main.storyboard */,
@@ -250,6 +262,7 @@
 				D96AABC3183FE967005E39C6 /* silvercoin.jpg in Resources */,
 				D96AAB95183FA596005E39C6 /* InfoPlist.strings in Resources */,
 				D96AABC1183FE8B8005E39C6 /* goldcoin.jpg in Resources */,
+				D915A6381845582B0084CE6D /* Spaceship.png in Resources */,
 				D96AAB9E183FA596005E39C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D915A63B1845584F0084CE6D /* MyScene.m in Sources */,
 				D96AABA1183FA596005E39C6 /* ViewController.m in Sources */,
 				D96AAB9B183FA596005E39C6 /* AppDelegate.m in Sources */,
 				D96AAB97183FA596005E39C6 /* main.m in Sources */,
@@ -405,6 +419,7 @@
 				INFOPLIST_FILE = "SpaceInvaders/SpaceInvaders-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -421,6 +436,7 @@
 				INFOPLIST_FILE = "SpaceInvaders/SpaceInvaders-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -486,6 +502,7 @@
 				D96AABBB183FA596005E39C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D96AABBC183FA596005E39C6 /* Build configuration list for PBXNativeTarget "SpaceInvadersTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +511,7 @@
 				D96AABBE183FA596005E39C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
