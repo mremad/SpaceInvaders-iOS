@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  SpaceInvaders
 //
-//  Created by Mohamed Emad on 11/22/13.
-//  Copyright (c) 2013 Mohamed Emad. All rights reserved.
+//  Created by M on 11/26/13.
+//  Copyright (c) 2013 M. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -13,7 +13,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
     return YES;
 }
 							
@@ -43,7 +42,5 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-
 
 @end

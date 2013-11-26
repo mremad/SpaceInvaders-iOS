@@ -2,20 +2,19 @@
 //  ViewController.m
 //  SpaceInvaders
 //
-//  Created by Mohamed Emad on 11/22/13.
-//  Copyright (c) 2013 Mohamed Emad. All rights reserved.
+//  Created by M on 11/26/13.
+//  Copyright (c) 2013 M. All rights reserved.
 //
 
-
-#import "ViewController.h"
+#import "GameViewController.h"
 #import "MyScene.h"
 
-@implementation ViewController
+@implementation GameViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
@@ -50,4 +49,3 @@
 }
 
 @end
-

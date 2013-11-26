@@ -7,188 +7,187 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D915A6381845582B0084CE6D /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = D915A6371845582B0084CE6D /* Spaceship.png */; };
-		D915A63B1845584F0084CE6D /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D915A63A1845584F0084CE6D /* MyScene.m */; };
-		D92DF013184506B9001DB25B /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92DF012184506B9001DB25B /* SpriteKit.framework */; };
-		D96AAB8B183FA596005E39C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AAB8A183FA596005E39C6 /* Foundation.framework */; };
-		D96AAB8D183FA596005E39C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AAB8C183FA596005E39C6 /* CoreGraphics.framework */; };
-		D96AAB8F183FA596005E39C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AAB8E183FA596005E39C6 /* UIKit.framework */; };
-		D96AAB95183FA596005E39C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D96AAB93183FA596005E39C6 /* InfoPlist.strings */; };
-		D96AAB97183FA596005E39C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D96AAB96183FA596005E39C6 /* main.m */; };
-		D96AAB9B183FA596005E39C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D96AAB9A183FA596005E39C6 /* AppDelegate.m */; };
-		D96AAB9E183FA596005E39C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96AAB9C183FA596005E39C6 /* Main.storyboard */; };
-		D96AABA1183FA596005E39C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D96AABA0183FA596005E39C6 /* ViewController.m */; };
-		D96AABA3183FA596005E39C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96AABA2183FA596005E39C6 /* Images.xcassets */; };
-		D96AABAA183FA596005E39C6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AABA9183FA596005E39C6 /* XCTest.framework */; };
-		D96AABAB183FA596005E39C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AAB8A183FA596005E39C6 /* Foundation.framework */; };
-		D96AABAC183FA596005E39C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96AAB8E183FA596005E39C6 /* UIKit.framework */; };
-		D96AABB4183FA596005E39C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D96AABB2183FA596005E39C6 /* InfoPlist.strings */; };
-		D96AABB6183FA596005E39C6 /* SpaceInvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D96AABB5183FA596005E39C6 /* SpaceInvadersTests.m */; };
-		D96AABC1183FE8B8005E39C6 /* goldcoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96AABC0183FE8B8005E39C6 /* goldcoin.jpg */; };
-		D96AABC3183FE967005E39C6 /* silvercoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96AABC2183FE967005E39C6 /* silvercoin.jpg */; };
+		D915A64918455A6A0084CE6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64818455A6A0084CE6D /* Foundation.framework */; };
+		D915A64B18455A6A0084CE6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64A18455A6A0084CE6D /* CoreGraphics.framework */; };
+		D915A64D18455A6A0084CE6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64C18455A6A0084CE6D /* UIKit.framework */; };
+		D915A64F18455A6A0084CE6D /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64E18455A6A0084CE6D /* SpriteKit.framework */; };
+		D915A65518455A6A0084CE6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D915A65318455A6A0084CE6D /* InfoPlist.strings */; };
+		D915A65718455A6A0084CE6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D915A65618455A6A0084CE6D /* main.m */; };
+		D915A65B18455A6A0084CE6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D915A65A18455A6A0084CE6D /* AppDelegate.m */; };
+		D915A65E18455A6A0084CE6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D915A65C18455A6A0084CE6D /* Main.storyboard */; };
+		D915A66118455A6A0084CE6D /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D915A66018455A6A0084CE6D /* GameViewController.m */; };
+		D915A66418455A6A0084CE6D /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D915A66318455A6A0084CE6D /* MyScene.m */; };
+		D915A66618455A6A0084CE6D /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = D915A66518455A6A0084CE6D /* Spaceship.png */; };
+		D915A66818455A6A0084CE6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D915A66718455A6A0084CE6D /* Images.xcassets */; };
+		D915A66F18455A6A0084CE6D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A66E18455A6A0084CE6D /* XCTest.framework */; };
+		D915A67018455A6A0084CE6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64818455A6A0084CE6D /* Foundation.framework */; };
+		D915A67118455A6A0084CE6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64C18455A6A0084CE6D /* UIKit.framework */; };
+		D915A67918455A6A0084CE6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D915A67718455A6A0084CE6D /* InfoPlist.strings */; };
+		D915A67B18455A6A0084CE6D /* SpaceInvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D915A67A18455A6A0084CE6D /* SpaceInvadersTests.m */; };
+		D915A68718455D740084CE6D /* goldcoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D915A68518455D740084CE6D /* goldcoin.jpg */; };
+		D915A68818455D740084CE6D /* silvercoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D915A68618455D740084CE6D /* silvercoin.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D96AABAD183FA596005E39C6 /* PBXContainerItemProxy */ = {
+		D915A67218455A6A0084CE6D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D96AAB7F183FA596005E39C6 /* Project object */;
+			containerPortal = D915A63D18455A6A0084CE6D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D96AAB86183FA596005E39C6;
+			remoteGlobalIDString = D915A64418455A6A0084CE6D;
 			remoteInfo = SpaceInvaders;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D915A6371845582B0084CE6D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
-		D915A6391845584F0084CE6D /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		D915A63A1845584F0084CE6D /* MyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		D92DF012184506B9001DB25B /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		D96AAB87183FA596005E39C6 /* SpaceInvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceInvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D96AAB8A183FA596005E39C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D96AAB8C183FA596005E39C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D96AAB8E183FA596005E39C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D96AAB92183FA596005E39C6 /* SpaceInvaders-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceInvaders-Info.plist"; sourceTree = "<group>"; };
-		D96AAB94183FA596005E39C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D96AAB96183FA596005E39C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D96AAB98183FA596005E39C6 /* SpaceInvaders-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpaceInvaders-Prefix.pch"; sourceTree = "<group>"; };
-		D96AAB99183FA596005E39C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D96AAB9A183FA596005E39C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D96AAB9D183FA596005E39C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D96AAB9F183FA596005E39C6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D96AABA0183FA596005E39C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D96AABA2183FA596005E39C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D96AABA8183FA596005E39C6 /* SpaceInvadersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceInvadersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D96AABA9183FA596005E39C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D96AABB1183FA596005E39C6 /* SpaceInvadersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceInvadersTests-Info.plist"; sourceTree = "<group>"; };
-		D96AABB3183FA596005E39C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D96AABB5183FA596005E39C6 /* SpaceInvadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceInvadersTests.m; sourceTree = "<group>"; };
-		D96AABC0183FE8B8005E39C6 /* goldcoin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goldcoin.jpg; sourceTree = "<group>"; };
-		D96AABC2183FE967005E39C6 /* silvercoin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silvercoin.jpg; sourceTree = "<group>"; };
+		D915A64518455A6A0084CE6D /* SpaceInvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceInvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D915A64818455A6A0084CE6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D915A64A18455A6A0084CE6D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D915A64C18455A6A0084CE6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D915A64E18455A6A0084CE6D /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		D915A65218455A6A0084CE6D /* SpaceInvaders-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceInvaders-Info.plist"; sourceTree = "<group>"; };
+		D915A65418455A6A0084CE6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D915A65618455A6A0084CE6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D915A65818455A6A0084CE6D /* SpaceInvaders-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpaceInvaders-Prefix.pch"; sourceTree = "<group>"; };
+		D915A65918455A6A0084CE6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D915A65A18455A6A0084CE6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D915A65D18455A6A0084CE6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D915A65F18455A6A0084CE6D /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D915A66018455A6A0084CE6D /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		D915A66218455A6A0084CE6D /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		D915A66318455A6A0084CE6D /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		D915A66518455A6A0084CE6D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		D915A66718455A6A0084CE6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D915A66D18455A6A0084CE6D /* SpaceInvadersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceInvadersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D915A66E18455A6A0084CE6D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D915A67618455A6A0084CE6D /* SpaceInvadersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceInvadersTests-Info.plist"; sourceTree = "<group>"; };
+		D915A67818455A6A0084CE6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D915A67A18455A6A0084CE6D /* SpaceInvadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceInvadersTests.m; sourceTree = "<group>"; };
+		D915A68518455D740084CE6D /* goldcoin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goldcoin.jpg; sourceTree = "<group>"; };
+		D915A68618455D740084CE6D /* silvercoin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silvercoin.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D96AAB84183FA596005E39C6 /* Frameworks */ = {
+		D915A64218455A6A0084CE6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92DF013184506B9001DB25B /* SpriteKit.framework in Frameworks */,
-				D96AAB8D183FA596005E39C6 /* CoreGraphics.framework in Frameworks */,
-				D96AAB8F183FA596005E39C6 /* UIKit.framework in Frameworks */,
-				D96AAB8B183FA596005E39C6 /* Foundation.framework in Frameworks */,
+				D915A64B18455A6A0084CE6D /* CoreGraphics.framework in Frameworks */,
+				D915A64D18455A6A0084CE6D /* UIKit.framework in Frameworks */,
+				D915A64F18455A6A0084CE6D /* SpriteKit.framework in Frameworks */,
+				D915A64918455A6A0084CE6D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D96AABA5183FA596005E39C6 /* Frameworks */ = {
+		D915A66A18455A6A0084CE6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96AABAA183FA596005E39C6 /* XCTest.framework in Frameworks */,
-				D96AABAC183FA596005E39C6 /* UIKit.framework in Frameworks */,
-				D96AABAB183FA596005E39C6 /* Foundation.framework in Frameworks */,
+				D915A66F18455A6A0084CE6D /* XCTest.framework in Frameworks */,
+				D915A67118455A6A0084CE6D /* UIKit.framework in Frameworks */,
+				D915A67018455A6A0084CE6D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D96AAB7E183FA596005E39C6 = {
+		D915A63C18455A6A0084CE6D = {
 			isa = PBXGroup;
 			children = (
-				D96AABBF183FE8B8005E39C6 /* images */,
-				D96AAB90183FA596005E39C6 /* SpaceInvaders */,
-				D96AABAF183FA596005E39C6 /* SpaceInvadersTests */,
-				D96AAB89183FA596005E39C6 /* Frameworks */,
-				D96AAB88183FA596005E39C6 /* Products */,
+				D915A65018455A6A0084CE6D /* SpaceInvaders */,
+				D915A67418455A6A0084CE6D /* SpaceInvadersTests */,
+				D915A64718455A6A0084CE6D /* Frameworks */,
+				D915A64618455A6A0084CE6D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D96AAB88183FA596005E39C6 /* Products */ = {
+		D915A64618455A6A0084CE6D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D96AAB87183FA596005E39C6 /* SpaceInvaders.app */,
-				D96AABA8183FA596005E39C6 /* SpaceInvadersTests.xctest */,
+				D915A64518455A6A0084CE6D /* SpaceInvaders.app */,
+				D915A66D18455A6A0084CE6D /* SpaceInvadersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D96AAB89183FA596005E39C6 /* Frameworks */ = {
+		D915A64718455A6A0084CE6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D92DF012184506B9001DB25B /* SpriteKit.framework */,
-				D96AAB8A183FA596005E39C6 /* Foundation.framework */,
-				D96AAB8C183FA596005E39C6 /* CoreGraphics.framework */,
-				D96AAB8E183FA596005E39C6 /* UIKit.framework */,
-				D96AABA9183FA596005E39C6 /* XCTest.framework */,
+				D915A64818455A6A0084CE6D /* Foundation.framework */,
+				D915A64A18455A6A0084CE6D /* CoreGraphics.framework */,
+				D915A64C18455A6A0084CE6D /* UIKit.framework */,
+				D915A64E18455A6A0084CE6D /* SpriteKit.framework */,
+				D915A66E18455A6A0084CE6D /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D96AAB90183FA596005E39C6 /* SpaceInvaders */ = {
+		D915A65018455A6A0084CE6D /* SpaceInvaders */ = {
 			isa = PBXGroup;
 			children = (
-				D915A6391845584F0084CE6D /* MyScene.h */,
-				D915A63A1845584F0084CE6D /* MyScene.m */,
-				D915A6371845582B0084CE6D /* Spaceship.png */,
-				D96AAB99183FA596005E39C6 /* AppDelegate.h */,
-				D96AAB9A183FA596005E39C6 /* AppDelegate.m */,
-				D96AAB9C183FA596005E39C6 /* Main.storyboard */,
-				D96AAB9F183FA596005E39C6 /* ViewController.h */,
-				D96AABA0183FA596005E39C6 /* ViewController.m */,
-				D96AABA2183FA596005E39C6 /* Images.xcassets */,
-				D96AAB91183FA596005E39C6 /* Supporting Files */,
+				D915A68418455D740084CE6D /* images */,
+				D915A65918455A6A0084CE6D /* AppDelegate.h */,
+				D915A65A18455A6A0084CE6D /* AppDelegate.m */,
+				D915A65C18455A6A0084CE6D /* Main.storyboard */,
+				D915A65F18455A6A0084CE6D /* GameViewController.h */,
+				D915A66018455A6A0084CE6D /* GameViewController.m */,
+				D915A66218455A6A0084CE6D /* MyScene.h */,
+				D915A66318455A6A0084CE6D /* MyScene.m */,
+				D915A66518455A6A0084CE6D /* Spaceship.png */,
+				D915A66718455A6A0084CE6D /* Images.xcassets */,
+				D915A65118455A6A0084CE6D /* Supporting Files */,
 			);
 			path = SpaceInvaders;
 			sourceTree = "<group>";
 		};
-		D96AAB91183FA596005E39C6 /* Supporting Files */ = {
+		D915A65118455A6A0084CE6D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D96AAB92183FA596005E39C6 /* SpaceInvaders-Info.plist */,
-				D96AAB93183FA596005E39C6 /* InfoPlist.strings */,
-				D96AAB96183FA596005E39C6 /* main.m */,
-				D96AAB98183FA596005E39C6 /* SpaceInvaders-Prefix.pch */,
+				D915A65218455A6A0084CE6D /* SpaceInvaders-Info.plist */,
+				D915A65318455A6A0084CE6D /* InfoPlist.strings */,
+				D915A65618455A6A0084CE6D /* main.m */,
+				D915A65818455A6A0084CE6D /* SpaceInvaders-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D96AABAF183FA596005E39C6 /* SpaceInvadersTests */ = {
+		D915A67418455A6A0084CE6D /* SpaceInvadersTests */ = {
 			isa = PBXGroup;
 			children = (
-				D96AABB5183FA596005E39C6 /* SpaceInvadersTests.m */,
-				D96AABB0183FA596005E39C6 /* Supporting Files */,
+				D915A67A18455A6A0084CE6D /* SpaceInvadersTests.m */,
+				D915A67518455A6A0084CE6D /* Supporting Files */,
 			);
 			path = SpaceInvadersTests;
 			sourceTree = "<group>";
 		};
-		D96AABB0183FA596005E39C6 /* Supporting Files */ = {
+		D915A67518455A6A0084CE6D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D96AABB1183FA596005E39C6 /* SpaceInvadersTests-Info.plist */,
-				D96AABB2183FA596005E39C6 /* InfoPlist.strings */,
+				D915A67618455A6A0084CE6D /* SpaceInvadersTests-Info.plist */,
+				D915A67718455A6A0084CE6D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D96AABBF183FE8B8005E39C6 /* images */ = {
+		D915A68418455D740084CE6D /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D96AABC2183FE967005E39C6 /* silvercoin.jpg */,
-				D96AABC0183FE8B8005E39C6 /* goldcoin.jpg */,
+				D915A68518455D740084CE6D /* goldcoin.jpg */,
+				D915A68618455D740084CE6D /* silvercoin.jpg */,
 			);
-			name = images;
-			path = SpaceInvaders/images;
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D96AAB86183FA596005E39C6 /* SpaceInvaders */ = {
+		D915A64418455A6A0084CE6D /* SpaceInvaders */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D96AABB9183FA596005E39C6 /* Build configuration list for PBXNativeTarget "SpaceInvaders" */;
+			buildConfigurationList = D915A67E18455A6A0084CE6D /* Build configuration list for PBXNativeTarget "SpaceInvaders" */;
 			buildPhases = (
-				D96AAB83183FA596005E39C6 /* Sources */,
-				D96AAB84183FA596005E39C6 /* Frameworks */,
-				D96AAB85183FA596005E39C6 /* Resources */,
+				D915A64118455A6A0084CE6D /* Sources */,
+				D915A64218455A6A0084CE6D /* Frameworks */,
+				D915A64318455A6A0084CE6D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -196,45 +195,42 @@
 			);
 			name = SpaceInvaders;
 			productName = SpaceInvaders;
-			productReference = D96AAB87183FA596005E39C6 /* SpaceInvaders.app */;
+			productReference = D915A64518455A6A0084CE6D /* SpaceInvaders.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D96AABA7183FA596005E39C6 /* SpaceInvadersTests */ = {
+		D915A66C18455A6A0084CE6D /* SpaceInvadersTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D96AABBC183FA596005E39C6 /* Build configuration list for PBXNativeTarget "SpaceInvadersTests" */;
+			buildConfigurationList = D915A68118455A6A0084CE6D /* Build configuration list for PBXNativeTarget "SpaceInvadersTests" */;
 			buildPhases = (
-				D96AABA4183FA596005E39C6 /* Sources */,
-				D96AABA5183FA596005E39C6 /* Frameworks */,
-				D96AABA6183FA596005E39C6 /* Resources */,
+				D915A66918455A6A0084CE6D /* Sources */,
+				D915A66A18455A6A0084CE6D /* Frameworks */,
+				D915A66B18455A6A0084CE6D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D96AABAE183FA596005E39C6 /* PBXTargetDependency */,
+				D915A67318455A6A0084CE6D /* PBXTargetDependency */,
 			);
 			name = SpaceInvadersTests;
 			productName = SpaceInvadersTests;
-			productReference = D96AABA8183FA596005E39C6 /* SpaceInvadersTests.xctest */;
+			productReference = D915A66D18455A6A0084CE6D /* SpaceInvadersTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D96AAB7F183FA596005E39C6 /* Project object */ = {
+		D915A63D18455A6A0084CE6D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Mohamed Emad";
+				ORGANIZATIONNAME = M;
 				TargetAttributes = {
-					D96AAB86183FA596005E39C6 = {
-						DevelopmentTeam = W88773838E;
-					};
-					D96AABA7183FA596005E39C6 = {
-						TestTargetID = D96AAB86183FA596005E39C6;
+					D915A66C18455A6A0084CE6D = {
+						TestTargetID = D915A64418455A6A0084CE6D;
 					};
 				};
 			};
-			buildConfigurationList = D96AAB82183FA596005E39C6 /* Build configuration list for PBXProject "SpaceInvaders" */;
+			buildConfigurationList = D915A64018455A6A0084CE6D /* Build configuration list for PBXProject "SpaceInvaders" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -242,92 +238,92 @@
 				en,
 				Base,
 			);
-			mainGroup = D96AAB7E183FA596005E39C6;
-			productRefGroup = D96AAB88183FA596005E39C6 /* Products */;
+			mainGroup = D915A63C18455A6A0084CE6D;
+			productRefGroup = D915A64618455A6A0084CE6D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D96AAB86183FA596005E39C6 /* SpaceInvaders */,
-				D96AABA7183FA596005E39C6 /* SpaceInvadersTests */,
+				D915A64418455A6A0084CE6D /* SpaceInvaders */,
+				D915A66C18455A6A0084CE6D /* SpaceInvadersTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D96AAB85183FA596005E39C6 /* Resources */ = {
+		D915A64318455A6A0084CE6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96AABA3183FA596005E39C6 /* Images.xcassets in Resources */,
-				D96AABC3183FE967005E39C6 /* silvercoin.jpg in Resources */,
-				D96AAB95183FA596005E39C6 /* InfoPlist.strings in Resources */,
-				D96AABC1183FE8B8005E39C6 /* goldcoin.jpg in Resources */,
-				D915A6381845582B0084CE6D /* Spaceship.png in Resources */,
-				D96AAB9E183FA596005E39C6 /* Main.storyboard in Resources */,
+				D915A68718455D740084CE6D /* goldcoin.jpg in Resources */,
+				D915A65518455A6A0084CE6D /* InfoPlist.strings in Resources */,
+				D915A66818455A6A0084CE6D /* Images.xcassets in Resources */,
+				D915A68818455D740084CE6D /* silvercoin.jpg in Resources */,
+				D915A66618455A6A0084CE6D /* Spaceship.png in Resources */,
+				D915A65E18455A6A0084CE6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D96AABA6183FA596005E39C6 /* Resources */ = {
+		D915A66B18455A6A0084CE6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96AABB4183FA596005E39C6 /* InfoPlist.strings in Resources */,
+				D915A67918455A6A0084CE6D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D96AAB83183FA596005E39C6 /* Sources */ = {
+		D915A64118455A6A0084CE6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D915A63B1845584F0084CE6D /* MyScene.m in Sources */,
-				D96AABA1183FA596005E39C6 /* ViewController.m in Sources */,
-				D96AAB9B183FA596005E39C6 /* AppDelegate.m in Sources */,
-				D96AAB97183FA596005E39C6 /* main.m in Sources */,
+				D915A66418455A6A0084CE6D /* MyScene.m in Sources */,
+				D915A66118455A6A0084CE6D /* GameViewController.m in Sources */,
+				D915A65B18455A6A0084CE6D /* AppDelegate.m in Sources */,
+				D915A65718455A6A0084CE6D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D96AABA4183FA596005E39C6 /* Sources */ = {
+		D915A66918455A6A0084CE6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96AABB6183FA596005E39C6 /* SpaceInvadersTests.m in Sources */,
+				D915A67B18455A6A0084CE6D /* SpaceInvadersTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D96AABAE183FA596005E39C6 /* PBXTargetDependency */ = {
+		D915A67318455A6A0084CE6D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D96AAB86183FA596005E39C6 /* SpaceInvaders */;
-			targetProxy = D96AABAD183FA596005E39C6 /* PBXContainerItemProxy */;
+			target = D915A64418455A6A0084CE6D /* SpaceInvaders */;
+			targetProxy = D915A67218455A6A0084CE6D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D96AAB93183FA596005E39C6 /* InfoPlist.strings */ = {
+		D915A65318455A6A0084CE6D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D96AAB94183FA596005E39C6 /* en */,
+				D915A65418455A6A0084CE6D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		D96AAB9C183FA596005E39C6 /* Main.storyboard */ = {
+		D915A65C18455A6A0084CE6D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D96AAB9D183FA596005E39C6 /* Base */,
+				D915A65D18455A6A0084CE6D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D96AABB2183FA596005E39C6 /* InfoPlist.strings */ = {
+		D915A67718455A6A0084CE6D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D96AABB3183FA596005E39C6 /* en */,
+				D915A67818455A6A0084CE6D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -335,7 +331,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D96AABB7183FA596005E39C6 /* Debug */ = {
+		D915A67C18455A6A0084CE6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -374,7 +370,7 @@
 			};
 			name = Debug;
 		};
-		D96AABB8183FA596005E39C6 /* Release */ = {
+		D915A67D18455A6A0084CE6D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -407,41 +403,35 @@
 			};
 			name = Release;
 		};
-		D96AABBA183FA596005E39C6 /* Debug */ = {
+		D915A67F18455A6A0084CE6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpaceInvaders/SpaceInvaders-Prefix.pch";
 				INFOPLIST_FILE = "SpaceInvaders/SpaceInvaders-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		D96AABBB183FA596005E39C6 /* Release */ = {
+		D915A68018455A6A0084CE6D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpaceInvaders/SpaceInvaders-Prefix.pch";
 				INFOPLIST_FILE = "SpaceInvaders/SpaceInvaders-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		D96AABBD183FA596005E39C6 /* Debug */ = {
+		D915A68218455A6A0084CE6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -464,7 +454,7 @@
 			};
 			name = Debug;
 		};
-		D96AABBE183FA596005E39C6 /* Release */ = {
+		D915A68318455A6A0084CE6D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -486,34 +476,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D96AAB82183FA596005E39C6 /* Build configuration list for PBXProject "SpaceInvaders" */ = {
+		D915A64018455A6A0084CE6D /* Build configuration list for PBXProject "SpaceInvaders" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D96AABB7183FA596005E39C6 /* Debug */,
-				D96AABB8183FA596005E39C6 /* Release */,
+				D915A67C18455A6A0084CE6D /* Debug */,
+				D915A67D18455A6A0084CE6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D96AABB9183FA596005E39C6 /* Build configuration list for PBXNativeTarget "SpaceInvaders" */ = {
+		D915A67E18455A6A0084CE6D /* Build configuration list for PBXNativeTarget "SpaceInvaders" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D96AABBA183FA596005E39C6 /* Debug */,
-				D96AABBB183FA596005E39C6 /* Release */,
+				D915A67F18455A6A0084CE6D /* Debug */,
+				D915A68018455A6A0084CE6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D96AABBC183FA596005E39C6 /* Build configuration list for PBXNativeTarget "SpaceInvadersTests" */ = {
+		D915A68118455A6A0084CE6D /* Build configuration list for PBXNativeTarget "SpaceInvadersTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D96AABBD183FA596005E39C6 /* Debug */,
-				D96AABBE183FA596005E39C6 /* Release */,
+				D915A68218455A6A0084CE6D /* Debug */,
+				D915A68318455A6A0084CE6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D96AAB7F183FA596005E39C6 /* Project object */;
+	rootObject = D915A63D18455A6A0084CE6D /* Project object */;
 }

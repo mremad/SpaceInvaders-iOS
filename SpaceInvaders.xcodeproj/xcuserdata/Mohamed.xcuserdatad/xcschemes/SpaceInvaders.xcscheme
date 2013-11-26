@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D96AAB86183FA596005E39C6"
+               BlueprintIdentifier = "D915A64418455A6A0084CE6D"
                BuildableName = "SpaceInvaders.app"
                BlueprintName = "SpaceInvaders"
                ReferencedContainer = "container:SpaceInvaders.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D96AABA7183FA596005E39C6"
+               BlueprintIdentifier = "D915A66C18455A6A0084CE6D"
                BuildableName = "SpaceInvadersTests.xctest"
                BlueprintName = "SpaceInvadersTests"
                ReferencedContainer = "container:SpaceInvaders.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D96AAB86183FA596005E39C6"
+            BlueprintIdentifier = "D915A64418455A6A0084CE6D"
             BuildableName = "SpaceInvaders.app"
             BlueprintName = "SpaceInvaders"
             ReferencedContainer = "container:SpaceInvaders.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D96AAB86183FA596005E39C6"
+            BlueprintIdentifier = "D915A64418455A6A0084CE6D"
             BuildableName = "SpaceInvaders.app"
             BlueprintName = "SpaceInvaders"
             ReferencedContainer = "container:SpaceInvaders.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D96AAB86183FA596005E39C6"
+            BlueprintIdentifier = "D915A64418455A6A0084CE6D"
             BuildableName = "SpaceInvaders.app"
             BlueprintName = "SpaceInvaders"
             ReferencedContainer = "container:SpaceInvaders.xcodeproj">
