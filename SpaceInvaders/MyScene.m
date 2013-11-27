@@ -9,7 +9,13 @@
 #import "MyScene.h"
 
 @implementation MyScene
+{
+    //Game Objects
+    SpaceShip *_spaceShip;
+    
+    float _score;
 
+}
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
@@ -24,6 +30,15 @@
                                        CGRectGetMidY(self.frame));
         
         [self addChild:myLabel];
+        
+        //Setup the monkey
+        _layerPlayerNode = [SKNode new];
+        _spaceShip = [[SpaceShip alloc] initWithPosition:CGPointMake((self.size.width / 2), 120)];
+        [_layerPlayerNode addChild:_spaceShip];
+        //[_monkey startFlyAnimation];
+        
+        [self addChild:_layerPlayerNode];
+        
     }
     return self;
 }

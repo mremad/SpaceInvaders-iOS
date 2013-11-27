@@ -26,6 +26,8 @@
 		D915A67B18455A6A0084CE6D /* SpaceInvadersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D915A67A18455A6A0084CE6D /* SpaceInvadersTests.m */; };
 		D915A68718455D740084CE6D /* goldcoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D915A68518455D740084CE6D /* goldcoin.jpg */; };
 		D915A68818455D740084CE6D /* silvercoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D915A68618455D740084CE6D /* silvercoin.jpg */; };
+		D91AE7971845F13F00A280E6 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7961845F13F00A280E6 /* GameObject.m */; };
+		D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7991845F30100A280E6 /* SpaceShip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,10 @@
 		D915A67A18455A6A0084CE6D /* SpaceInvadersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceInvadersTests.m; sourceTree = "<group>"; };
 		D915A68518455D740084CE6D /* goldcoin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goldcoin.jpg; sourceTree = "<group>"; };
 		D915A68618455D740084CE6D /* silvercoin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silvercoin.jpg; sourceTree = "<group>"; };
+		D91AE7951845F13F00A280E6 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		D91AE7961845F13F00A280E6 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
+		D91AE7981845F30100A280E6 /* SpaceShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceShip.h; sourceTree = "<group>"; };
+		D91AE7991845F30100A280E6 /* SpaceShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShip.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 		D915A65018455A6A0084CE6D /* SpaceInvaders */ = {
 			isa = PBXGroup;
 			children = (
+				D915A68F184562130084CE6D /* GameObjects */,
 				D915A68418455D740084CE6D /* images */,
 				D915A65918455A6A0084CE6D /* AppDelegate.h */,
 				D915A65A18455A6A0084CE6D /* AppDelegate.m */,
@@ -176,6 +183,17 @@
 				D915A68618455D740084CE6D /* silvercoin.jpg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		D915A68F184562130084CE6D /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				D91AE7951845F13F00A280E6 /* GameObject.h */,
+				D91AE7961845F13F00A280E6 /* GameObject.m */,
+				D91AE7981845F30100A280E6 /* SpaceShip.h */,
+				D91AE7991845F30100A280E6 /* SpaceShip.m */,
+			);
+			name = GameObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D91AE7971845F13F00A280E6 /* GameObject.m in Sources */,
 				D915A66418455A6A0084CE6D /* MyScene.m in Sources */,
+				D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */,
 				D915A66118455A6A0084CE6D /* GameViewController.m in Sources */,
 				D915A65B18455A6A0084CE6D /* AppDelegate.m in Sources */,
 				D915A65718455A6A0084CE6D /* main.m in Sources */,

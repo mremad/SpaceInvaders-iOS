@@ -7,7 +7,13 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "SpaceShip.h"
 
 @interface MyScene : SKScene
 
+
+/**
+ the layerPlayerNode is the node that the spaceship is a member of
+ */
+@property (nonatomic, strong) SKNode *layerPlayerNode;
 @end
