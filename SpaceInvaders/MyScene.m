@@ -13,13 +13,9 @@
 {
     //Game Objects
     SpaceShip *_spaceShip;
-    
-    
     float _score;
     NSArray  *upgrades;
     BOOL automaticShooting;
-    
-    
 }
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
@@ -55,7 +51,7 @@
 
 -(void) evaluateUpdates
 {
-    
+    //Xruser,Xtroyer,Xstar
 }
 
 -(void) addEnemy

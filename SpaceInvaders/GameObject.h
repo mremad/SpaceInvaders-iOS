@@ -16,9 +16,9 @@
 typedef NS_OPTIONS(uint32_t, CollisionType) {
     CollisionTypeSpaceShip      = 1 << 0,
     CollisionTypeSpaceShipBullet   = 1 << 1,
-    CollisionTypeEnemyA     = 1 << 2,
-    CollisionTypeEnemyB      = 1 << 3,
-    CollisionTypeEnemyC      = 1 << 4,
+    CollisionTypeEnemyXRuser     = 1 << 2,
+    CollisionTypeEnemyXTroyer      = 1 << 3,
+    CollisionTypeEnemyXStar      = 1 << 4,
     CollisionTypeEnemyBullet      = 1 << 4,
 };
 

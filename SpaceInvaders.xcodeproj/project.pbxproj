@@ -32,6 +32,9 @@
 		D91AE7A018460E2800A280E6 /* SpaceShipBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */; };
 		D91AE7A318461BDC00A280E6 /* EnemyShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7A218461BDC00A280E6 /* EnemyShip.m */; };
 		D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7A518461E5200A280E6 /* EnemyFactory.m */; };
+		D91AE7AB1846687E00A280E6 /* XRuser.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AA1846687E00A280E6 /* XRuser.m */; };
+		D91AE7AE1846689C00A280E6 /* XTroyer.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AD1846689C00A280E6 /* XTroyer.m */; };
+		D91AE7B11846690800A280E6 /* XStar.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7B01846690800A280E6 /* XStar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,12 @@
 		D91AE7A218461BDC00A280E6 /* EnemyShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyShip.m; sourceTree = "<group>"; };
 		D91AE7A418461E5200A280E6 /* EnemyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyFactory.h; sourceTree = "<group>"; };
 		D91AE7A518461E5200A280E6 /* EnemyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyFactory.m; sourceTree = "<group>"; };
+		D91AE7A91846687E00A280E6 /* XRuser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRuser.h; sourceTree = "<group>"; };
+		D91AE7AA1846687E00A280E6 /* XRuser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRuser.m; sourceTree = "<group>"; };
+		D91AE7AC1846689C00A280E6 /* XTroyer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTroyer.h; sourceTree = "<group>"; };
+		D91AE7AD1846689C00A280E6 /* XTroyer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTroyer.m; sourceTree = "<group>"; };
+		D91AE7AF1846690800A280E6 /* XStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStar.h; sourceTree = "<group>"; };
+		D91AE7B01846690800A280E6 /* XStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +237,12 @@
 			children = (
 				D91AE7A118461BDC00A280E6 /* EnemyShip.h */,
 				D91AE7A218461BDC00A280E6 /* EnemyShip.m */,
+				D91AE7A91846687E00A280E6 /* XRuser.h */,
+				D91AE7AA1846687E00A280E6 /* XRuser.m */,
+				D91AE7AC1846689C00A280E6 /* XTroyer.h */,
+				D91AE7AD1846689C00A280E6 /* XTroyer.m */,
+				D91AE7AF1846690800A280E6 /* XStar.h */,
+				D91AE7B01846690800A280E6 /* XStar.m */,
 			);
 			name = EnemyShips;
 			sourceTree = "<group>";
@@ -338,8 +353,11 @@
 				D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */,
 				D915A66118455A6A0084CE6D /* GameViewController.m in Sources */,
 				D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */,
+				D91AE7B11846690800A280E6 /* XStar.m in Sources */,
+				D91AE7AB1846687E00A280E6 /* XRuser.m in Sources */,
 				D91AE7A018460E2800A280E6 /* SpaceShipBullet.m in Sources */,
 				D915A65B18455A6A0084CE6D /* AppDelegate.m in Sources */,
+				D91AE7AE1846689C00A280E6 /* XTroyer.m in Sources */,
 				D915A65718455A6A0084CE6D /* main.m in Sources */,
 				D91AE79D1845FC9300A280E6 /* Upgrade.m in Sources */,
 			);

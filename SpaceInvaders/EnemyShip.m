@@ -24,30 +24,15 @@
 
 
 
-- (void)configureCollisionBody {
-    
-    /*
-     This asteroid will collide with the monkey, but will not move itself--it will push the monkey out of the way.  This is accomplished by setting the collisionBitMask to 0, but setting the contactTestBitMask to the monkey.
-     */
-    self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
-    self.physicsBody.affectedByGravity = NO;
-    self.physicsBody.categoryBitMask = CollisionTypeEnemyA;
-    self.physicsBody.collisionBitMask = CollisionTypeSpaceShipBullet;
-    self.physicsBody.contactTestBitMask = CollisionTypeSpaceShipBullet;
+- (void)configureCollisionBody
+{
+    [self doesNotRecognizeSelector:_cmd]; // without overriding this method, this method is not usable(As If abstract)
 }
 
-+ (SKTexture *)createTexture {
-    
-    static SKTexture *texture = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        texture = [SKTexture textureWithImageNamed:@"goldcoin.jpg"];
-        texture.filteringMode = SKTextureFilteringNearest;
-        
-    });
-    
-    return texture;
++ (SKTexture *)createTexture
+{
+   [self doesNotRecognizeSelector:_cmd]; // without overriding this method, this method is not usable(As If abstract)
+    return nil;
     
 }
 @end
