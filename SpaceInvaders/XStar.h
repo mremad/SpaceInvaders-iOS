@@ -10,4 +10,5 @@
 
 @interface XStar : EnemyShip
 
+
 @end

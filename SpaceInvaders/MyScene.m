@@ -19,10 +19,14 @@
 }
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
+        
+        //there is no gravity in space...
+        self.physicsWorld.gravity = CGVectorMake(0, 0);
+        self.physicsWorld.contactDelegate = self;
         /* Setup your scene here */
         automaticShooting=YES;
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-
+        _gameRunning=YES;
         _layerEnemiesNode=[SKNode new];
         [self addChild:_layerEnemiesNode];
         _layerPlayerNode = [SKNode new];
@@ -37,7 +41,7 @@
         
         //Setup the enemies.....
         SKAction *spawnEnemiesAction = [SKAction performSelector:@selector(addEnemy) onTarget:self];
-        SKAction *waitAction1 = [SKAction waitForDuration:5 withRange:10];
+        SKAction *waitAction1 = [SKAction waitForDuration:1 withRange:3];
         [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction, waitAction1]]]];
         
         
@@ -75,6 +79,31 @@
     [_layerSpaceShipBulletsNode addChild:bullet];
     
     
+}
+
+
+
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+    
+    if(_gameRunning) {
+        
+        SKNode *contactNode1 = contact.bodyA.node;
+        SKNode *contactNode2 = contact.bodyB.node;
+        if([contactNode1 isKindOfClass:[GameObject class]]) {
+            [(GameObject *)contactNode1 collidedWith:contact.bodyB contact:contact];
+        }
+        if([contactNode2 isKindOfClass:[GameObject class]]) {
+            [(GameObject *)contactNode2 collidedWith:contact.bodyA contact:contact];
+        }
+    }
+}
+
+- (void)didEndContact:(SKPhysicsContact *)contact
+{    
+    
+    int gg=1;
+    //rotate our monkey back to zero after contact has ended...
+    //[_monkey runAction:[SKAction rotateToAngle:0 duration:.5]];
 }
 
 -(void)update:(CFTimeInterval)currentTime {

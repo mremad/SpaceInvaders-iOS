@@ -19,7 +19,7 @@ typedef NS_OPTIONS(uint32_t, CollisionType) {
     CollisionTypeEnemyXRuser     = 1 << 2,
     CollisionTypeEnemyXTroyer      = 1 << 3,
     CollisionTypeEnemyXStar      = 1 << 4,
-    CollisionTypeEnemyBullet      = 1 << 4,
+    CollisionTypeEnemyBullet      = 1 << 5,
 };
 
 @interface GameObject : SKSpriteNode

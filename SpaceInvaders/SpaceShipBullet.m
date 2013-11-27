@@ -22,18 +22,17 @@
     return self;
 }
 
-
-
 - (void)configureCollisionBody {
-    
-    /*
-     This asteroid will collide with the monkey, but will not move itself--it will push the monkey out of the way.  This is accomplished by setting the collisionBitMask to 0, but setting the contactTestBitMask to the monkey.
-     */
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.categoryBitMask = CollisionTypeSpaceShipBullet;
-    self.physicsBody.collisionBitMask = CollisionTypeEnemyBullet;
-    self.physicsBody.contactTestBitMask = CollisionTypeEnemyBullet;
+    self.physicsBody.collisionBitMask = CollisionTypeEnemyXRuser;
+    self.physicsBody.contactTestBitMask = CollisionTypeEnemyXRuser;
+}
+
+- (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
+{
+        [self removeFromParent]; //if the bullet collided with anything remove the bullet
 }
 
 + (SKTexture *)createTexture {

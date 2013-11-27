@@ -7,7 +7,7 @@
 //
 
 #import "EnemyShip.h"
-
+//you can not instantiate Objects from EnemyShip!(it will lead to an Exception)
 @implementation EnemyShip
 - (id)initWithPosition:(CGPoint)position {
     
@@ -22,6 +22,14 @@
     return self;
 }
 
+- (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
+{
+    if(contact.bodyA.categoryBitMask == CollisionTypeSpaceShipBullet || contact.bodyB.categoryBitMask == CollisionTypeSpaceShipBullet||contact.bodyA.categoryBitMask  == CollisionTypeSpaceShip || contact.bodyB.categoryBitMask  == CollisionTypeSpaceShip)
+    {
+        [self removeAllActions];
+        [self removeFromParent]; //TODO TEAM show Explosion
+    }
+}
 
 
 - (void)configureCollisionBody

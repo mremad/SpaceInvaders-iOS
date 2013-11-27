@@ -13,7 +13,7 @@
 #import "EnemyShip.h"
 #import "EnemyFactory.h"
 
-@interface MyScene : SKScene
+@interface MyScene : SKScene<SKPhysicsContactDelegate>
 
 
 /**
@@ -24,5 +24,7 @@
 @property (nonatomic, strong) SKNode *layerSpaceShipBulletsNode;
 
 @property (nonatomic, strong) SKNode *layerEnemiesNode;
+
+@property BOOL gameRunning;
 
 @end

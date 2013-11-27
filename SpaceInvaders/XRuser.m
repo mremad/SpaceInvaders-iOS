@@ -14,14 +14,13 @@
     if(self = [super initWithPosition:position]) {
         
         //Name the asteroid and reduce it's size to 70%--it looks about right.
-        self.name = @"spaceShipBullet";
+        self.name = @"EnemyXRuser";
         [self setScale:0.02f];
         [self configureCollisionBody];
     }
     
     return self;
 }
-
 
 
 - (void)configureCollisionBody {
@@ -31,8 +30,8 @@
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.categoryBitMask = CollisionTypeEnemyXRuser;
-    self.physicsBody.collisionBitMask = CollisionTypeSpaceShipBullet;
-    self.physicsBody.contactTestBitMask = CollisionTypeSpaceShipBullet;
+    self.physicsBody.collisionBitMask = 0;
+    self.physicsBody.contactTestBitMask = CollisionTypeSpaceShipBullet|CollisionTypeSpaceShip;
 }
 
 + (SKTexture *)createTexture {
@@ -41,7 +40,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"goldcoin.jpg"];
+        texture = [SKTexture textureWithImageNamed:@"goldcoin.jpg"]; //TODO TEAM RAVI 
         texture.filteringMode = SKTextureFilteringNearest;
         
     });

@@ -24,17 +24,20 @@
 }
 
 
+- (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
+{
+    //if the SpaceShip collided with anything destory it 
+        [self removeFromParent]; //TODO TEAM show Explosion
+}
+
 
 - (void)configureCollisionBody {
     
-    /*
-     This asteroid will collide with the monkey, but will not move itself--it will push the monkey out of the way.  This is accomplished by setting the collisionBitMask to 0, but setting the contactTestBitMask to the monkey.
-     */
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.categoryBitMask = CollisionTypeSpaceShip;
-    self.physicsBody.collisionBitMask = CollisionTypeSpaceShip;
-    self.physicsBody.contactTestBitMask = CollisionTypeSpaceShip;
+    self.physicsBody.collisionBitMask = 0;
+    self.physicsBody.contactTestBitMask = CollisionTypeEnemyXRuser;
 }
 
 + (SKTexture *)createTexture {
