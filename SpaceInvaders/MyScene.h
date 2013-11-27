@@ -10,6 +10,8 @@
 #import "SpaceShip.h"
 #import "Upgrade.h"
 #import "SpaceShipBullet.h"
+#import "EnemyShip.h"
+#import "EnemyFactory.h"
 
 @interface MyScene : SKScene
 
@@ -20,5 +22,7 @@
 @property (nonatomic, strong) SKNode *layerPlayerNode;
 
 @property (nonatomic, strong) SKNode *layerSpaceShipBulletsNode;
+
+@property (nonatomic, strong) SKNode *layerEnemiesNode;
 
 @end

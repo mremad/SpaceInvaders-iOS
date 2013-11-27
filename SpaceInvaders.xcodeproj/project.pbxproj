@@ -30,6 +30,8 @@
 		D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7991845F30100A280E6 /* SpaceShip.m */; };
 		D91AE79D1845FC9300A280E6 /* Upgrade.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE79C1845FC9300A280E6 /* Upgrade.m */; };
 		D91AE7A018460E2800A280E6 /* SpaceShipBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */; };
+		D91AE7A318461BDC00A280E6 /* EnemyShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7A218461BDC00A280E6 /* EnemyShip.m */; };
+		D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7A518461E5200A280E6 /* EnemyFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,7 @@
 		D915A66018455A6A0084CE6D /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		D915A66218455A6A0084CE6D /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		D915A66318455A6A0084CE6D /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		D915A66518455A6A0084CE6D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		D915A66518455A6A0084CE6D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Spaceship.png; path = ../Spaceship.png; sourceTree = "<group>"; };
 		D915A66718455A6A0084CE6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D915A66D18455A6A0084CE6D /* SpaceInvadersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceInvadersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D915A66E18455A6A0084CE6D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -76,6 +78,10 @@
 		D91AE79C1845FC9300A280E6 /* Upgrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Upgrade.m; path = ../Upgrade.m; sourceTree = "<group>"; };
 		D91AE79E18460E2800A280E6 /* SpaceShipBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceShipBullet.h; sourceTree = "<group>"; };
 		D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShipBullet.m; sourceTree = "<group>"; };
+		D91AE7A118461BDC00A280E6 /* EnemyShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyShip.h; sourceTree = "<group>"; };
+		D91AE7A218461BDC00A280E6 /* EnemyShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyShip.m; sourceTree = "<group>"; };
+		D91AE7A418461E5200A280E6 /* EnemyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyFactory.h; sourceTree = "<group>"; };
+		D91AE7A518461E5200A280E6 /* EnemyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +143,7 @@
 		D915A65018455A6A0084CE6D /* SpaceInvaders */ = {
 			isa = PBXGroup;
 			children = (
-				D91AE79B1845FC9300A280E6 /* Upgrade.h */,
-				D91AE79C1845FC9300A280E6 /* Upgrade.m */,
+				D91AE7A71846248200A280E6 /* HelperClasses */,
 				D915A68F184562130084CE6D /* GameObjects */,
 				D915A68418455D740084CE6D /* images */,
 				D915A65918455A6A0084CE6D /* AppDelegate.h */,
@@ -148,7 +153,6 @@
 				D915A66018455A6A0084CE6D /* GameViewController.m */,
 				D915A66218455A6A0084CE6D /* MyScene.h */,
 				D915A66318455A6A0084CE6D /* MyScene.m */,
-				D915A66518455A6A0084CE6D /* Spaceship.png */,
 				D915A66718455A6A0084CE6D /* Images.xcassets */,
 				D915A65118455A6A0084CE6D /* Supporting Files */,
 			);
@@ -187,6 +191,7 @@
 		D915A68418455D740084CE6D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D915A66518455A6A0084CE6D /* Spaceship.png */,
 				D915A68518455D740084CE6D /* goldcoin.jpg */,
 				D915A68618455D740084CE6D /* silvercoin.jpg */,
 			);
@@ -196,6 +201,7 @@
 		D915A68F184562130084CE6D /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				D91AE7A8184630AD00A280E6 /* EnemyShips */,
 				D91AE7951845F13F00A280E6 /* GameObject.h */,
 				D91AE7961845F13F00A280E6 /* GameObject.m */,
 				D91AE7981845F30100A280E6 /* SpaceShip.h */,
@@ -204,6 +210,26 @@
 				D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */,
 			);
 			name = GameObjects;
+			sourceTree = "<group>";
+		};
+		D91AE7A71846248200A280E6 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D91AE7A418461E5200A280E6 /* EnemyFactory.h */,
+				D91AE7A518461E5200A280E6 /* EnemyFactory.m */,
+				D91AE79B1845FC9300A280E6 /* Upgrade.h */,
+				D91AE79C1845FC9300A280E6 /* Upgrade.m */,
+			);
+			name = HelperClasses;
+			sourceTree = "<group>";
+		};
+		D91AE7A8184630AD00A280E6 /* EnemyShips */ = {
+			isa = PBXGroup;
+			children = (
+				D91AE7A118461BDC00A280E6 /* EnemyShip.h */,
+				D91AE7A218461BDC00A280E6 /* EnemyShip.m */,
+			);
+			name = EnemyShips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,8 +334,10 @@
 			files = (
 				D91AE7971845F13F00A280E6 /* GameObject.m in Sources */,
 				D915A66418455A6A0084CE6D /* MyScene.m in Sources */,
+				D91AE7A318461BDC00A280E6 /* EnemyShip.m in Sources */,
 				D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */,
 				D915A66118455A6A0084CE6D /* GameViewController.m in Sources */,
+				D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */,
 				D91AE7A018460E2800A280E6 /* SpaceShipBullet.m in Sources */,
 				D915A65B18455A6A0084CE6D /* AppDelegate.m in Sources */,
 				D915A65718455A6A0084CE6D /* main.m in Sources */,

@@ -17,39 +17,38 @@
     
     float _score;
     NSArray  *upgrades;
+    BOOL automaticShooting;
     
     
 }
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        
+        automaticShooting=YES;
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
-        [self addChild:myLabel];
-        
-        //Setup the monkey
+
+        _layerEnemiesNode=[SKNode new];
+        [self addChild:_layerEnemiesNode];
         _layerPlayerNode = [SKNode new];
         [self addChild:_layerPlayerNode];
         _layerSpaceShipBulletsNode = [SKNode new];
         [self addChild:_layerSpaceShipBulletsNode];
        
         _spaceShip = [[SpaceShip alloc] initWithPosition:CGPointMake((self.size.width / 2), 120)];
-         CGPoint ps=_spaceShip.position;
+        //spaceShip.position here will return the correct position;
         [_layerPlayerNode addChild:_spaceShip];
-        //[_monkey startFlyAnimation];
+        
+        
+        //Setup the enemies.....
+        SKAction *spawnEnemiesAction = [SKAction performSelector:@selector(addEnemy) onTarget:self];
+        SKAction *waitAction1 = [SKAction waitForDuration:5 withRange:10];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction, waitAction1]]]];
         
         
         
         upgrades = [NSArray arrayWithObjects:[NSNumber numberWithInt:UpgradeAutomaticShooting], nil];
         [self evaluateUpdates];
+        
     }
     return self;
 }
@@ -57,6 +56,11 @@
 -(void) evaluateUpdates
 {
     
+}
+
+-(void) addEnemy
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateSingleToughEnemy]];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

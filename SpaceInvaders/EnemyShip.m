@@ -1,22 +1,21 @@
 //
-//  SpaceShip.m
+//  EnemyShip.m
 //  SpaceInvaders
 //
 //  Created by M on 11/27/13.
 //  Copyright (c) 2013 M. All rights reserved.
 //
 
-#import "SpaceShip.h"
+#import "EnemyShip.h"
 
-@implementation SpaceShip
-
+@implementation EnemyShip
 - (id)initWithPosition:(CGPoint)position {
     
     if(self = [super initWithPosition:position]) {
         
         //Name the asteroid and reduce it's size to 70%--it looks about right.
-        self.name = @"spaceShip";
-        [self setScale:0.2f];
+        self.name = @"spaceShipBullet";
+        [self setScale:0.02f];
         [self configureCollisionBody];
     }
     
@@ -32,9 +31,9 @@
      */
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
-    self.physicsBody.categoryBitMask = CollisionTypeSpaceShip;
-    self.physicsBody.collisionBitMask = CollisionTypeEnemyA | CollisionTypeEnemyB | CollisionTypeEnemyBullet | CollisionTypeEnemyC;
-    self.physicsBody.contactTestBitMask = CollisionTypeEnemyA | CollisionTypeEnemyB | CollisionTypeEnemyBullet | CollisionTypeEnemyC;
+    self.physicsBody.categoryBitMask = CollisionTypeEnemyA;
+    self.physicsBody.collisionBitMask = CollisionTypeSpaceShipBullet;
+    self.physicsBody.contactTestBitMask = CollisionTypeSpaceShipBullet;
 }
 
 + (SKTexture *)createTexture {
@@ -43,7 +42,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"Spaceship.png"];
+        texture = [SKTexture textureWithImageNamed:@"goldcoin.jpg"];
         texture.filteringMode = SKTextureFilteringNearest;
         
     });
@@ -52,4 +51,3 @@
     
 }
 @end
-
