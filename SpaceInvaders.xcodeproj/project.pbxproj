@@ -28,6 +28,8 @@
 		D915A68818455D740084CE6D /* silvercoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D915A68618455D740084CE6D /* silvercoin.jpg */; };
 		D91AE7971845F13F00A280E6 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7961845F13F00A280E6 /* GameObject.m */; };
 		D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7991845F30100A280E6 /* SpaceShip.m */; };
+		D91AE79D1845FC9300A280E6 /* Upgrade.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE79C1845FC9300A280E6 /* Upgrade.m */; };
+		D91AE7A018460E2800A280E6 /* SpaceShipBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		D91AE7961845F13F00A280E6 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		D91AE7981845F30100A280E6 /* SpaceShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceShip.h; sourceTree = "<group>"; };
 		D91AE7991845F30100A280E6 /* SpaceShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShip.m; sourceTree = "<group>"; };
+		D91AE79B1845FC9300A280E6 /* Upgrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Upgrade.h; path = ../Upgrade.h; sourceTree = "<group>"; };
+		D91AE79C1845FC9300A280E6 /* Upgrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Upgrade.m; path = ../Upgrade.m; sourceTree = "<group>"; };
+		D91AE79E18460E2800A280E6 /* SpaceShipBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceShipBullet.h; sourceTree = "<group>"; };
+		D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShipBullet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,8 @@
 		D915A65018455A6A0084CE6D /* SpaceInvaders */ = {
 			isa = PBXGroup;
 			children = (
+				D91AE79B1845FC9300A280E6 /* Upgrade.h */,
+				D91AE79C1845FC9300A280E6 /* Upgrade.m */,
 				D915A68F184562130084CE6D /* GameObjects */,
 				D915A68418455D740084CE6D /* images */,
 				D915A65918455A6A0084CE6D /* AppDelegate.h */,
@@ -192,6 +200,8 @@
 				D91AE7961845F13F00A280E6 /* GameObject.m */,
 				D91AE7981845F30100A280E6 /* SpaceShip.h */,
 				D91AE7991845F30100A280E6 /* SpaceShip.m */,
+				D91AE79E18460E2800A280E6 /* SpaceShipBullet.h */,
+				D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -300,8 +310,10 @@
 				D915A66418455A6A0084CE6D /* MyScene.m in Sources */,
 				D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */,
 				D915A66118455A6A0084CE6D /* GameViewController.m in Sources */,
+				D91AE7A018460E2800A280E6 /* SpaceShipBullet.m in Sources */,
 				D915A65B18455A6A0084CE6D /* AppDelegate.m in Sources */,
 				D915A65718455A6A0084CE6D /* main.m in Sources */,
+				D91AE79D1845FC9300A280E6 /* Upgrade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
