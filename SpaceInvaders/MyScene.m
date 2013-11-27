@@ -56,7 +56,7 @@
 
 -(void) addEnemy
 {
-    [_layerEnemiesNode addChild:[EnemyFactory CreateSingleToughEnemy]];
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemyXRuser]];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

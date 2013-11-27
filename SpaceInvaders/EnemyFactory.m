@@ -26,9 +26,9 @@
     return nil;
 }
 
-+(EnemyShip *)CreateSingleToughEnemy
++(EnemyShip *)CreateEnemyXRuser
 {
-    EnemyShip *ship = [[EnemyShip alloc]initWithPosition:[self generateRandomAcceptablePoint]];
+    EnemyShip *ship = [[XRuser alloc]initWithPosition:[self generateRandomAcceptablePoint]];
     SKAction *moveAction = [SKAction moveToY:-100 duration:8]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
     SKAction *removeEnemy= [SKAction removeFromParent];
     SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];

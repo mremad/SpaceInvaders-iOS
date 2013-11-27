@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "EnemyShip.h"
+#import "XRuser.h"
+#import "XTroyer.h"
+#import "XStar.h"
 
 @interface EnemyFactory : NSObject
 {
@@ -16,6 +19,6 @@
 @property (nonatomic, retain) NSString *someProperty;
 
 + (EnemyFactory *)sharedFactory;
-+ (EnemyShip *)CreateSingleToughEnemy;
++ (EnemyShip *)CreateEnemyXRuser;
 
 @end

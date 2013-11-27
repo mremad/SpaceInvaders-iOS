@@ -32,8 +32,8 @@
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.categoryBitMask = CollisionTypeSpaceShipBullet;
-    self.physicsBody.collisionBitMask = CollisionTypeEnemyA | CollisionTypeEnemyB | CollisionTypeEnemyBullet | CollisionTypeEnemyC;
-    self.physicsBody.contactTestBitMask = CollisionTypeEnemyA | CollisionTypeEnemyB | CollisionTypeEnemyBullet | CollisionTypeEnemyC;
+    self.physicsBody.collisionBitMask = CollisionTypeEnemyBullet;
+    self.physicsBody.contactTestBitMask = CollisionTypeEnemyBullet;
 }
 
 + (SKTexture *)createTexture {
