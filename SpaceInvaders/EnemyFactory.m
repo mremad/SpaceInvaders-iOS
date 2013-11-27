@@ -23,16 +23,46 @@
 
 +(EnemyShip *)CreateSingleRandomEnemy
 {
-    return nil;
+    int modulo3Number = arc4random()%3;
+    switch (modulo3Number) {
+        case 0:
+            return [self CreateEnemyXRuser];
+            break;
+        case 1:
+            return [self CreateEnemyXTroyer];
+            break;
+        default:
+            return [self CreateEnemyXStar];
+    }
+}
+
++(SKAction *) normalEnemyBehaviour
+{
+    SKAction *moveAction = [SKAction moveToY:-100 duration:8]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
+    SKAction *removeEnemy= [SKAction removeFromParent];
+    SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
+    return enemySequence;
+    
 }
 
 +(EnemyShip *)CreateEnemyXRuser
 {
     EnemyShip *ship = [[XRuser alloc]initWithPosition:[self generateRandomAcceptablePoint]];
-    SKAction *moveAction = [SKAction moveToY:-100 duration:8]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
-    SKAction *removeEnemy= [SKAction removeFromParent];
-    SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
-    [ship runAction:enemySequence];
+    [ship runAction:[self normalEnemyBehaviour]];
+    return ship;
+}
+
++(EnemyShip *)CreateEnemyXTroyer
+{
+    EnemyShip *ship = [[XTroyer alloc]initWithPosition:[self generateRandomAcceptablePoint]];
+    [ship runAction:[self normalEnemyBehaviour]];
+    return ship;
+}
+
++(EnemyShip *)CreateEnemyXStar
+{
+    EnemyShip *ship = [[XStar alloc]initWithPosition:[self generateRandomAcceptablePoint]];
+    [ship runAction:[self normalEnemyBehaviour]];
     return ship;
 }
 

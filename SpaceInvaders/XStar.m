@@ -15,7 +15,7 @@
         
         //Name the asteroid and reduce it's size to 70%--it looks about right.
         self.name = @"EnemyXStar";
-        [self setScale:0.02f];
+        [self setScale:0.02f]; //TODO TEAM RAVI 
         [self configureCollisionBody];
     }
     
@@ -32,8 +32,8 @@
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.categoryBitMask = CollisionTypeEnemyXStar;
-    self.physicsBody.collisionBitMask = CollisionTypeSpaceShipBullet;
-    self.physicsBody.contactTestBitMask = CollisionTypeSpaceShipBullet;
+    self.physicsBody.collisionBitMask = 0;
+    self.physicsBody.contactTestBitMask = CollisionTypeSpaceShipBullet|CollisionTypeSpaceShip;
 }
 
 + (SKTexture *)createTexture {

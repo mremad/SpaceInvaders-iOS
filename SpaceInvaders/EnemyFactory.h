@@ -20,5 +20,9 @@
 
 + (EnemyFactory *)sharedFactory;
 + (EnemyShip *)CreateEnemyXRuser;
++ (EnemyShip *)CreateEnemyXTroyer;
++ (EnemyShip *)CreateEnemyXStar;
++ (EnemyShip *)CreateSingleRandomEnemy;
+
 
 @end
