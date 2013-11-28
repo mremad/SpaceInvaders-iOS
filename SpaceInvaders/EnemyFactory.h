@@ -12,11 +12,12 @@
 #import "XTroyer.h"
 #import "XStar.h"
 
+typedef enum EnemyMovement {MovementNormal,
+    MovementArc} EnemyMovement;
+
 @interface EnemyFactory : NSObject
 {
 }
-
-@property (nonatomic, retain) NSString *someProperty;
 
 + (EnemyFactory *)sharedFactory;
 + (EnemyShip *)CreateEnemyXRuser;

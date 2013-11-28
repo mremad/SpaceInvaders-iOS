@@ -44,8 +44,6 @@
         SKAction *waitAction1 = [SKAction waitForDuration:1 withRange:3];
         [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction, waitAction1]]]];
         
-        
-        
         upgrades = [NSArray arrayWithObjects:[NSNumber numberWithInt:UpgradeAutomaticShooting], nil];
         [self evaluateUpdates];
         
@@ -70,17 +68,19 @@
     p.y+=10;
     
     SpaceShipBullet *bullet = [[SpaceShipBullet alloc]initWithPosition:p];
-    //Move the bullet down the screen and remove it when it is of screen
-    SKAction *moveAction = [SKAction moveToY:1000 duration:8]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
-    SKAction *removeBullet= [SKAction removeFromParent];
-    SKAction *bulletSequence = [SKAction sequence:@[moveAction, removeBullet]];
-    
-    [bullet runAction:bulletSequence];
+    [bullet runAction:[self normalBulletAction]];
     [_layerSpaceShipBulletsNode addChild:bullet];
-    
-    
 }
 
+
+-(SKAction *) normalBulletAction
+{
+    //Move the bullet down the screen and remove it when it is of screen
+    SKAction *moveAction = [SKAction moveToY:1000 duration:8];//TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
+    SKAction *removeBullet= [SKAction removeFromParent];
+    SKAction *bulletSequence = [SKAction sequence:@[moveAction, removeBullet]];
+    return bulletSequence;
+}
 
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
