@@ -54,6 +54,8 @@ typedef NS_OPTIONS(uint32_t, CollisionType) {
  */
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact;
 
+- (void)removeNodeWhileShowingSomeGraphicsOfTheDestruction;
+
 /**
  Creates the object with texture that represents this object and will be rendered on screen.
  */

@@ -35,6 +35,11 @@
     }
 }
 
+-(void) removeNodeWhileShowingSomeGraphicsOfTheDestruction
+{
+    [self removeFromParent];
+}
+
 //to be overridden
 - (void)update:(CFTimeInterval)timeSpan {}
 - (void)configureCollisionBody {}

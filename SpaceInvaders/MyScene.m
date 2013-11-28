@@ -101,9 +101,6 @@
 - (void)didEndContact:(SKPhysicsContact *)contact
 {    
     
-    int gg=1;
-    //rotate our monkey back to zero after contact has ended...
-    //[_monkey runAction:[SKAction rotateToAngle:0 duration:.5]];
 }
 
 -(void)update:(CFTimeInterval)currentTime {

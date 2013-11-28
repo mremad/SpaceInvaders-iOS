@@ -27,7 +27,8 @@
     if(contact.bodyA.categoryBitMask == CollisionTypeSpaceShipBullet || contact.bodyB.categoryBitMask == CollisionTypeSpaceShipBullet||contact.bodyA.categoryBitMask  == CollisionTypeSpaceShip || contact.bodyB.categoryBitMask  == CollisionTypeSpaceShip)
     {
         [self removeAllActions];
-        [self removeFromParent]; //TODO TEAM show Explosion
+        //[self removeFromParent];
+        [self removeNodeWhileShowingSomeGraphicsOfTheDestruction];
     }
 }
 
