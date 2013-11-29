@@ -76,7 +76,7 @@
 {
     NSMutableArray *cGPointsArray = [NSMutableArray arrayWithCapacity:amount];
     
-    for(int i=0;i<cGPointsArray.count;i++)
+    for(int i=0;i<amount ;i++)
     {
         [cGPointsArray insertObject:[NSValue valueWithCGPoint:[self getPossibleCGPoint:movement]] atIndex:i];
     }
@@ -86,7 +86,7 @@
 
 + (EnemyShip *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement
 {
-    return [[self CreateEnemies:enemyType AndTheMovement:movement AndTheirAmount:0] objectAtIndex:0];
+    return [[self CreateEnemies:enemyType AndTheMovement:movement AndTheirAmount:1] objectAtIndex:0];
 }
 +(SKAction *) EnemyBehaviourNormal
 {

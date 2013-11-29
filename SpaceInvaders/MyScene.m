@@ -39,18 +39,26 @@
         [_layerPlayerNode addChild:_spaceShip];
         
         
-        //Setup the enemies.....
-        SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addRandomEnemy) onTarget:self];
+        //Setup the enemies from top
+        SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
         SKAction *waitAction1 = [SKAction waitForDuration:1 withRange:3];
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction1, waitAction1]]]];
+        SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction1]] count:20];
+       // [self runAction:firstWave];
         
-        SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
+        //Setup up the enemies from left
+        SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemyArc) onTarget:self];
         SKAction *waitAction2 = [SKAction waitForDuration:1 withRange:3];
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction2, waitAction2]]]];
+        SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction2]] count:15];
+        [self runAction:[SKAction sequence:@[firstWave , secondWave]]];
+        
+        
+        //Setup the enemies from top and left
+        //[self runAction:[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction1,spawnEnemiesAction2, waitAction2]] count:10]];
+        
         
         SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
         SKAction *waitAction3 = [SKAction waitForDuration:1 withRange:3];
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction3, waitAction3]]]];
+       // [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction3, waitAction3]]]];
         
         
         
@@ -64,7 +72,7 @@
 
 -(void) evaluateUpdates
 {
-    //Xruser,Xtroyer,Xstar
+    //do something with upgrades
 }
 
 -(void) addRandomEnemy
@@ -75,6 +83,11 @@
 -(void) addXRuserEnemy
 {
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXRuser AndTheMovement:EnemyMovementNormal]];
+}
+
+-(void) addXRuserEnemyArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXRuser AndTheMovement:EnemyMovementArc]];
 }
 
 -(void) addXTroyerEnemy
