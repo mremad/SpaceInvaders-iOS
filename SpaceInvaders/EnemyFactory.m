@@ -135,9 +135,6 @@ CGPoint lastPoint;
 
 +(void) generateRandomAcceptablePointForTopEnemies
 {
-    int Ymin = 200;
-    int Ymax = 500;
-    int YInBetween=Ymin+(arc4random()%(Ymax-Ymin));
     
     int Xmin = 20;
     int Xmax =300;

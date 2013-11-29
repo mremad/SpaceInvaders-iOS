@@ -42,7 +42,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"goldcoin.jpg"]; //TODO TEAM RAVI 
+        texture = [SKTexture textureWithImageNamed:@"Xstar.jpeg"]; //TODO TEAM RAVI
         texture.filteringMode = SKTextureFilteringNearest;
         
     });

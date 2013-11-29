@@ -35,6 +35,10 @@
 		D91AE7AB1846687E00A280E6 /* XRuser.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AA1846687E00A280E6 /* XRuser.m */; };
 		D91AE7AE1846689C00A280E6 /* XTroyer.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AD1846689C00A280E6 /* XTroyer.m */; };
 		D91AE7B11846690800A280E6 /* XStar.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7B01846690800A280E6 /* XStar.m */; };
+		D93247191848A41200A4467C /* Amigo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D93247151848A41200A4467C /* Amigo.jpeg */; };
+		D932471A1848A41200A4467C /* Xruser.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D93247161848A41200A4467C /* Xruser.jpeg */; };
+		D932471B1848A41200A4467C /* Xstar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D93247171848A41200A4467C /* Xstar.jpeg */; };
+		D932471C1848A41200A4467C /* Xtroyer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D93247181848A41200A4467C /* Xtroyer.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		D91AE7AD1846689C00A280E6 /* XTroyer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTroyer.m; sourceTree = "<group>"; };
 		D91AE7AF1846690800A280E6 /* XStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStar.h; sourceTree = "<group>"; };
 		D91AE7B01846690800A280E6 /* XStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStar.m; sourceTree = "<group>"; };
+		D93247151848A41200A4467C /* Amigo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Amigo.jpeg; sourceTree = "<group>"; };
+		D93247161848A41200A4467C /* Xruser.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Xruser.jpeg; sourceTree = "<group>"; };
+		D93247171848A41200A4467C /* Xstar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Xstar.jpeg; sourceTree = "<group>"; };
+		D93247181848A41200A4467C /* Xtroyer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Xtroyer.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +208,10 @@
 		D915A68418455D740084CE6D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D93247151848A41200A4467C /* Amigo.jpeg */,
+				D93247161848A41200A4467C /* Xruser.jpeg */,
+				D93247171848A41200A4467C /* Xstar.jpeg */,
+				D93247181848A41200A4467C /* Xtroyer.jpeg */,
 				D915A66518455A6A0084CE6D /* Spaceship.png */,
 				D915A68518455D740084CE6D /* goldcoin.jpg */,
 				D915A68618455D740084CE6D /* silvercoin.jpg */,
@@ -323,12 +335,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D932471B1848A41200A4467C /* Xstar.jpeg in Resources */,
+				D932471A1848A41200A4467C /* Xruser.jpeg in Resources */,
+				D93247191848A41200A4467C /* Amigo.jpeg in Resources */,
 				D915A68718455D740084CE6D /* goldcoin.jpg in Resources */,
 				D915A65518455A6A0084CE6D /* InfoPlist.strings in Resources */,
 				D915A66818455A6A0084CE6D /* Images.xcassets in Resources */,
 				D915A68818455D740084CE6D /* silvercoin.jpg in Resources */,
 				D915A66618455A6A0084CE6D /* Spaceship.png in Resources */,
 				D915A65E18455A6A0084CE6D /* Main.storyboard in Resources */,
+				D932471C1848A41200A4467C /* Xtroyer.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
