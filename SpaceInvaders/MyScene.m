@@ -44,11 +44,11 @@
         SKAction *waitAction1 = [SKAction waitForDuration:1 withRange:3];
         [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction1, waitAction1]]]];
         
-        SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addRandomEnemy) onTarget:self];
+        SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
         SKAction *waitAction2 = [SKAction waitForDuration:1 withRange:3];
         [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction2, waitAction2]]]];
         
-        SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addRandomEnemy) onTarget:self];
+        SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
         SKAction *waitAction3 = [SKAction waitForDuration:1 withRange:3];
         [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction3, waitAction3]]]];
         
@@ -85,21 +85,15 @@
 -(void) addXStarEnemy
 {
     [_layerEnemiesNode addChild:[EnemyFactory CreateRandomEnemy]];
-    CGPoint ff;
-    int gg =1;
-    int gfasd=3;
 }
-
-
-
 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
-    CGPoint p=[_layerPlayerNode.children.firstObject position]; //TODO emad do you know y spaceShip.position does not Work here??
+    CGPoint p=_spaceShip.position;
     p.y+=10;
-    
+
     SpaceShipBullet *bullet = [[SpaceShipBullet alloc]initWithPosition:p];
     [bullet runAction:[self normalBulletAction]];
     [_layerSpaceShipBulletsNode addChild:bullet];

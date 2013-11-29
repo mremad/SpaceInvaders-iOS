@@ -70,6 +70,22 @@
     return enemiesResultArray;
 }
 
++ (NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement AndTheirAmount:(int) amount
+{
+    NSMutableArray *cGPointsArray = [NSMutableArray arrayWithCapacity:amount];
+    
+    for(int i=0;i<cGPointsArray.count;i++)
+    {
+        [cGPointsArray insertObject:[NSValue valueWithCGPoint:[self getPointGivenMovement:movement]] atIndex:i];
+    }
+    
+    return [self CreateEnemies:enemyType AndTheMovement:movement AndTheirPositions:cGPointsArray];
+}
+
++ (NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement
+{
+    return [self CreateEnemies:enemyType AndTheMovement:movement AndTheirAmount:0];
+}
 +(SKAction *) EnemyBehaviourNormal
 {
     SKAction *moveAction = [SKAction moveToY:-100 duration:8]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
@@ -162,7 +178,6 @@
 
 +(CGPoint) getRandomAcceptablePointForEnemiesComingFromTheTop
 {
-    
     int Xmin = 20;
     int Xmax = 300;
     int XInBetween = Xmin+(arc4random()%(Xmax-Xmin));
