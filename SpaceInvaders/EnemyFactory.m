@@ -24,7 +24,7 @@
 {
     int modulo3Number = arc4random()%3;
     CGPoint myPoint = [self getRandomAcceptablePointForEnemiesComingFromTheTop];
-    EnemyMovement movement = MovementNormal;
+    EnemyMovement movement = EnemyMovementNormal;
     switch (modulo3Number)
     {
         case 0:
@@ -37,6 +37,8 @@
             return [self CreateEnemyXStarWithMovement:movement AndThePosition:myPoint];
     }
 }
+
+
 
 +(NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement AndTheirPositions:(NSArray *) myCGPointArray
 {
@@ -76,15 +78,15 @@
     
     for(int i=0;i<cGPointsArray.count;i++)
     {
-        [cGPointsArray insertObject:[NSValue valueWithCGPoint:[self getPointGivenMovement:movement]] atIndex:i];
+        [cGPointsArray insertObject:[NSValue valueWithCGPoint:[self getPossibleCGPoint:movement]] atIndex:i];
     }
     
     return [self CreateEnemies:enemyType AndTheMovement:movement AndTheirPositions:cGPointsArray];
 }
 
-+ (NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement
++ (EnemyShip *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement
 {
-    return [self CreateEnemies:enemyType AndTheMovement:movement AndTheirAmount:0];
+    return [[self CreateEnemies:enemyType AndTheMovement:movement AndTheirAmount:0] objectAtIndex:0];
 }
 +(SKAction *) EnemyBehaviourNormal
 {
@@ -110,9 +112,9 @@
     return thePath;
 }
 
-+(CGPoint) getPointGivenMovement:(EnemyMovement) movement
++(CGPoint) getPossibleCGPoint:(EnemyMovement) movement
 {
-    if(movement==MovementNormal)
+    if(movement==EnemyMovementNormal)
     {
         return [self getRandomAcceptablePointForEnemiesComingFromTheTop];
     }
@@ -124,7 +126,7 @@
 
 +(EnemyShip *)CreateEnemyXRuserWithMovement :(EnemyMovement)movement
 {
-    CGPoint p=[self getPointGivenMovement:movement];
+    CGPoint p=[self getPossibleCGPoint:movement];
     return [self CreateEnemyXRuserWithMovement:movement AndThePosition:p];
 }
 
@@ -138,7 +140,7 @@
 
 +(EnemyShip *)CreateEnemyXTroyerWithMovement :(EnemyMovement)movement
 {
-    CGPoint p=[self getPointGivenMovement:movement];
+    CGPoint p=[self getPossibleCGPoint:movement];
     return [self CreateEnemyXTroyerWithMovement:movement AndThePosition:p];
 }
 
@@ -152,7 +154,7 @@
 
 +(EnemyShip *)CreateEnemyXStarWithMovement :(EnemyMovement)movement
 {
-    CGPoint p=[self getPointGivenMovement:movement];
+    CGPoint p=[self getPossibleCGPoint:movement];
     return [self CreateEnemyXStarWithMovement:movement AndThePosition:p];
 }
 
@@ -165,11 +167,11 @@
 
 +(void)runAppropiateAction:(EnemyShip*) ship WithMovemement:(EnemyMovement) movement
 {
-    if(movement==MovementNormal)
+    if(movement==EnemyMovementNormal)
     {
         [ship runAction:[self EnemyBehaviourNormal]];
     }
-    else if(movement==MovementArc)
+    else if(movement==EnemyMovementArc)
     {
         ship.position=CGPointMake(0, ship.position.y);
         [ship runAction:[self EnemyBehaviourArcLikeGivenYPosition:ship.position.x AndYPosition:ship.position.y]];

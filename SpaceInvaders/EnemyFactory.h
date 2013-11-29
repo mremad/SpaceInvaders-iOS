@@ -12,8 +12,8 @@
 #import "XTroyer.h"
 #import "XStar.h"
 
-typedef enum EnemyMovement {MovementNormal,
-    MovementArc} EnemyMovement;
+typedef enum EnemyMovement {EnemyMovementNormal,
+    EnemyMovementArc} EnemyMovement;
 
 typedef enum EnemyType{EnemyTypeXRuser,EnemyTypeXTroyer,
     EnemyTypeXStar} EnemyType;
@@ -23,7 +23,7 @@ typedef enum EnemyType{EnemyTypeXRuser,EnemyTypeXTroyer,
 }
 
 + (EnemyFactory *)sharedFactory;
-+ (NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement;
++ (EnemyShip *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement;
 + (NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement AndTheirPositions:(NSArray *) myCGPointArray;
 + (NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement AndTheirAmount:(int) amount;
 + (EnemyShip *)CreateRandomEnemy;

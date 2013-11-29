@@ -74,17 +74,17 @@
 
 -(void) addXRuserEnemy
 {
-    [_layerEnemiesNode addChild:[EnemyFactory CreateRandomEnemy]];
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXRuser AndTheMovement:EnemyMovementNormal]];
 }
 
 -(void) addXTroyerEnemy
 {
-    [_layerEnemiesNode addChild:[EnemyFactory CreateRandomEnemy]];
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementNormal]];
 }
 
 -(void) addXStarEnemy
 {
-    [_layerEnemiesNode addChild:[EnemyFactory CreateRandomEnemy]];
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXStar AndTheMovement:EnemyMovementNormal]];
 }
 
 
