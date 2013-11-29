@@ -40,9 +40,20 @@
         
         
         //Setup the enemies.....
-        SKAction *spawnEnemiesAction = [SKAction performSelector:@selector(addEnemy) onTarget:self];
+        SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addRandomEnemy) onTarget:self];
         SKAction *waitAction1 = [SKAction waitForDuration:1 withRange:3];
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction, waitAction1]]]];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction1, waitAction1]]]];
+        
+        SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addRandomEnemy) onTarget:self];
+        SKAction *waitAction2 = [SKAction waitForDuration:1 withRange:3];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction2, waitAction2]]]];
+        
+        SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addRandomEnemy) onTarget:self];
+        SKAction *waitAction3 = [SKAction waitForDuration:1 withRange:3];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[spawnEnemiesAction3, waitAction3]]]];
+        
+        
+        
         
         upgrades = [NSArray arrayWithObjects:[NSNumber numberWithInt:UpgradeAutomaticShooting], nil];
         [self evaluateUpdates];
@@ -56,10 +67,32 @@
     //Xruser,Xtroyer,Xstar
 }
 
--(void) addEnemy
+-(void) addRandomEnemy
 {
-    [_layerEnemiesNode addChild:[EnemyFactory CreateSingleRandomEnemy]];
+    [_layerEnemiesNode addChild:[EnemyFactory CreateRandomEnemy]];
 }
+
+-(void) addXRuserEnemy
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateRandomEnemy]];
+}
+
+-(void) addXTroyerEnemy
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateRandomEnemy]];
+}
+
+-(void) addXStarEnemy
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateRandomEnemy]];
+    CGPoint ff;
+    int gg =1;
+    int gfasd=3;
+}
+
+
+
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {

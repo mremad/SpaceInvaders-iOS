@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpaceInvaders/MyScene.m"
-            timestampString = "407333545.822289"
+            timestampString = "407420275.777158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpaceInvaders/MyScene.m"
-            timestampString = "407282924.713777"
+            timestampString = "407420275.777158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "-initWithSize:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpaceInvaders/EnemyFactory.m"
-            timestampString = "407343634.805604"
+            timestampString = "407419757.725234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpaceInvaders/MyScene.m"
-            timestampString = "407283483.243863"
+            timestampString = "407420275.777158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpaceInvaders/MyScene.m"
-            timestampString = "407282924.713777"
+            timestampString = "407420275.777158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpaceInvaders/MyScene.m"
-            timestampString = "407284345.075928"
+            timestampString = "407420275.777158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpaceInvaders/EnemyFactory.m"
-            timestampString = "407341100.451113"
+            timestampString = "407419757.725234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "+drawPathWithArcGivenYPosition:AndYPosition:"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,44 +202,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpaceInvaders/EnemyFactory.m"
-            timestampString = "407341100.451113"
+            timestampString = "407419757.725234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "+runAppropiateAction:"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "+runAppropiateAction:WithMovemement:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpaceInvaders/EnemyFactory.m"
-            timestampString = "407342796.174821"
+            timestampString = "407419757.725234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "+getRandomOrFixedPoint"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "+EnemyBehaviourArcLikeGivenYPosition:AndYPosition:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SpaceInvaders/EnemyFactory.m"
-            timestampString = "407342843.731673"
+            filePath = "SpaceInvaders/MyScene.m"
+            timestampString = "407420275.777158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "+getRandomOrFixedPoint"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-addXStarEnemy"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

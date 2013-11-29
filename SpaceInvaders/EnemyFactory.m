@@ -9,14 +9,6 @@
 #import "EnemyFactory.h"
 
 @implementation EnemyFactory
-{
-    
-}
-
-EnemyMovement movement = MovementArc;
-int amountOfEnemysToStartFromSamePosition=3,amountOfEnemiesCreatedInSamePositionCounter=0; //must be the same..
-
-CGPoint lastPoint;
 
 
 + (EnemyFactory *)sharedFactory {
@@ -28,25 +20,54 @@ CGPoint lastPoint;
     return sharedFactory;
 }
 
-+ (void) setAmountOfEnemysToStartFromSamePosition:(int) amount
-{
-    amountOfEnemysToStartFromSamePosition=amount;
-}
-
-
-+(EnemyShip *)CreateSingleRandomEnemy
++(EnemyShip *)CreateRandomEnemy
 {
     int modulo3Number = arc4random()%3;
-    switch (modulo3Number) {
+    CGPoint myPoint = [self getRandomAcceptablePointForEnemiesComingFromTheTop];
+    EnemyMovement movement = MovementNormal;
+    switch (modulo3Number)
+    {
         case 0:
-            return [self CreateEnemyXRuser];
+            return [self CreateEnemyXRuserWithMovement:movement AndThePosition:myPoint];
             break;
         case 1:
-            return [self CreateEnemyXTroyer];
+            return [self CreateEnemyXTroyerWithMovement:movement AndThePosition:myPoint];
             break;
         default:
-            return [self CreateEnemyXStar];
+            return [self CreateEnemyXStarWithMovement:movement AndThePosition:myPoint];
     }
+}
+
++(NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement AndTheirPositions:(NSArray *) myCGPointArray
+{
+    //NSArray *myCGPointArray = [[NSArray alloc] initWithObjects:[NSValue valueWithCGPoint:CGPointMake(30.0, 150.0)],[NSValue valueWithCGPoint:CGPointMake(41.67, 145.19)], nil];
+    
+    NSMutableArray *enemiesResultArray = [NSMutableArray array];
+    for(int i =0;i<[myCGPointArray count];i++)
+    {
+        CGPoint myPoint = [[myCGPointArray objectAtIndex:i] CGPointValue];
+        EnemyShip *enemy;
+        switch (enemyType)
+        {
+            case EnemyTypeXRuser:
+            {
+                enemy=[self CreateEnemyXRuserWithMovement:movement AndThePosition:myPoint];
+                break;
+            }
+            case EnemyTypeXTroyer:
+            {
+                enemy=[self CreateEnemyXTroyerWithMovement:movement AndThePosition:myPoint];
+                break;
+            }
+            default:
+            {
+                enemy=[self CreateEnemyXStarWithMovement:movement AndThePosition:myPoint];
+                break;
+            }
+        }
+        [enemiesResultArray addObject:enemy];
+    }
+    return enemiesResultArray;
 }
 
 +(SKAction *) EnemyBehaviourNormal
@@ -66,41 +87,71 @@ CGPoint lastPoint;
     return enemySequence;
 }
 
-
 + (CGMutablePathRef )drawPathWithArcGivenYPosition:(CGFloat) xPosition AndYPosition:(CGFloat)yPosition
 {
     CGMutablePathRef thePath =CGPathCreateMutable();
     CGPathAddArc(thePath, NULL, 200.f, yPosition, 200.f, M_PI, 0.f, NO);
-    //CGPathAddArc(<#CGMutablePathRef path#>, <#const CGAffineTransform *m#>, <#CGFloat x#>, <#CGFloat y#>, <#CGFloat radius#>, <#CGFloat startAngle#>, <#CGFloat endAngle#>, <#bool clockwise#>)
     return thePath;
 }
 
-+(EnemyShip *)CreateEnemyXRuser
-{
-    EnemyShip *ship = [[XRuser alloc]initWithPosition:[self getRandomOrFixedPoint]];
-    [self runAppropiateAction:ship];
-    return ship;
-}
-
-+(EnemyShip *)CreateEnemyXTroyer
-{
-    EnemyShip *ship = [[XTroyer alloc]initWithPosition:[self getRandomOrFixedPoint]];
-    [self runAppropiateAction:ship];
-    return ship;
-}
-
-+(EnemyShip *)CreateEnemyXStar
-{
-    EnemyShip *ship = [[XStar alloc]initWithPosition:[self getRandomOrFixedPoint]];
-    [self runAppropiateAction:ship];
-    return ship;
-}
-
-+(void)runAppropiateAction:(EnemyShip*) ship
++(CGPoint) getPointGivenMovement:(EnemyMovement) movement
 {
     if(movement==MovementNormal)
     {
-         [ship runAction:[self EnemyBehaviourNormal]];
+        return [self getRandomAcceptablePointForEnemiesComingFromTheTop];
+    }
+    else
+    {
+        return [self getRandomAcceptablePointForArcEnemiesComingFromTheLeft];
+    }
+}
+
++(EnemyShip *)CreateEnemyXRuserWithMovement :(EnemyMovement)movement
+{
+    CGPoint p=[self getPointGivenMovement:movement];
+    return [self CreateEnemyXRuserWithMovement:movement AndThePosition:p];
+}
+
++(EnemyShip *)CreateEnemyXRuserWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
+{
+    EnemyShip *ship = [[XRuser alloc]initWithPosition:point];
+    [self runAppropiateAction:ship WithMovemement:movement];
+    return ship;
+}
+
+
++(EnemyShip *)CreateEnemyXTroyerWithMovement :(EnemyMovement)movement
+{
+    CGPoint p=[self getPointGivenMovement:movement];
+    return [self CreateEnemyXTroyerWithMovement:movement AndThePosition:p];
+}
+
++(EnemyShip *)CreateEnemyXTroyerWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
+{
+    EnemyShip *ship = [[XTroyer alloc]initWithPosition:point];
+    [self runAppropiateAction:ship WithMovemement:movement];
+    return ship;
+}
+
+
++(EnemyShip *)CreateEnemyXStarWithMovement :(EnemyMovement)movement
+{
+    CGPoint p=[self getPointGivenMovement:movement];
+    return [self CreateEnemyXStarWithMovement:movement AndThePosition:p];
+}
+
++(EnemyShip *)CreateEnemyXStarWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
+{
+    EnemyShip *ship = [[XStar alloc]initWithPosition:point];
+    [self runAppropiateAction:ship WithMovemement:movement];
+    return ship;
+}
+
++(void)runAppropiateAction:(EnemyShip*) ship WithMovemement:(EnemyMovement) movement
+{
+    if(movement==MovementNormal)
+    {
+        [ship runAction:[self EnemyBehaviourNormal]];
     }
     else if(movement==MovementArc)
     {
@@ -109,51 +160,27 @@ CGPoint lastPoint;
     }
 }
 
-+(CGPoint) getRandomOrFixedPoint
-{
-    if(amountOfEnemiesCreatedInSamePositionCounter==0)
-    {
-       
-        amountOfEnemiesCreatedInSamePositionCounter=amountOfEnemysToStartFromSamePosition;
-        if(movement==MovementNormal)
-        {
-            [self generateRandomAcceptablePointForTopEnemies];
-        }
-        else if(movement==MovementArc)
-        {
-            [self generateRandomAcceptablePointForArcEnemies];
-        }
-    }
-    else
-    {
-        amountOfEnemiesCreatedInSamePositionCounter--;
-    }
-    
-    return lastPoint;
-}
-
-
-+(void) generateRandomAcceptablePointForTopEnemies
++(CGPoint) getRandomAcceptablePointForEnemiesComingFromTheTop
 {
     
     int Xmin = 20;
-    int Xmax =300;
-    int XInBetween=Xmin+(arc4random()%(Xmax-Xmin));
+    int Xmax = 300;
+    int XInBetween = Xmin+(arc4random()%(Xmax-Xmin));
     
-    lastPoint=CGPointMake(XInBetween, 500);
+    return CGPointMake(XInBetween, 500);
 }
 
-+(void) generateRandomAcceptablePointForArcEnemies
++(CGPoint) getRandomAcceptablePointForArcEnemiesComingFromTheLeft
 {
     int Ymin = 180;
     int Ymax = 250;
-    int YInBetween=Ymin+(arc4random()%(Ymax-Ymin));
+    int YInBetween = Ymin+(arc4random()%(Ymax-Ymin));
     
     int Xmin = 20;
-    int Xmax =300;
-    int XInBetween=Xmin+(arc4random()%(Xmax-Xmin));
+    int Xmax = 300;
+    int XInBetween = Xmin+(arc4random()%(Xmax-Xmin));
     
-    lastPoint=CGPointMake(XInBetween, YInBetween);
+    return CGPointMake(XInBetween, YInBetween);
 }
 
 

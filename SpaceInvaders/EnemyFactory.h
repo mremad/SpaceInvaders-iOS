@@ -15,15 +15,17 @@
 typedef enum EnemyMovement {MovementNormal,
     MovementArc} EnemyMovement;
 
+typedef enum EnemyType{EnemyTypeXRuser,EnemyTypeXTroyer,
+    EnemyTypeXStar} EnemyType;
+
 @interface EnemyFactory : NSObject
 {
 }
 
 + (EnemyFactory *)sharedFactory;
-+ (EnemyShip *)CreateEnemyXRuser;
-+ (EnemyShip *)CreateEnemyXTroyer;
-+ (EnemyShip *)CreateEnemyXStar;
-+ (EnemyShip *)CreateSingleRandomEnemy;
++ (NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement AndTheirPositions:(NSArray *) myCGPointArray;
++ (EnemyShip *)CreateRandomEnemy;
+
 
 
 @end
