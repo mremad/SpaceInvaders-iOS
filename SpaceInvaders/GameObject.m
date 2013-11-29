@@ -37,7 +37,22 @@
 
 -(void) removeNodeWhileShowingSomeGraphicsOfTheDestruction
 {
+    SKEmitterNode* explosion = [GameObject newExplosionEmitter];
+    
+    explosion.numParticlesToEmit = 250;
+    explosion.position = CGPointMake(self.position.x, self.position.y);
+    
+    [self.parent addChild:explosion];
+    
     [self removeFromParent];
+    
+}
+
++(SKEmitterNode *) newExplosionEmitter
+{
+    NSString *explosionPath = [[NSBundle mainBundle] pathForResource:@"FireParticles" ofType:@"sks"];
+    SKEmitterNode *explosion = [NSKeyedUnarchiver unarchiveObjectWithFile:explosionPath];
+    return explosion;
 }
 
 //to be overridden
