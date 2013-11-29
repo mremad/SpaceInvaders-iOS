@@ -9,6 +9,12 @@
 #import "EnemyFactory.h"
 
 @implementation EnemyFactory
+//some constants
+    const int enemyMovementNormalY=500;
+    const int enemyMovementLeftArcX=0;
+    const int enemyMovementRightArcX=-50; //this requires some more work to undersand how the arc is generated , but for now I tried out random numbers till I got it to look good
+
+    
 
 
 + (EnemyFactory *)sharedFactory {
@@ -19,6 +25,18 @@
     });
     return sharedFactory;
 }
+
+- (id)init
+{
+    self = [super init];
+    if(self==nil)
+    {
+        NSLog(@"Error in th initializer of EnemyFactory");
+    }
+    return self;
+}
+
+#pragma mark Creating Enemies
 
 +(EnemyShip *)CreateRandomEnemy
 {
@@ -72,6 +90,8 @@
     return enemiesResultArray;
 }
 
+
+
 + (NSArray *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement AndTheirAmount:(int) amount
 {
     NSMutableArray *cGPointsArray = [NSMutableArray arrayWithCapacity:amount];
@@ -87,41 +107,6 @@
 + (EnemyShip *)CreateEnemies:(EnemyType) enemyType AndTheMovement:(EnemyMovement)movement
 {
     return [[self CreateEnemies:enemyType AndTheMovement:movement AndTheirAmount:1] objectAtIndex:0];
-}
-+(SKAction *) EnemyBehaviourNormal
-{
-    SKAction *moveAction = [SKAction moveToY:-100 duration:8]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
-    SKAction *removeEnemy= [SKAction removeFromParent];
-    SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
-    return enemySequence;
-}
-
-+(SKAction *) EnemyBehaviourArcLikeGivenYPosition:(CGFloat) xPosition AndYPosition:(CGFloat)yPosition
-{
-    CGMutablePathRef ff=[self drawPathWithArcGivenYPosition:xPosition AndYPosition:yPosition];
-    SKAction *moveAction = [SKAction followPath:ff asOffset:YES orientToPath:YES duration:5];
-    SKAction *removeEnemy= [SKAction removeFromParent];
-    SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
-    return enemySequence;
-}
-
-+ (CGMutablePathRef )drawPathWithArcGivenYPosition:(CGFloat) xPosition AndYPosition:(CGFloat)yPosition
-{
-    CGMutablePathRef thePath =CGPathCreateMutable();
-    CGPathAddArc(thePath, NULL, 200.f, yPosition, 200.f, M_PI, 0.f, NO);
-    return thePath;
-}
-
-+(CGPoint) getPossibleCGPoint:(EnemyMovement) movement
-{
-    if(movement==EnemyMovementNormal)
-    {
-        return [self getRandomAcceptablePointForEnemiesComingFromTheTop];
-    }
-    else
-    {
-        return [self getRandomAcceptablePointForArcEnemiesComingFromTheLeft];
-    }
 }
 
 +(EnemyShip *)CreateEnemyXRuserWithMovement :(EnemyMovement)movement
@@ -165,16 +150,23 @@
     return ship;
 }
 
-+(void)runAppropiateAction:(EnemyShip*) ship WithMovemement:(EnemyMovement) movement
+
+#pragma mark Point Handling
+
+
++(CGPoint) getPossibleCGPoint:(EnemyMovement) movement
 {
     if(movement==EnemyMovementNormal)
     {
-        [ship runAction:[self EnemyBehaviourNormal]];
+        return [self getRandomAcceptablePointForEnemiesComingFromTheTop];
     }
-    else if(movement==EnemyMovementArc)
+    else if(movement == EnemyMovementLeftArc)
     {
-        ship.position=CGPointMake(0, ship.position.y);
-        [ship runAction:[self EnemyBehaviourArcLikeGivenYPosition:ship.position.x AndYPosition:ship.position.y]];
+        return [self getRandomAcceptablePointForArcEnemiesComingFromTheLeft];
+    }
+    else
+    { //movement == EnemyMovementRightArc
+        return [self getRandomAcceptablePointForArcEnemiesComingFromTheRight];
     }
 }
 
@@ -184,7 +176,7 @@
     int Xmax = 300;
     int XInBetween = Xmin+(arc4random()%(Xmax-Xmin));
     
-    return CGPointMake(XInBetween, 500);
+    return CGPointMake(XInBetween, enemyMovementNormalY);
 }
 
 +(CGPoint) getRandomAcceptablePointForArcEnemiesComingFromTheLeft
@@ -193,22 +185,62 @@
     int Ymax = 250;
     int YInBetween = Ymin+(arc4random()%(Ymax-Ymin));
     
-    int Xmin = 20;
-    int Xmax = 300;
-    int XInBetween = Xmin+(arc4random()%(Xmax-Xmin));
-    
-    return CGPointMake(XInBetween, YInBetween);
+    return CGPointMake(enemyMovementLeftArcX, YInBetween);
 }
 
-
-- (id)init
++(CGPoint) getRandomAcceptablePointForArcEnemiesComingFromTheRight
 {
-    self = [super init];
-    if(self==nil)
-    {
-        NSLog(@"Error in th initializer of EnemyFactory");
-    }
-    return self;
+    int Ymin = 180;
+    int Ymax = 250;
+    int YInBetween = Ymin+(arc4random()%(Ymax-Ymin));
+    
+    return CGPointMake(enemyMovementRightArcX, YInBetween);
 }
+#pragma mark SKActions
+
++(SKAction *) EnemyBehaviourNormal
+{
+    SKAction *moveAction = [SKAction moveToY:-100 duration:8]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
+    SKAction *removeEnemy= [SKAction removeFromParent];
+    SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
+    return enemySequence;
+}
+
++(SKAction *) EnemyBehaviourLeftArcGivenYPosition:(CGFloat)yPosition
+{
+    CGMutablePathRef thePath =CGPathCreateMutable();
+    CGPathAddArc(thePath, NULL, 200.f, yPosition, 200.f, M_PI, 0.f, NO);
+    SKAction *moveAction = [SKAction followPath:thePath asOffset:YES orientToPath:YES duration:5];
+    SKAction *removeEnemy= [SKAction removeFromParent];
+    SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
+    return enemySequence;
+}
+
++(SKAction *) EnemyBehaviourRightArcGivenYPosition:(CGFloat)yPosition
+{
+    CGMutablePathRef thePath =CGPathCreateMutable();
+    CGPathAddArc(thePath, NULL, 200.f, yPosition, 200.f, 0.f, M_PI, YES);//TODO these numbers are probably not the best suitable
+    SKAction *moveAction = [SKAction followPath:thePath asOffset:YES orientToPath:YES duration:5];
+    SKAction *removeEnemy= [SKAction removeFromParent];
+    SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
+    return enemySequence;
+}
+
++(void)runAppropiateAction:(EnemyShip*) ship WithMovemement:(EnemyMovement) movement
+{
+    if(movement==EnemyMovementNormal)
+    {
+        [ship runAction:[self EnemyBehaviourNormal]];
+    }
+    else if(movement==EnemyMovementLeftArc)
+    {
+        [ship runAction:[self EnemyBehaviourLeftArcGivenYPosition:ship.position.y]];
+    }
+    else if(movement==EnemyMovementRightArc)
+    {
+        [ship runAction:[self EnemyBehaviourRightArcGivenYPosition:ship.position.y]];
+    }
+}
+
 
 @end

@@ -14,7 +14,7 @@
     if(self = [super initWithPosition:position]) {
         
         //Name the asteroid and reduce it's size to 70%--it looks about right.
-        self.name = @"spaceShipBullet";
+        self.name = @"SpaceShipBullet";
         [self setScale:0.005f];
         [self configureCollisionBody];
     }

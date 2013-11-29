@@ -13,7 +13,7 @@
 #import "XStar.h"
 
 typedef enum EnemyMovement {EnemyMovementNormal,
-    EnemyMovementArc} EnemyMovement;
+    EnemyMovementRightArc,EnemyMovementLeftArc} EnemyMovement;
 
 typedef enum EnemyType{EnemyTypeXRuser,EnemyTypeXTroyer,
     EnemyTypeXStar} EnemyType;

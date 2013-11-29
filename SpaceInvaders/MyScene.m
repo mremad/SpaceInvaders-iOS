@@ -51,20 +51,24 @@
 {
     //Setup the enemies from top
     SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
-    SKAction *waitAction1 = [SKAction waitForDuration:1 withRange:3];
-    SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction1]] count:20];
+    SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
+    SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:20];
     
     SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
     
     //Setup up the enemies from left
-    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemyArc) onTarget:self];
-    SKAction *waitAction2 = [SKAction waitForDuration:1 withRange:3];
-    SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction2]] count:15];
+    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemyLeftArc) onTarget:self];
+    SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction]] count:15];
     
     //Setup the enemies from top and left
-    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction1,spawnEnemiesAction2, waitAction2]] count:10];
+    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction]] count:10];
     
-    [self runAction:[SKAction sequence:@[firstWave ,waitActionBetweenWaves, secondWave,waitActionBetweenWaves, thirdWave]]];
+    //Setup up the enemies from the right and the left
+    SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXTroyerEnemyRightArc) onTarget:self];
+    SKAction *fourthWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction,spawnEnemiesAction3, waitAction]] count:8];
+    
+    
+    [self runAction:[SKAction sequence:@[firstWave ,waitActionBetweenWaves, secondWave,waitActionBetweenWaves, thirdWave ,waitActionBetweenWaves,fourthWave]]];
 }
 
 -(void) evaluateUpdates
@@ -82,14 +86,19 @@
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXRuser AndTheMovement:EnemyMovementNormal]];
 }
 
--(void) addXRuserEnemyArc
+-(void) addXRuserEnemyLeftArc
 {
-    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXRuser AndTheMovement:EnemyMovementArc]];
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXRuser AndTheMovement:EnemyMovementLeftArc]];
 }
 
 -(void) addXTroyerEnemy
 {
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementNormal]];
+}
+
+-(void) addXTroyerEnemyRightArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementRightArc]];
 }
 
 -(void) addXStarEnemy
