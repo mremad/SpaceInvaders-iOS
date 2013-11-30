@@ -35,7 +35,7 @@
     }
 }
 
--(void) removeNodeWhileShowingSomeGraphicsOfTheDestruction
+-(void) removeNodeWithEffectsAtContactPoint:(CGPoint)contactPoint
 {
     SKEmitterNode* explosion = [GameObject newExplosionEmitter];
     
@@ -43,7 +43,7 @@
     explosion.position = CGPointMake(self.position.x, self.position.y);
     
     [self.parent addChild:explosion];
-    
+    [self.parent addChild:[[XTroyerDebris alloc] initWithPosition:self.position atContactPoint:contactPoint]];
     [self removeFromParent];
     
 }

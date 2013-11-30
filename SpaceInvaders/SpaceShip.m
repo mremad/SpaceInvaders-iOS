@@ -37,14 +37,14 @@
 
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
 {
-    //if the SpaceShip collided with anything destory it 
-    [self removeNodeWhileShowingSomeGraphicsOfTheDestruction];
+    //if the SpaceShip collided with anything destory it
+    [self removeNodeWithEffectsAtContactPoint:contact.contactPoint];
 }
 
 
 - (void)configureCollisionBody {
     
-    self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width-20, self.frame.size.height-5)];
+    self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width-10, self.frame.size.height-5)];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.categoryBitMask = CollisionTypeSpaceShip;
     self.physicsBody.collisionBitMask = 0;
