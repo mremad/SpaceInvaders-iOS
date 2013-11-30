@@ -149,7 +149,7 @@
 -(SKAction *) normalBulletAction
 {
     //Move the bullet down the screen and remove it when it is of screen
-    SKAction *moveAction = [SKAction moveToY:1000 duration:8];//TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
+    SKAction *moveAction = [SKAction moveToY:1000 duration:4];//TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
     SKAction *removeBullet= [SKAction removeFromParent];
     SKAction *bulletSequence = [SKAction sequence:@[moveAction, removeBullet]];
     return bulletSequence;
