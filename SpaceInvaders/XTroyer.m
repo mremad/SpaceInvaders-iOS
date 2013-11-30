@@ -15,7 +15,18 @@
         
         //Name the asteroid and reduce it's size to 70%--it looks about right.
         self.name = @"EnemyXTroyer";
-        [self setScale:0.02f]; //TODO TEAM RAVI 
+        [self setScale:0.2f]; //TODO TEAM RAVI
+        
+        SKEmitterNode* fuelLeft = [GameObject newFuelEmitter];
+        fuelLeft.emissionAngle = 1.57;
+        fuelLeft.position = CGPointMake(self.size.width/2 - 63,self.size.height-25);
+        [self addChild:fuelLeft];
+        
+        SKEmitterNode* fuelRight = [GameObject newFuelEmitter];
+        fuelRight.emissionAngle = 1.57;
+        fuelRight.position = CGPointMake(self.size.width/2 + 33,self.size.height-25);
+        [self addChild:fuelRight];
+        
         [self configureCollisionBody];
     }
     
@@ -42,7 +53,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"Xtroyer.jpeg"]; //TODO TEAM RAVI 
+        texture = [SKTexture textureWithImageNamed:@"shipRed.png"]; //TODO TEAM RAVI
         texture.filteringMode = SKTextureFilteringNearest;
         
     });

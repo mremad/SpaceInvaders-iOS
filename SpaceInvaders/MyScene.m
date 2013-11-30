@@ -25,7 +25,7 @@
         self.physicsWorld.contactDelegate = self;
         /* Setup your scene here */
         automaticShooting=YES;
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [SKColor blackColor];
         _gameRunning=YES;
         _layerEnemiesNode=[SKNode new];
         [self addChild:_layerEnemiesNode];
@@ -38,6 +38,11 @@
         //spaceShip.position here will return the correct position;
         [_layerPlayerNode addChild:_spaceShip];
         
+        //Added Background Particle Node
+        SKEmitterNode* starBg = [MyScene newStarParticles];
+        starBg.position = CGPointMake(self.size.width/2, self.size.height/2);
+        [self addChild:starBg];
+        
         [self level1];
      
         upgrades = [NSArray arrayWithObjects:[NSNumber numberWithInt:UpgradeAutomaticShooting], nil];
@@ -47,17 +52,24 @@
     return self;
 }
 
++(SKEmitterNode *) newStarParticles
+{
+    NSString *starPath = [[NSBundle mainBundle] pathForResource:@"BokehParticles" ofType:@"sks"];
+    SKEmitterNode *star = [NSKeyedUnarchiver unarchiveObjectWithFile:starPath];
+    return star;
+}
+
 -(void) level1
 {
     //Setup the enemies from top
-    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
+    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
     SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
     SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:20];
     
     SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
     
     //Setup up the enemies from left
-    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemyLeftArc) onTarget:self];
+    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
     SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction]] count:15];
     
     //Setup the enemies from top and left
@@ -116,8 +128,23 @@
     SpaceShipBullet *bullet = [[SpaceShipBullet alloc]initWithPosition:p];
     [bullet runAction:[self normalBulletAction]];
     [_layerSpaceShipBulletsNode addChild:bullet];
+    
+    
+    
+    
 }
 
+
+//Uncomment to test while moving ship
+/*
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event touchesForView:self.view] anyObject];
+    
+    CGPoint location = [touch locationInNode:self];
+    _spaceShip.position = location;
+}
+*/
 
 -(SKAction *) normalBulletAction
 {

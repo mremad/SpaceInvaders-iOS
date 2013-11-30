@@ -18,10 +18,21 @@
         self.name = @"SpaceShip";
         [self setScale:0.2f];
         [self configureCollisionBody];
+        
+        //Add fuel ignition particles
+        SKEmitterNode* leftFuel = [GameObject newFuelEmitter];
+        leftFuel.position = CGPointMake(self.size.width/2 - 70,self.size.height/2 - 60);
+        [self addChild:leftFuel];
+        
+        SKEmitterNode* rightFuel = [GameObject newFuelEmitter];
+        rightFuel.position = CGPointMake(self.size.width/2 + 25,self.size.height/2 - 60);
+        [self addChild:rightFuel];
+        
     }
     
     return self;
 }
+
 
 
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
@@ -33,12 +44,14 @@
 
 - (void)configureCollisionBody {
     
-    self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
+    self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width-20, self.frame.size.height-5)];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.categoryBitMask = CollisionTypeSpaceShip;
     self.physicsBody.collisionBitMask = 0;
     self.physicsBody.contactTestBitMask = CollisionTypeEnemyXRuser;
 }
+
+
 
 + (SKTexture *)createTexture {
     
@@ -46,7 +59,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"Spaceship.png"];
+        texture = [SKTexture textureWithImageNamed:@"shipBlue.png"];
         texture.filteringMode = SKTextureFilteringNearest;
         
     });

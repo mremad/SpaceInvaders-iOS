@@ -13,9 +13,15 @@
     
     if(self = [super initWithPosition:position]) {
         
+        SKEmitterNode* bulletEmitter = [GameObject newBulletEmitter];
+        bulletEmitter.position = CGPointMake(self.size.width/2, self.size.height);
+        
         //Name the asteroid and reduce it's size to 70%--it looks about right.
         self.name = @"SpaceShipBullet";
-        [self setScale:0.005f];
+        [self setSize:CGSizeMake(10, 50)];
+        [self setColor:[UIColor clearColor]];
+        [self setScale:0.25f];
+        [self addChild:bulletEmitter];
         [self configureCollisionBody];
     }
     
@@ -35,6 +41,9 @@
         [self removeFromParent]; //if the bullet collided with anything remove the bullet
 }
 
+//Remove to add bullet texture
+
+/*
 + (SKTexture *)createTexture {
     
     static SKTexture *texture = nil;
@@ -48,5 +57,6 @@
     
     return texture;
     
-}
+}*/
+
 @end

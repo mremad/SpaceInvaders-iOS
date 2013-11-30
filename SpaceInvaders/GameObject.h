@@ -60,6 +60,9 @@ typedef NS_OPTIONS(uint32_t, CollisionType) {
  Creates the object with texture that represents this object and will be rendered on screen.
  */
 + (SKTexture *)createTexture;
++ (SKEmitterNode*)newExplosionEmitter;
++ (SKEmitterNode*)newFuelEmitter;
++ (SKEmitterNode *) newBulletEmitter;
 
 
 @end

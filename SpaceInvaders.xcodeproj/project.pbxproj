@@ -42,6 +42,14 @@
 		D9CCC2521848E8780066C056 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC24F1848E8780066C056 /* FireParticles.sks */; };
 		D9CCC2531848E8780066C056 /* flame.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC2501848E8780066C056 /* flame.jpg */; };
 		D9CCC2541848E8780066C056 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC2511848E8780066C056 /* spark.png */; };
+		D9CCC259184975B90066C056 /* shipBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC256184975B90066C056 /* shipBlue.png */; };
+		D9CCC25A184975B90066C056 /* shipPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC257184975B90066C056 /* shipPurple.png */; };
+		D9CCC25B184975B90066C056 /* shipRed.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC258184975B90066C056 /* shipRed.png */; };
+		D9CCC25D184977860066C056 /* FuelBurningParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC25C184977860066C056 /* FuelBurningParticles.sks */; };
+		D9CCC2651849814C0066C056 /* BulletParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC2641849814C0066C056 /* BulletParticle.sks */; };
+		D9CCC26B184988040066C056 /* SnowParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC26A184988040066C056 /* SnowParticles.sks */; };
+		D9CCC26E18498B370066C056 /* BokehParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC26C18498B370066C056 /* BokehParticles.sks */; };
+		D9CCC26F18498B370066C056 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC26D18498B370066C056 /* bokeh.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +113,14 @@
 		D9CCC24F1848E8780066C056 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 		D9CCC2501848E8780066C056 /* flame.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flame.jpg; sourceTree = "<group>"; };
 		D9CCC2511848E8780066C056 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		D9CCC256184975B90066C056 /* shipBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipBlue.png; sourceTree = "<group>"; };
+		D9CCC257184975B90066C056 /* shipPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipPurple.png; sourceTree = "<group>"; };
+		D9CCC258184975B90066C056 /* shipRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shipRed.png; sourceTree = "<group>"; };
+		D9CCC25C184977860066C056 /* FuelBurningParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FuelBurningParticles.sks; sourceTree = "<group>"; };
+		D9CCC2641849814C0066C056 /* BulletParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BulletParticle.sks; sourceTree = "<group>"; };
+		D9CCC26A184988040066C056 /* SnowParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowParticles.sks; sourceTree = "<group>"; };
+		D9CCC26C18498B370066C056 /* BokehParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BokehParticles.sks; sourceTree = "<group>"; };
+		D9CCC26D18498B370066C056 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +230,7 @@
 		D915A68418455D740084CE6D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D9CCC255184975B90066C056 /* Ships */,
 				D9CCC24E1848E8780066C056 /* Particles */,
 				D93247151848A41200A4467C /* Amigo.jpeg */,
 				D93247161848A41200A4467C /* Xruser.jpeg */,
@@ -272,8 +289,23 @@
 				D9CCC24F1848E8780066C056 /* FireParticles.sks */,
 				D9CCC2501848E8780066C056 /* flame.jpg */,
 				D9CCC2511848E8780066C056 /* spark.png */,
+				D9CCC25C184977860066C056 /* FuelBurningParticles.sks */,
+				D9CCC2641849814C0066C056 /* BulletParticle.sks */,
+				D9CCC26A184988040066C056 /* SnowParticles.sks */,
+				D9CCC26C18498B370066C056 /* BokehParticles.sks */,
+				D9CCC26D18498B370066C056 /* bokeh.png */,
 			);
 			path = Particles;
+			sourceTree = "<group>";
+		};
+		D9CCC255184975B90066C056 /* Ships */ = {
+			isa = PBXGroup;
+			children = (
+				D9CCC256184975B90066C056 /* shipBlue.png */,
+				D9CCC257184975B90066C056 /* shipPurple.png */,
+				D9CCC258184975B90066C056 /* shipRed.png */,
+			);
+			path = Ships;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,17 +384,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CCC26B184988040066C056 /* SnowParticles.sks in Resources */,
 				D932471B1848A41200A4467C /* Xstar.jpeg in Resources */,
 				D932471A1848A41200A4467C /* Xruser.jpeg in Resources */,
 				D9CCC2521848E8780066C056 /* FireParticles.sks in Resources */,
 				D93247191848A41200A4467C /* Amigo.jpeg in Resources */,
 				D915A68718455D740084CE6D /* goldcoin.jpg in Resources */,
+				D9CCC25D184977860066C056 /* FuelBurningParticles.sks in Resources */,
 				D9CCC2541848E8780066C056 /* spark.png in Resources */,
+				D9CCC25A184975B90066C056 /* shipPurple.png in Resources */,
+				D9CCC26E18498B370066C056 /* BokehParticles.sks in Resources */,
 				D915A65518455A6A0084CE6D /* InfoPlist.strings in Resources */,
+				D9CCC26F18498B370066C056 /* bokeh.png in Resources */,
 				D915A66818455A6A0084CE6D /* Images.xcassets in Resources */,
 				D915A68818455D740084CE6D /* silvercoin.jpg in Resources */,
 				D915A66618455A6A0084CE6D /* Spaceship.png in Resources */,
 				D9CCC2531848E8780066C056 /* flame.jpg in Resources */,
+				D9CCC2651849814C0066C056 /* BulletParticle.sks in Resources */,
+				D9CCC259184975B90066C056 /* shipBlue.png in Resources */,
+				D9CCC25B184975B90066C056 /* shipRed.png in Resources */,
 				D915A65E18455A6A0084CE6D /* Main.storyboard in Resources */,
 				D932471C1848A41200A4467C /* Xtroyer.jpeg in Resources */,
 			);

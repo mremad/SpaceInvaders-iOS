@@ -39,7 +39,7 @@
 {
     SKEmitterNode* explosion = [GameObject newExplosionEmitter];
     
-    explosion.numParticlesToEmit = 250;
+    explosion.numParticlesToEmit = 125;
     explosion.position = CGPointMake(self.position.x, self.position.y);
     
     [self.parent addChild:explosion];
@@ -48,11 +48,27 @@
     
 }
 
++(SKEmitterNode*)newFuelEmitter
+{
+    NSString *fuelPath = [[NSBundle mainBundle] pathForResource:@"FuelBurningParticles" ofType:@"sks"];
+    SKEmitterNode *fuel = [NSKeyedUnarchiver unarchiveObjectWithFile:fuelPath];
+    return fuel;
+}
+
+
+
 +(SKEmitterNode *) newExplosionEmitter
 {
     NSString *explosionPath = [[NSBundle mainBundle] pathForResource:@"FireParticles" ofType:@"sks"];
     SKEmitterNode *explosion = [NSKeyedUnarchiver unarchiveObjectWithFile:explosionPath];
     return explosion;
+}
+
++(SKEmitterNode *) newBulletEmitter
+{
+    NSString *bulletPath = [[NSBundle mainBundle] pathForResource:@"BulletParticle" ofType:@"sks"];
+    SKEmitterNode *bullet = [NSKeyedUnarchiver unarchiveObjectWithFile:bulletPath];
+    return bullet;
 }
 
 //to be overridden
