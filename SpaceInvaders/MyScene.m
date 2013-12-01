@@ -224,7 +224,7 @@
 
 
 //Uncomment to test while moving ship
-/*
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [[event touchesForView:self.view] anyObject];
@@ -232,7 +232,7 @@
     CGPoint location = [touch locationInNode:self];
     _spaceShip.position = location;
 }
-*/
+
 
 -(SKAction *) normalBulletAction
 {

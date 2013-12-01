@@ -20,13 +20,15 @@
         
         SKEmitterNode* fuelLeft = [GameObject newFuelEmitter];
         fuelLeft.emissionAngle = 1.57;
-        fuelLeft.position = CGPointMake(self.size.width/2,self.size.height);
+        fuelLeft.position = CGPointMake(self.size.width/2 - 63,self.size.height-25);
         [self addChild:fuelLeft];
         
         SKEmitterNode* fuelRight = [GameObject newFuelEmitter];
         fuelRight.emissionAngle = 1.57;
-        fuelRight.position = CGPointMake(self.size.width/2 - 40,self.size.height);
+        fuelRight.position = CGPointMake(self.size.width/2 + 33,self.size.height-25);
         [self addChild:fuelRight];
+        
+
     }
     
     return self;
