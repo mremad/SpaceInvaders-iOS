@@ -65,6 +65,8 @@
         
         
         [self level1];
+        [self level2];
+
      
         upgrades = [NSArray arrayWithObjects:[NSNumber numberWithInt:UpgradeAutomaticShooting], nil];
         [self evaluateUpdates];
@@ -108,6 +110,30 @@
 }
 
 -(void) level1
+{
+    //Setup the enemies from top
+    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
+    SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
+    SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:20];
+    
+    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
+    
+    //Setup up the enemies from left
+    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
+    SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction]] count:15];
+    
+    //Setup the enemies from top and left
+    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction]] count:10];
+    
+    //Setup up the enemies from the right and the left
+    SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXTroyerEnemyRightArc) onTarget:self];
+    SKAction *fourthWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction,spawnEnemiesAction3, waitAction]] count:8];
+    
+    
+    [self runAction:[SKAction sequence:@[firstWave ,waitActionBetweenWaves, secondWave,waitActionBetweenWaves, thirdWave ,waitActionBetweenWaves,fourthWave]]];
+}
+
+-(void) level2
 {
     //Setup the enemies from top
     SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
