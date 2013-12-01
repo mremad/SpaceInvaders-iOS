@@ -36,9 +36,17 @@
 
 
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
+{   //if the SpaceShip collided with anything destory it
+    
+    //[self removeNodeWithEffectsAtContactPoint:contact]; TODO put this back later
+    
+    [self blinkIndicatingHealthWarning];
+}
+
+
+-(void) blinkIndicatingHealthWarning
 {
-    //if the SpaceShip collided with anything destory it
-    [self removeNodeWithEffectsAtContactPoint:contact];
+    
 }
 
 

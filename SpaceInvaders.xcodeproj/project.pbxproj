@@ -257,19 +257,10 @@
 		D915A68418455D740084CE6D /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D98C1F8E184AE75B00B25DD6 /* star_2_small.png */,
-				D98C1F8A184ADC0200B25DD6 /* planetStripe_1.png */,
-				D98C1F8B184ADC0200B25DD6 /* planetStripe_2.png */,
-				D98C1F88184AD73400B25DD6 /* bg.jpg */,
+				D98E2624184BB0EB00EA296E /* Background images */,
+				D98E2623184BB0D000EA296E /* unused images */,
 				D9CCC255184975B90066C056 /* Ships */,
 				D9CCC24E1848E8780066C056 /* Particles */,
-				D93247151848A41200A4467C /* Amigo.jpeg */,
-				D93247161848A41200A4467C /* Xruser.jpeg */,
-				D93247171848A41200A4467C /* Xstar.jpeg */,
-				D93247181848A41200A4467C /* Xtroyer.jpeg */,
-				D915A66518455A6A0084CE6D /* Spaceship.png */,
-				D915A68518455D740084CE6D /* goldcoin.jpg */,
-				D915A68618455D740084CE6D /* silvercoin.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -318,6 +309,31 @@
 				D98C1F84184AD1B000B25DD6 /* XRuserDebris.m */,
 			);
 			name = EnemyShips;
+			sourceTree = "<group>";
+		};
+		D98E2623184BB0D000EA296E /* unused images */ = {
+			isa = PBXGroup;
+			children = (
+				D93247151848A41200A4467C /* Amigo.jpeg */,
+				D93247161848A41200A4467C /* Xruser.jpeg */,
+				D93247171848A41200A4467C /* Xstar.jpeg */,
+				D93247181848A41200A4467C /* Xtroyer.jpeg */,
+				D915A66518455A6A0084CE6D /* Spaceship.png */,
+				D915A68518455D740084CE6D /* goldcoin.jpg */,
+				D915A68618455D740084CE6D /* silvercoin.jpg */,
+			);
+			name = "unused images";
+			sourceTree = "<group>";
+		};
+		D98E2624184BB0EB00EA296E /* Background images */ = {
+			isa = PBXGroup;
+			children = (
+				D98C1F8E184AE75B00B25DD6 /* star_2_small.png */,
+				D98C1F8A184ADC0200B25DD6 /* planetStripe_1.png */,
+				D98C1F8B184ADC0200B25DD6 /* planetStripe_2.png */,
+				D98C1F88184AD73400B25DD6 /* bg.jpg */,
+			);
+			name = "Background images";
 			sourceTree = "<group>";
 		};
 		D9CCC24E1848E8780066C056 /* Particles */ = {
