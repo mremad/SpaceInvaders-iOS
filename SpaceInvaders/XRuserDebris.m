@@ -27,7 +27,7 @@
     dispatch_once(&onceToken, ^{
         
         int randDebris = (arc4random()%2) +1;
-        NSString* debrisImage = [NSString stringWithFormat:@"debrisPurple_%d",randDebris];
+        NSString* debrisImage = [NSString stringWithFormat:@"debrisRed_%d",randDebris];
         texture = [SKTexture textureWithImageNamed:debrisImage]; //TODO TEAM RAVI
         texture.filteringMode = SKTextureFilteringNearest;
         

@@ -7,6 +7,7 @@
 //
 
 #import "XTroyer.h"
+#import "MyScene.h"
 
 @implementation XTroyer
 - (id)initWithPosition:(CGPoint)position {
@@ -39,6 +40,11 @@
     [super removeNodeWithEffectsAtContactPoint:contact];
 }
 
+- (float)increaseScoreAmount
+{
+    return 20;
+}
+
 
 - (void)configureCollisionBody {
     
@@ -58,7 +64,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"shipRed.png"]; //TODO TEAM RAVI
+        texture = [SKTexture textureWithImageNamed:@"shipPurple.png"]; //TODO TEAM RAVI
         texture.filteringMode = SKTextureFilteringNearest;
         
     });

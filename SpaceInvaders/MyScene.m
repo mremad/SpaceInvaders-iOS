@@ -16,6 +16,7 @@
     float _score;
     NSArray  *upgrades;
     BOOL automaticShooting;
+    SKLabelNode *_scoreNode;
 }
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
@@ -59,18 +60,13 @@
         //spaceShip.position here will return the correct position;
         [_layerPlayerNode addChild:_spaceShip];
         
-        
-        
-        
-        
-        
         [self level1];
-        [self level2];
+        //[self level2];
 
      
         upgrades = [NSArray arrayWithObjects:[NSNumber numberWithInt:UpgradeAutomaticShooting], nil];
         [self evaluateUpdates];
-        
+        [self setupHUD];
     }
     return self;
 }
@@ -112,21 +108,21 @@
 -(void) level1
 {
     //Setup the enemies from top
-    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
+    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
     SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
     SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:20];
     
     SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
     
     //Setup up the enemies from left
-    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
+    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
     SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction]] count:15];
     
     //Setup the enemies from top and left
     SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction]] count:10];
     
     //Setup up the enemies from the right and the left
-    SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXTroyerEnemyRightArc) onTarget:self];
+    SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXRuserEnemyRightArc) onTarget:self];
     SKAction *fourthWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction,spawnEnemiesAction3, waitAction]] count:8];
     
     
@@ -143,7 +139,7 @@
     SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
     
     //Setup up the enemies from left
-    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
+    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXStarEnemy) onTarget:self];
     SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction]] count:15];
     
     //Setup the enemies from top and left
@@ -177,10 +173,17 @@
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXRuser AndTheMovement:EnemyMovementLeftArc]];
 }
 
+-(void) addXRuserEnemyRightArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXRuser AndTheMovement:EnemyMovementRightArc]];
+}
+
 -(void) addXTroyerEnemy
 {
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementNormal]];
 }
+
+
 
 -(void) addXTroyerEnemyRightArc
 {
@@ -250,6 +253,14 @@
     
 }
 
+- (void)increaseScoreBy:(float)amount
+{
+    _score += amount;
+    _scoreNode.text = [NSString stringWithFormat:@"Score:%1.0f", _score];
+}
+
+
+
 -(void)update:(CFTimeInterval)currentTime {
  /* Called before each frame is rendered */
     
@@ -262,5 +273,35 @@
     if(_layerFirstBackground.position.y <= -1*self.size.height)
         _layerFirstBackground.position = CGPointMake(0, self.size.height);
 }
+
+- (void)setupHUD {
+    //Heads Up Display
+    
+    //Add HUD
+    _layerHudNode = [SKNode new];
+    
+    //setup HUD basics
+    int hudHeight = 40;
+    CGSize bgSize = CGSizeMake(self.size.width, hudHeight);
+    SKColor *bgColor = [SKColor colorWithRed:0.5 green:0.5 blue:0.75 alpha:0.70];
+    SKSpriteNode *hudBackground = [SKSpriteNode spriteNodeWithColor:bgColor size:bgSize];
+    
+    hudBackground.position = CGPointMake(0, self.size.height - hudHeight);
+    hudBackground.anchorPoint = CGPointZero;
+    [_layerHudNode addChild:hudBackground];
+    
+    _scoreNode = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    _scoreNode.fontSize = 18.0;
+    _scoreNode.text = @"Score:0";
+    _scoreNode.name = @"scoreNode";
+    _scoreNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    _scoreNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    _scoreNode.position = CGPointMake(6, self.size.height - _scoreNode.frame.size.height -2);
+
+    [_layerHudNode addChild:_scoreNode];
+    [self addChild:_layerHudNode];
+}
+
 
 @end

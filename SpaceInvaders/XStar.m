@@ -22,7 +22,10 @@
     return self;
 }
 
-
+- (float)increaseScoreAmount
+{
+    return 50;
+}
 
 - (void)configureCollisionBody {
     

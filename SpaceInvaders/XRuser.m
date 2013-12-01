@@ -7,7 +7,7 @@
 //
 
 #import "XRuser.h"
-
+#import "MyScene.h"
 @implementation XRuser
 - (id)initWithPosition:(CGPoint)position {
     
@@ -50,13 +50,18 @@
     [super removeNodeWithEffectsAtContactPoint:contact];
 }
 
+- (float)increaseScoreAmount
+{
+    return 10;
+}
+
 + (SKTexture *)createTexture {
     
     static SKTexture *texture = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"shipPurple.png"]; //TODO TEAM RAVI 
+        texture = [SKTexture textureWithImageNamed:@"shipRed.png"]; //TODO TEAM RAVI 
         texture.filteringMode = SKTextureFilteringNearest;
         
     });
