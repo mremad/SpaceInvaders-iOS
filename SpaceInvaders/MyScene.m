@@ -29,18 +29,9 @@
          */
         
         //Added Background Particle Node
+        [self setupBackground];
         
-        
-        _layerFirstBackground = [SKNode new];
-        _layerSecondBackground = [SKNode new];
-        [self addChild:_layerFirstBackground];
-        [self addChild:_layerSecondBackground];
-        [self createSecondBackground];
-        [self createFirstBackground];
-        
-        SKEmitterNode* starBg = [MyScene newStarParticles];
-        starBg.position = CGPointMake(self.size.width/2, self.size.height/2);
-        [self addChild:starBg];
+ 
         
         //there is no gravity in space...
         self.physicsWorld.gravity = CGVectorMake(0, 0);
@@ -71,6 +62,22 @@
     return self;
 }
 
+-(void)setupBackground{
+    
+    SKEmitterNode* starBg = [MyScene newStarParticles];
+    starBg.position = CGPointMake(self.size.width/2, self.size.height/2);
+    [self addChild:starBg];
+    
+    _layerFirstBackground = [SKNode new];
+    _layerSecondBackground = [SKNode new];
+    [self addChild:_layerFirstBackground];
+    [self addChild:_layerSecondBackground];
+    [self createSecondBackground];
+    [self createFirstBackground];
+    
+
+}
+
 +(SKEmitterNode *) newStarParticles
 {
     NSString *starPath = [[NSBundle mainBundle] pathForResource:@"BokehParticles" ofType:@"sks"];
@@ -83,9 +90,11 @@
     SKSpriteNode* planet1 = [SKSpriteNode spriteNodeWithImageNamed:@"planetStripe_1.png"];
     planet1.size = CGSizeMake(100, 100);
     planet1.position = CGPointMake(100, 100);
+    planet1.speed = 10;
     SKSpriteNode* planet2 = [SKSpriteNode spriteNodeWithImageNamed:@"planetStripe_2.png"];
-    planet2.size = CGSizeMake(200, 200);
+    planet2.size = CGSizeMake(50, 50);
     planet2.position = CGPointMake(200, 500);
+    planet2.speed = 12;
     [_layerFirstBackground addChild:planet1];
     [_layerFirstBackground addChild:planet2];
     _layerFirstBackground.position = CGPointMake(0, 0);
@@ -94,11 +103,13 @@
 -(void)createSecondBackground
 {
     SKSpriteNode* planet1 = [SKSpriteNode spriteNodeWithImageNamed:@"planetStripe_1.png"];
-    planet1.size = CGSizeMake(200, 200);
+    planet1.size = CGSizeMake(100, 100);
     planet1.position = CGPointMake(100, 200);
+    planet1.speed = 8;
     SKSpriteNode* planet2 = [SKSpriteNode spriteNodeWithImageNamed:@"planetStripe_2.png"];
     planet2.size = CGSizeMake(75, 75);
     planet2.position = CGPointMake(200, 400);
+    planet2.speed = 9;
     [_layerSecondBackground addChild:planet1];
     [_layerSecondBackground addChild:planet2];
     _layerSecondBackground.position = CGPointMake(0, self.size.height);
