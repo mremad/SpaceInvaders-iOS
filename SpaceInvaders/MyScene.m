@@ -72,6 +72,8 @@
     _layerSecondBackground = [SKNode new];
     [self addChild:_layerFirstBackground];
     [self addChild:_layerSecondBackground];
+    _layerFirstBackground.alpha = 0.4;
+    _layerSecondBackground.alpha = 0.4;
     [self createSecondBackground];
     [self createFirstBackground];
     
@@ -292,9 +294,9 @@
     _layerHudNode = [SKNode new];
     
     //setup HUD basics
-    int hudHeight = 40;
+    int hudHeight = 25;
     CGSize bgSize = CGSizeMake(self.size.width, hudHeight);
-    SKColor *bgColor = [SKColor colorWithRed:0.5 green:0.5 blue:0.75 alpha:0.70];
+    SKColor *bgColor = [SKColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.30];
     SKSpriteNode *hudBackground = [SKSpriteNode spriteNodeWithColor:bgColor size:bgSize];
     
     hudBackground.position = CGPointMake(0, self.size.height - hudHeight);
@@ -302,7 +304,7 @@
     [_layerHudNode addChild:hudBackground];
     
     _scoreNode = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _scoreNode.fontSize = 18.0;
+    _scoreNode.fontSize = 12.0;
     _scoreNode.text = @"Score:0";
     _scoreNode.name = @"scoreNode";
     _scoreNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
