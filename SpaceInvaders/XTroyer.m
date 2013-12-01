@@ -33,6 +33,11 @@
     return self;
 }
 
+-(void) removeNodeWithEffectsAtContactPoint:(SKPhysicsContact*)contact
+{
+    [self.parent addChild:[[XTroyerDebris alloc] initWithPosition:self.position withContact:contact]];
+    [super removeNodeWithEffectsAtContactPoint:contact];
+}
 
 
 - (void)configureCollisionBody {

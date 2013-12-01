@@ -1,0 +1,13 @@
+var OX_20a86744 = '';
+OX_20a86744 += "<"+"div align=\"center\">\n";
+OX_20a86744 += "<"+"script language=\"JavaScript 1.1\" type=\"text/javascript\">\n";
+OX_20a86744 += "var gmtp = \"http\", gmturl = gmtp + \"://gmads.net/r\", gmttzd = (new Date).getTimezoneOffset(), gmth = encodeURI(parent.location.host), gmthp = encodeURI(parent.location.pathname);\n";
+OX_20a86744 += "var ganid = Math.floor(Math.random()*99999999999);\n";
+OX_20a86744 += "var gmtredir=encodeURI(\"http://media.gan-online.com/www/delivery/ajs.php?zoneid=2589&cb=\"+ganid);\n";
+OX_20a86744 += "document.write(\"<"+"scr\"+\"ipt src=\'\" + gmturl + \"?width=800&amp;height=255&amp;gmtr=\"+ganid+\"&amp;gmtp=\" + gmtp + \"&amp;gmtsubsite=004&amp;gmtctrl=13&amp;gmttu=25432&amp;gmtt=js&amp;gmti=gmdpna&amp;gmtsrc=gmde&amp;gmtv=4&amp;gmtcl=1&amp;gmth=\" + gmth + \"&amp;gmthp=\" + gmthp + \"&amp;ganid=\"+ganid+\"&amp;gmttzd=\" + gmttzd + \"&amp;gmtredir=\" + gmtredir + \"\' type=\'text/javascript\'><"+"\\/scr\"+\"ipt>\");\n";
+OX_20a86744 += "<"+"/script>\n";
+OX_20a86744 += "<"+"noscript>\n";
+OX_20a86744 += "<"+"iframe src=\"http://gmads.net/r?width=800&height=255&gmtr=67621e2aae&gmtp=http&gmtctrl=13&gmttu=25432&gmtt=if&gmti=gmdpna&gmtcl=1&gmtsrc=gmde&gmtv=4\" style=\"overflow: hidden;\" scrolling=\"no\" framespacing=\"0\" frameborder=\"0\" width=800 height=255><"+"/iframe>\n";
+OX_20a86744 += "<"+"/noscript>\n";
+OX_20a86744 += "<"+"/div><"+"div id=\'beacon_67621e2aae\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://media.gan-online.com/www/delivery/lg.php?bannerid=11951&amp;campaignid=4484&amp;zoneid=2588&amp;loc=1&amp;referer=http%3A%2F%2Fall-angry-birds-sprites.wikia.com%2Fwiki%2FSpace_Worlds&amp;cb=67621e2aae&amp;ctm=1385865707\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+document.write(OX_20a86744);

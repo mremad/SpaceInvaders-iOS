@@ -1,0 +1,81 @@
+document.write('<scr'+'ipt src="http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=rsb&c=28&pli=8256973&PluID=0&w=800&h=250&ord=1385865708115&ucm=true&pcp=$$25432$$&ncu=$$http://gmads.net/clk?vid=001382023023104000001659907172&gmti=gmdpna&gmtevt=8a838688419f617e0141c6f7cde7354f&gmtcl=1&tppub_clk=&gmtredir=$$"></scr'+'ipt>');;
+var bbserv = '';
+  try { (function() {
+        var ADPResources = {
+            getLanguage : function(){
+                var lang = 'en';
+                var browserLang = window.navigator.userLanguage || window.navigator.language || lang;
+                if (browserLang.indexOf('de') == -1 && browserLang !== 'en'){
+                    lang = 'en';
+                }
+                else{
+                    lang = 'de';
+                }
+                return lang;
+            },
+            title : {'en' : 'Xaxis, a division of GroupM Competence Center GmbH','de' : 'Xaxis, a division of GroupM Competence Center GmbH'},
+            text : {'en' : 'We are Xaxis - a media company for the digital age. We place targeted advertising across the digital media landscape.', 'de' : 'Wir sind Xaxis - das Mediaunternehmen f&uuml;r das digitale Zeitalter. Wir platzieren auf Zielgruppen ausgerichtete Werbung in der gesamten digitalen Medienlandschaft.'},
+            url : {'en' : 'http://www.xaxis.com/page/privacy-policy', 'de': 'http://www.xaxis.com/de/page/privacy-policy'},
+            linkText : {'en' : 'More', 'de': 'Mehr'}
+        };
+        var ADPConfig = {
+            items : [
+                {
+                    title :     ADPResources.title[ADPResources.getLanguage()],
+                    text :      ADPResources.text[ADPResources.getLanguage()],
+                    url :       ADPResources.url[ADPResources.getLanguage()],
+                    linkText :  ADPResources.linkText[ADPResources.getLanguage()],
+                    usePopup :  true,
+                    position :  'top-right'
+                } ],
+
+            obaId : undefined,
+            domId : 'adp_container_' + (0 | 9999 * Math.random()),
+            createPlayer : true,
+
+            jspath : 'http://' + bbserv + '/js/adplayer.min.js',
+            csspath : 'http://' + bbserv + '/css/adplayer.min.css',
+            translationpath : 'http://' + bbserv + '/js/adplayer-translation.min.js'
+        };
+        document.write('<style> .adp-wrapper { position: relative; } </style>');
+        document.write('<div id="'+ADPConfig.domId+'" style="width:800px; margin: -255px auto 255px auto;" class="adp-position"></div>');
+        // DO NOT MODIFY ANYTHING BELOW THIS LINE!
+        (function lazyLoad() {
+            if (window.$ADP) {
+                if (ADPConfig.translationpath)
+                    $ADP.Registry.setTranslation({
+                        href : ADPConfig.translationpath
+                    });
+                var obaId = ADPConfig.obaId ? ADPConfig.obaId : $ADP.Registry
+                        .generateId();
+                if (ADPConfig.items) {
+                    for (k in ADPConfig.items) {
+                        $ADP.Registry.register(obaId, ADPConfig.items[k]);
+                    }
+                }
+                if (ADPConfig.createPlayer)
+                    $ADP.Registry.createPlayer(obaId, {
+                        domId : ADPConfig.domId
+                    });
+            } else {
+                if (!document.getElementById('adpscript')) {
+                    var adp = document.createElement('script');
+                    adp.type = 'text/javascript';
+                    adp.async = true;
+                    adp.src = ADPConfig.jspath;
+                    adp.id = 'adpscript';
+                    document.getElementsByTagName('head')[0].appendChild(adp);
+                }
+                if (!document.getElementById('adpstyle')) {
+                    var adp = document.createElement('link');
+                    adp.type = 'text/css';
+                    adp.href = ADPConfig.csspath;
+                    adp.rel = 'stylesheet';
+                    adp.id = 'adpstyle';
+                    document.getElementsByTagName('head')[0].appendChild(adp);
+                }
+                window.setTimeout(lazyLoad, 50);
+            }
+        })();
+    })();
+   } catch (e) { }

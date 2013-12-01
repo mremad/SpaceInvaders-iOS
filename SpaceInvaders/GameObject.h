@@ -8,7 +8,6 @@
 
 
 #import <SpriteKit/SpriteKit.h>
-#import "XTroyerDebris.h"
 
 /**
  Used to identify game object types and is used for object contacts and collisions.
@@ -55,7 +54,7 @@ typedef NS_OPTIONS(uint32_t, CollisionType) {
  */
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact;
 
-- (void)removeNodeWithEffectsAtContactPoint:(CGPoint)contactPoint;
+- (void)removeNodeWithEffectsAtContactPoint:(SKPhysicsContact*)contact;
 
 /**
  Creates the object with texture that represents this object and will be rendered on screen.
@@ -64,6 +63,7 @@ typedef NS_OPTIONS(uint32_t, CollisionType) {
 + (SKEmitterNode*)newExplosionEmitter;
 + (SKEmitterNode*)newFuelEmitter;
 + (SKEmitterNode *) newBulletEmitter;
++ (SKEmitterNode*)newSmokeEmitter;
 
 
 @end

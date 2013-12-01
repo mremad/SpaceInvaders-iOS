@@ -44,6 +44,12 @@
     self.physicsBody.contactTestBitMask = CollisionTypeSpaceShipBullet|CollisionTypeSpaceShip;
 }
 
+-(void) removeNodeWithEffectsAtContactPoint:(SKPhysicsContact*)contact
+{
+    [self.parent addChild:[[XRuserDebris alloc] initWithPosition:self.position withContact:contact]];
+    [super removeNodeWithEffectsAtContactPoint:contact];
+}
+
 + (SKTexture *)createTexture {
     
     static SKTexture *texture = nil;

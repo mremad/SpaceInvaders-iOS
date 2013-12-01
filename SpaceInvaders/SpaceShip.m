@@ -38,7 +38,7 @@
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
 {
     //if the SpaceShip collided with anything destory it
-    [self removeNodeWithEffectsAtContactPoint:contact.contactPoint];
+    [self removeNodeWithEffectsAtContactPoint:contact];
 }
 
 

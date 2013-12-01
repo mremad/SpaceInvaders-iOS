@@ -7,6 +7,7 @@
 //
 
 #import "EnemyShip.h"
+#import "XRuserDebris.h"
 
 @interface XRuser : EnemyShip
 

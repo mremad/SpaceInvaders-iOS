@@ -25,6 +25,9 @@
 
 @property (nonatomic, strong) SKNode *layerEnemiesNode;
 
+@property (nonatomic, strong) SKNode* layerFirstBackground;
+@property (nonatomic, strong) SKNode* layerSecondBackground;
+
 @property BOOL gameRunning;
 
 @end

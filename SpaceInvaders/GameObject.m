@@ -35,7 +35,7 @@
     }
 }
 
--(void) removeNodeWithEffectsAtContactPoint:(CGPoint)contactPoint
+-(void) removeNodeWithEffectsAtContactPoint:(SKPhysicsContact*)contact
 {
     SKEmitterNode* explosion = [GameObject newExplosionEmitter];
     
@@ -43,7 +43,6 @@
     explosion.position = CGPointMake(self.position.x, self.position.y);
     
     [self.parent addChild:explosion];
-    [self.parent addChild:[[XTroyerDebris alloc] initWithPosition:self.position atContactPoint:contactPoint]];
     [self removeFromParent];
     
 }
@@ -53,6 +52,13 @@
     NSString *fuelPath = [[NSBundle mainBundle] pathForResource:@"FuelBurningParticles" ofType:@"sks"];
     SKEmitterNode *fuel = [NSKeyedUnarchiver unarchiveObjectWithFile:fuelPath];
     return fuel;
+}
+
++(SKEmitterNode*)newSmokeEmitter
+{
+    NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"SmokeParticles" ofType:@"sks"];
+    SKEmitterNode *smoke = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
+    return smoke;
 }
 
 

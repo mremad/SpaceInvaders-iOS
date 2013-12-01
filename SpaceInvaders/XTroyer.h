@@ -7,6 +7,7 @@
 //
 
 #import "EnemyShip.h"
+#import "XTroyerDebris.h"
 
 @interface XTroyer : EnemyShip
 
