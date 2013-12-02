@@ -29,7 +29,8 @@
          */
         
         //Added Background Particle Node
-        [self setupBackground];
+         [self setupBackground];
+
         
  
         
@@ -75,13 +76,13 @@
     NSString *smallStar = @"star_2_small.png";
     
 
-    SKEmitterNode *star1 = [self starLayer:1 scale:0.4 speed:-8 textureName:smallStar];
+    SKEmitterNode *star1 = [self starLayer:1 scale:0.2 speed:16 textureName:smallStar];
     
-    SKEmitterNode *star2 = [self starLayer:1 scale:0.2 speed:-10 textureName:largeStar];
+    SKEmitterNode *star2 = [self starLayer:1 scale:0.4 speed:20 textureName:largeStar];
     
     [_starLayerNode addChild:star1];
     [_starLayerNode addChild:star2];
-    
+    [self addChild:_starLayerNode];
     
     _layerFirstBackground = [SKNode new];
     _layerSecondBackground = [SKNode new];
@@ -111,12 +112,15 @@
     SKEmitterNode *starNode = [SKEmitterNode new];
     starNode.particleTexture = texture;
     starNode.particleBirthRate = birthRate;
+    starNode.particleScale = scale;
     starNode.particleLifetime = self.frame.size.height/5;
     starNode.speed = speed;
     starNode.particleSpeedRange = 10;
     starNode.particleColor = [SKColor darkGrayColor];
+    starNode.particleColorBlendFactor = 0;
+    starNode.position = CGPointMake((CGRectGetMidX(self.frame)), CGRectGetMaxY(self.frame));
     
-    starNode.particlePosition = CGPointMake(150,200);
+    starNode.particlePositionRange = CGVectorMake(CGRectGetMaxX(self.frame), 0);
     
     [starNode advanceSimulationTime:starNode.particleLifetime];
     return starNode;

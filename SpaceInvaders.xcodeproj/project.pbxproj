@@ -261,6 +261,7 @@
 		D915A68418455D740084CE6D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				478AC7EA184C1A22003E6959 /* star_1_large.png */,
 				D98E2624184BB0EB00EA296E /* Background images */,
 				D98E2623184BB0D000EA296E /* unused images */,
 				D9CCC255184975B90066C056 /* Ships */,
@@ -333,7 +334,6 @@
 		D98E2624184BB0EB00EA296E /* Background images */ = {
 			isa = PBXGroup;
 			children = (
-				478AC7EA184C1A22003E6959 /* star_1_large.png */,
 				478AC7EB184C1A22003E6959 /* star_2_small.png */,
 				D98C1F8A184ADC0200B25DD6 /* planetStripe_1.png */,
 				D98C1F8B184ADC0200B25DD6 /* planetStripe_2.png */,
