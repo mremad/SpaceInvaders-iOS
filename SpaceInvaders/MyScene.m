@@ -221,6 +221,8 @@
     SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction,spawnEnemiesAction5,waitAction]] count:30];
     
     
+   
+    
     [self runAction:[SKAction sequence:@[thirdWave]]];
 }
 

@@ -16,7 +16,7 @@
         SKEmitterNode* bulletEmitter = [GameObject newBulletEmitter];
         bulletEmitter.position = CGPointMake(self.size.width/2, self.size.height);
         
-        //Name the asteroid and reduce it's size to 70%--it looks about right.
+        //Name the alien and reduce it's size to 70%--it looks about right.
         self.name = @"SpaceShipBullet";
         [self setSize:CGSizeMake(10, 50)];
         [self setColor:[UIColor clearColor]];

@@ -13,7 +13,7 @@
     
     if(self = [super initWithPosition:position]) {
         
-        //Name the asteroid and reduce it's size to 70%--it looks about right.
+        //Name the alien and reduce it's size to 70%--it looks about right.
         self.name = @"EnemyXStar";
         [self setScale:0.02f]; //TODO TEAM RAVI 
         [self configureCollisionBody];
@@ -30,7 +30,7 @@
 - (void)configureCollisionBody {
     
     /*
-     This asteroid will collide with the monkey, but will not move itself--it will push the monkey out of the way.  This is accomplished by setting the collisionBitMask to 0, but setting the contactTestBitMask to the monkey.
+     This alien will collide with the Spaceship, but will not move itself--it will push the Spaceship out of the way.  This is accomplished by setting the collisionBitMask to 0, but setting the contactTestBitMask to the Spaceship.
      */
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
