@@ -51,7 +51,7 @@
         //spaceShip.position here will return the correct position;
         [_layerPlayerNode addChild:_spaceShip];
         
-        [self level1];
+        [self levelX];
         //[self level2];
 
      
@@ -166,6 +166,24 @@
     [self runAction:[SKAction sequence:@[firstWave ,waitActionBetweenWaves, secondWave,waitActionBetweenWaves, thirdWave ,waitActionBetweenWaves,fourthWave]]];
 }
 
+-(void) levelX
+{
+    //Setup the enemies from top
+    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
+    SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
+  
+    
+    //Setup up the enemies from left
+    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXTroyerEnemyRightArc) onTarget:self];
+    SKAction *spawnEnemiesAction5 = [SKAction performSelector:@selector(addXTroyerEnemyLeftArc) onTarget:self];
+    
+    //Setup the enemies from top and left
+    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction,spawnEnemiesAction5,waitAction]] count:30];
+    
+    
+    [self runAction:[SKAction sequence:@[thirdWave]]];
+}
+
 -(void) evaluateUpdates
 {
     //do something with upgrades
@@ -201,6 +219,11 @@
 -(void) addXTroyerEnemyRightArc
 {
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementRightArc]];
+}
+
+-(void) addXTroyerEnemyLeftArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementLeftArc]];
 }
 
 -(void) addXStarEnemy

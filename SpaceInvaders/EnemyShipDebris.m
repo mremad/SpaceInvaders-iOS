@@ -105,16 +105,9 @@
 
 + (SKTexture *)createTexture {
     
-    static SKTexture *texture = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        texture = [SKTexture textureWithImageNamed:@"debrisRed_1.png"]; //TODO TEAM RAVI
-        texture.filteringMode = SKTextureFilteringNearest;
-        
-    });
+      [self doesNotRecognizeSelector:_cmd]; // without overriding this method, this method is not usable(As If abstract)
     
-    return texture;
+    return nil;
     
 }
 
