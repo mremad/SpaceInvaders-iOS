@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		478AC7EC184C1A22003E6959 /* star_1_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 478AC7EA184C1A22003E6959 /* star_1_large.png */; };
 		478AC7ED184C1A22003E6959 /* star_2_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 478AC7EB184C1A22003E6959 /* star_2_small.png */; };
+		478AC7EF184C1E22003E6959 /* BlackKnight.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 478AC7EE184C1E22003E6959 /* BlackKnight.jpeg */; };
 		D915A64918455A6A0084CE6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64818455A6A0084CE6D /* Foundation.framework */; };
 		D915A64B18455A6A0084CE6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64A18455A6A0084CE6D /* CoreGraphics.framework */; };
 		D915A64D18455A6A0084CE6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64C18455A6A0084CE6D /* UIKit.framework */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		478AC7EA184C1A22003E6959 /* star_1_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_1_large.png; sourceTree = "<group>"; };
 		478AC7EB184C1A22003E6959 /* star_2_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_2_small.png; sourceTree = "<group>"; };
+		478AC7EE184C1E22003E6959 /* BlackKnight.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BlackKnight.jpeg; sourceTree = "<group>"; };
 		D915A64518455A6A0084CE6D /* SpaceInvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceInvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D915A64818455A6A0084CE6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D915A64A18455A6A0084CE6D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -318,6 +320,7 @@
 			children = (
 				D93247151848A41200A4467C /* Amigo.jpeg */,
 				D93247161848A41200A4467C /* Xruser.jpeg */,
+				478AC7EE184C1E22003E6959 /* BlackKnight.jpeg */,
 				D93247171848A41200A4467C /* Xstar.jpeg */,
 				D93247181848A41200A4467C /* Xtroyer.jpeg */,
 				D915A66518455A6A0084CE6D /* Spaceship.png */,
@@ -451,6 +454,7 @@
 				D932471A1848A41200A4467C /* Xruser.jpeg in Resources */,
 				D9CCC2521848E8780066C056 /* FireParticles.sks in Resources */,
 				478AC7ED184C1A22003E6959 /* star_2_small.png in Resources */,
+				478AC7EF184C1E22003E6959 /* BlackKnight.jpeg in Resources */,
 				D93247191848A41200A4467C /* Amigo.jpeg in Resources */,
 				D915A68718455D740084CE6D /* goldcoin.jpg in Resources */,
 				D98C1F8D184ADC0200B25DD6 /* planetStripe_2.png in Resources */,
