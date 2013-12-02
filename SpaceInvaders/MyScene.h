@@ -29,6 +29,8 @@
 
 @property (nonatomic, strong) SKNode* layerSecondBackground;
 
+@property (nonatomic, strong) SKNode* starLayerNode;
+
 @property (nonatomic, strong) SKNode* layerHudNode;
 
 @property BOOL gameRunning;
