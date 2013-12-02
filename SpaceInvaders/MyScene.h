@@ -19,7 +19,7 @@
 /**
  the layerPlayerNode is the node that the spaceship is a member of
  */
-@property (nonatomic, strong) SKNode *layerPlayerNode;
+@property (nonatomic, strong) SKEffectNode *layerPlayerNode;
 
 @property (nonatomic, strong) SKNode *layerSpaceShipBulletsNode;
 

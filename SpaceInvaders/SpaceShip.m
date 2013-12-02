@@ -46,6 +46,21 @@
 
 -(void) blinkIndicatingHealthWarning
 {
+    static BOOL warnedForLowHealth = NO;
+    
+    if(!warnedForLowHealth)
+    {
+        CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
+        ((SKEffectNode*)self.parent).filter = filter;
+        ((SKEffectNode*)self.parent).shouldEnableEffects = NO;
+        SKAction* blinkAction = [SKAction runBlock:^{((SKEffectNode*)self.parent).shouldEnableEffects = !((SKEffectNode*)self.parent).shouldEnableEffects;}];
+        SKAction* waitAction = [SKAction waitForDuration:0.35];
+        
+        SKAction* sequence = [SKAction repeatActionForever: [SKAction sequence:[NSArray arrayWithObjects:blinkAction,waitAction, nil]]];
+        
+        [self runAction:sequence];
+        warnedForLowHealth = YES;
+    }
     
 }
 
