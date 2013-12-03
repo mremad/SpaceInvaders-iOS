@@ -272,13 +272,10 @@
 		D915A68F184562130084CE6D /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				D9E3CFB6184E99F40055BE71 /* SpaceShip */,
 				D91AE7A8184630AD00A280E6 /* EnemyShips */,
 				D91AE7951845F13F00A280E6 /* GameObject.h */,
 				D91AE7961845F13F00A280E6 /* GameObject.m */,
-				D91AE7981845F30100A280E6 /* SpaceShip.h */,
-				D91AE7991845F30100A280E6 /* SpaceShip.m */,
-				D91AE79E18460E2800A280E6 /* SpaceShipBullet.h */,
-				D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -370,6 +367,17 @@
 				D9CCC258184975B90066C056 /* shipRed.png */,
 			);
 			path = Ships;
+			sourceTree = "<group>";
+		};
+		D9E3CFB6184E99F40055BE71 /* SpaceShip */ = {
+			isa = PBXGroup;
+			children = (
+				D91AE7981845F30100A280E6 /* SpaceShip.h */,
+				D91AE7991845F30100A280E6 /* SpaceShip.m */,
+				D91AE79E18460E2800A280E6 /* SpaceShipBullet.h */,
+				D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */,
+			);
+			name = SpaceShip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
