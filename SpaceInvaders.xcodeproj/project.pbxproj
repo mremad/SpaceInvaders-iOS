@@ -419,6 +419,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = M;
 				TargetAttributes = {
+					D915A64418455A6A0084CE6D = {
+						DevelopmentTeam = W88773838E;
+					};
 					D915A66C18455A6A0084CE6D = {
 						TestTargetID = D915A64418455A6A0084CE6D;
 					};
@@ -640,10 +643,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpaceInvaders/SpaceInvaders-Prefix.pch";
 				INFOPLIST_FILE = "SpaceInvaders/SpaceInvaders-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -654,10 +660,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpaceInvaders/SpaceInvaders-Prefix.pch";
 				INFOPLIST_FILE = "SpaceInvaders/SpaceInvaders-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
