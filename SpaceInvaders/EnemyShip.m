@@ -15,7 +15,7 @@
     
     if(self = [super initWithPosition:position]) {
         
-        //Name the asteroid and reduce it's size to 70%--it looks about right.
+        //Name the alien and reduce it's size to 70%--it looks about right.
         self.name = @"EnemyShip";
         [self setScale:0.02f];
         [self configureCollisionBody];

@@ -29,7 +29,8 @@
          */
         
         //Added Background Particle Node
-        [self setupBackground];
+         [self setupBackground];
+
         
  
         
@@ -42,7 +43,7 @@
         _gameRunning=YES;
         _layerEnemiesNode=[SKNode new];
         [self addChild:_layerEnemiesNode];
-        _layerPlayerNode = [SKNode new];
+        _layerPlayerNode = [SKEffectNode new];
         [self addChild:_layerPlayerNode];
         _layerSpaceShipBulletsNode = [SKNode new];
         [self addChild:_layerSpaceShipBulletsNode];
@@ -66,7 +67,7 @@
     
     SKEmitterNode* starBg = [MyScene newStarParticles];
     starBg.position = CGPointMake(self.size.width/2, self.size.height/2);
-    starBg.speed = -5;
+    //starBg.speed = -5;
     [self addChild:starBg];
     
     _starLayerNode = [SKNode new];
@@ -75,13 +76,13 @@
     NSString *smallStar = @"star_2_small.png";
     
 
-    SKEmitterNode *star1 = [self starLayer:1 scale:0.4 speed:-8 textureName:smallStar];
+    SKEmitterNode *star1 = [self starLayer:1 scale:0.1 speed:40 textureName:smallStar];
     
-    SKEmitterNode *star2 = [self starLayer:1 scale:0.2 speed:-10 textureName:largeStar];
+    SKEmitterNode *star2 = [self starLayer:1 scale:0.2 speed:60 textureName:largeStar];
     
     [_starLayerNode addChild:star1];
     [_starLayerNode addChild:star2];
-    
+    [self addChild:_starLayerNode];
     
     _layerFirstBackground = [SKNode new];
     _layerSecondBackground = [SKNode new];
@@ -111,12 +112,15 @@
     SKEmitterNode *starNode = [SKEmitterNode new];
     starNode.particleTexture = texture;
     starNode.particleBirthRate = birthRate;
+    starNode.particleScale = scale;
     starNode.particleLifetime = self.frame.size.height/5;
     starNode.speed = speed;
-    starNode.particleSpeedRange = 10;
+    //starNode.particleSpeedRange = 10;
     starNode.particleColor = [SKColor darkGrayColor];
+    starNode.particleColorBlendFactor = 0;
+    starNode.position = CGPointMake((CGRectGetMidX(self.frame)), CGRectGetMaxY(self.frame));
     
-    starNode.particlePosition = CGPointMake(150,200);
+    starNode.particlePositionRange = CGVectorMake(CGRectGetMaxX(self.frame), 0);
     
     [starNode advanceSimulationTime:starNode.particleLifetime];
     return starNode;
@@ -216,6 +220,8 @@
     //Setup the enemies from top and left
     SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction,spawnEnemiesAction5,waitAction]] count:30];
     
+    
+   
     
     [self runAction:[SKAction sequence:@[thirdWave]]];
 }
