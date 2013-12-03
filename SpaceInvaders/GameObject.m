@@ -35,6 +35,11 @@
     }
 }
 
+- (float)getHealth:(float)health
+{
+    return health;
+}
+
 -(void) removeNodeWithEffectsAtContactPoint:(SKPhysicsContact*)contact
 {
     SKEmitterNode* explosion = [GameObject newExplosionEmitter];

@@ -27,34 +27,52 @@
         SKEmitterNode* rightFuel = [GameObject newFuelEmitter];
         rightFuel.position = CGPointMake(self.size.width/2 + 25,self.size.height/2 - 60);
         [self addChild:rightFuel];
-        
+        [self setMaxHealth:3];
+        [self setHealth:3];
     }
     
     return self;
 }
 
+-(void)setHealth :(float) myHealth
+{
+    [super setHealth:myHealth];
+}
+
+-(float)getHealth
+{
+    return [super health];
+}
 
 
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
 {   //if the SpaceShip collided with anything destory it
     
-    //[self removeNodeWithEffectsAtContactPoint:contact]; TODO put this back later
-    
-    [self blinkIndicatingHealthWarning];
+    [self setHealth:([self getHealth]-1)];
+    if([self getHealth]==0)
+    {
+        [self removeNodeWithEffectsAtContactPoint:contact];
+    }
+    else
+    {
+        [self IndicateWarning];
+    }
 }
 
 
--(void) blinkIndicatingHealthWarning
+-(void) IndicateWarning
 {
-    static BOOL warnedForLowHealth = NO;
     
+    static BOOL warnedForLowHealth = NO;
+  
     if(!warnedForLowHealth)
     {
         CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
         ((SKEffectNode*)self.parent).filter = filter;
         ((SKEffectNode*)self.parent).shouldEnableEffects = NO;
         SKAction* blinkAction = [SKAction runBlock:^{((SKEffectNode*)self.parent).shouldEnableEffects = !((SKEffectNode*)self.parent).shouldEnableEffects;}];
-        SKAction* waitAction = [SKAction waitForDuration:0.35];
+        float duration = [self getHealth] *0.1;
+        SKAction* waitAction = [SKAction waitForDuration:duration];
         
         SKAction* sequence = [SKAction repeatActionForever: [SKAction sequence:[NSArray arrayWithObjects:blinkAction,waitAction, nil]]];
         
