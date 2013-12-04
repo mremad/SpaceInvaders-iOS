@@ -11,5 +11,6 @@
 @interface EnemyShip : GameObject
 
 
+@property (assign, nonatomic) float probabilityToShoot;
 
 @end

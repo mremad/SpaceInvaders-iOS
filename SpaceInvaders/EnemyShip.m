@@ -17,6 +17,8 @@
         
         //Name the alien and reduce it's size to 70%--it looks about right.
         self.name = @"EnemyShip";
+        
+        _probabilityToShoot=0.01;
         [self setScale:0.02f];
         [self configureCollisionBody];
     }

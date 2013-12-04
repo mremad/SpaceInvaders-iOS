@@ -200,11 +200,55 @@
 
 +(SKAction *) EnemyBehaviourNormal
 {
-    SKAction *moveAction = [SKAction moveToY:-100 duration:8]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
+    SKAction *moveAction = [SKAction moveToY:0 duration:6]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
     SKAction *removeEnemy= [SKAction removeFromParent];
     SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
     return enemySequence;
 }
+
++(SKAction *) EnemyBehaviourNormalX:(EnemyShip*)ls
+{
+    SKAction *moveAction = [SKAction moveToY:0 duration:6]; //TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
+    SKAction *removeEnemy= [SKAction removeFromParent];
+/*    SKAction* blinkAction = [SKAction runBlock:^
+                             {
+                                 CGPoint p=ls.position;
+                                 p.y+=5;
+                                 EnemyShipBullet *bullet = [[EnemyShipBullet alloc]initWithPosition:p];
+                                 //Move the bullet down the screen and remove it when it is of screen
+                                 SKAction *moveAction = [SKAction moveToY:1000 duration:3];//TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
+                                 SKAction *removeBullet= [SKAction removeFromParent];
+                                 SKAction *bulletSequence = [SKAction sequence:@[moveAction, removeBullet]];
+                                 [bullet runAction:bulletSequence];
+                                 
+                             }
+                             ];*/
+    SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
+    return enemySequence;
+}
+
+/*-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    CGPoint p=_spaceShip.position;
+    p.y+=5;
+    
+    SpaceShipBullet *bullet = [[SpaceShipBullet alloc]initWithPosition:p];
+    [bullet runAction:[self normalBulletAction]];
+    [_layerSpaceShipBulletsNode addChild:bullet];
+    
+}
+
+
+-(SKAction *) normalBulletAction
+{
+    //Move the bullet down the screen and remove it when it is of screen
+    SKAction *moveAction = [SKAction moveToY:1000 duration:3];//TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
+    SKAction *removeBullet= [SKAction removeFromParent];
+    SKAction *bulletSequence = [SKAction sequence:@[moveAction, removeBullet]];
+    return bulletSequence;
+}*/
+
 
 +(SKAction *) EnemyBehaviourLeftArcGivenYPosition:(CGFloat)yPosition
 {

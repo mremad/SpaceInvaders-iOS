@@ -61,6 +61,7 @@
 		D9CCC26B184988040066C056 /* SnowParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC26A184988040066C056 /* SnowParticles.sks */; };
 		D9CCC26E18498B370066C056 /* BokehParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC26C18498B370066C056 /* BokehParticles.sks */; };
 		D9CCC26F18498B370066C056 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC26D18498B370066C056 /* bokeh.png */; };
+		D9E3CFBB184E9B0D0055BE71 /* EnemyShipBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E3CFBA184E9B0D0055BE71 /* EnemyShipBullet.m */; };
 		D9E90134184A7FFA0035376B /* EnemyShipDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E90133184A7FFA0035376B /* EnemyShipDebris.m */; };
 		D9E90136184A969D0035376B /* debrisRed_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E90135184A969D0035376B /* debrisRed_1.png */; };
 		D9E90139184ACC970035376B /* XTroyerDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E90138184ACC970035376B /* XTroyerDebris.m */; };
@@ -147,6 +148,8 @@
 		D9CCC26A184988040066C056 /* SnowParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowParticles.sks; sourceTree = "<group>"; };
 		D9CCC26C18498B370066C056 /* BokehParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BokehParticles.sks; sourceTree = "<group>"; };
 		D9CCC26D18498B370066C056 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
+		D9E3CFB9184E9B0D0055BE71 /* EnemyShipBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyShipBullet.h; sourceTree = "<group>"; };
+		D9E3CFBA184E9B0D0055BE71 /* EnemyShipBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyShipBullet.m; sourceTree = "<group>"; };
 		D9E90132184A7FFA0035376B /* EnemyShipDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyShipDebris.h; sourceTree = "<group>"; };
 		D9E90133184A7FFA0035376B /* EnemyShipDebris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyShipDebris.m; sourceTree = "<group>"; };
 		D9E90135184A969D0035376B /* debrisRed_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debrisRed_1.png; sourceTree = "<group>"; };
@@ -294,20 +297,12 @@
 		D91AE7A8184630AD00A280E6 /* EnemyShips */ = {
 			isa = PBXGroup;
 			children = (
+				D9E3CFB8184E9A6E0055BE71 /* EnemyShips */,
+				D9E3CFB7184E9A4A0055BE71 /* EnemyShipDebris */,
 				D91AE7A118461BDC00A280E6 /* EnemyShip.h */,
 				D91AE7A218461BDC00A280E6 /* EnemyShip.m */,
-				D91AE7A91846687E00A280E6 /* XRuser.h */,
-				D91AE7AA1846687E00A280E6 /* XRuser.m */,
-				D91AE7AC1846689C00A280E6 /* XTroyer.h */,
-				D91AE7AD1846689C00A280E6 /* XTroyer.m */,
-				D91AE7AF1846690800A280E6 /* XStar.h */,
-				D91AE7B01846690800A280E6 /* XStar.m */,
-				D9E90132184A7FFA0035376B /* EnemyShipDebris.h */,
-				D9E90133184A7FFA0035376B /* EnemyShipDebris.m */,
-				D9E90137184ACC970035376B /* XTroyerDebris.h */,
-				D9E90138184ACC970035376B /* XTroyerDebris.m */,
-				D98C1F83184AD1B000B25DD6 /* XRuserDebris.h */,
-				D98C1F84184AD1B000B25DD6 /* XRuserDebris.m */,
+				D9E3CFB9184E9B0D0055BE71 /* EnemyShipBullet.h */,
+				D9E3CFBA184E9B0D0055BE71 /* EnemyShipBullet.m */,
 			);
 			name = EnemyShips;
 			sourceTree = "<group>";
@@ -378,6 +373,32 @@
 				D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */,
 			);
 			name = SpaceShip;
+			sourceTree = "<group>";
+		};
+		D9E3CFB7184E9A4A0055BE71 /* EnemyShipDebris */ = {
+			isa = PBXGroup;
+			children = (
+				D9E90132184A7FFA0035376B /* EnemyShipDebris.h */,
+				D9E90133184A7FFA0035376B /* EnemyShipDebris.m */,
+				D9E90137184ACC970035376B /* XTroyerDebris.h */,
+				D9E90138184ACC970035376B /* XTroyerDebris.m */,
+				D98C1F83184AD1B000B25DD6 /* XRuserDebris.h */,
+				D98C1F84184AD1B000B25DD6 /* XRuserDebris.m */,
+			);
+			name = EnemyShipDebris;
+			sourceTree = "<group>";
+		};
+		D9E3CFB8184E9A6E0055BE71 /* EnemyShips */ = {
+			isa = PBXGroup;
+			children = (
+				D91AE7A91846687E00A280E6 /* XRuser.h */,
+				D91AE7AA1846687E00A280E6 /* XRuser.m */,
+				D91AE7AC1846689C00A280E6 /* XTroyer.h */,
+				D91AE7AD1846689C00A280E6 /* XTroyer.m */,
+				D91AE7AF1846690800A280E6 /* XStar.h */,
+				D91AE7B01846690800A280E6 /* XStar.m */,
+			);
+			name = EnemyShips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +532,7 @@
 			files = (
 				D91AE7971845F13F00A280E6 /* GameObject.m in Sources */,
 				D915A66418455A6A0084CE6D /* MyScene.m in Sources */,
+				D9E3CFBB184E9B0D0055BE71 /* EnemyShipBullet.m in Sources */,
 				D91AE7A318461BDC00A280E6 /* EnemyShip.m in Sources */,
 				D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */,
 				D915A66118455A6A0084CE6D /* GameViewController.m in Sources */,

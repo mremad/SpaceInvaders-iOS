@@ -27,8 +27,6 @@
         fuelRight.emissionAngle = 1.57;
         fuelRight.position = CGPointMake(self.size.width/2 + 33,self.size.height-25);
         [self addChild:fuelRight];
-        
-
     }
     
     return self;

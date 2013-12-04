@@ -11,6 +11,7 @@
 #import "XRuser.h"
 #import "XTroyer.h"
 #import "XStar.h"
+#import "EnemyShipBullet.h"
 
 typedef enum EnemyMovement {EnemyMovementNormal,
     EnemyMovementRightArc,EnemyMovementLeftArc} EnemyMovement;

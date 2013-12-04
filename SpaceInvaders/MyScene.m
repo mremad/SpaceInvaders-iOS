@@ -18,6 +18,18 @@
     BOOL automaticShooting;
     SKLabelNode *_scoreNode;
 }
+
+- (void)increaseScoreBy:(float)amount
+{
+    _score += amount;
+    _scoreNode.text = [NSString stringWithFormat:@"Score:%1.0f", _score];
+}
+
+-(void) evaluateUpdates
+{
+    //do something with upgrades
+}
+#pragma mark - Initilization
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         
@@ -63,6 +75,36 @@
     return self;
 }
 
+
+- (void)setupHUD {
+    //Heads Up Display
+    
+    //Add HUD
+    _layerHudNode = [SKNode new];
+    
+    //setup HUD basics
+    int hudHeight = 25;
+    CGSize bgSize = CGSizeMake(self.size.width, hudHeight);
+    SKColor *bgColor = [SKColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.30];
+    SKSpriteNode *hudBackground = [SKSpriteNode spriteNodeWithColor:bgColor size:bgSize];
+    
+    hudBackground.position = CGPointMake(0, self.size.height - hudHeight);
+    hudBackground.anchorPoint = CGPointZero;
+    [_layerHudNode addChild:hudBackground];
+    
+    _scoreNode = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    _scoreNode.fontSize = 12.0;
+    _scoreNode.text = @"Score:0";
+    _scoreNode.name = @"scoreNode";
+    _scoreNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    _scoreNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    _scoreNode.position = CGPointMake(6, self.size.height - _scoreNode.frame.size.height -2);
+    
+    [_layerHudNode addChild:_scoreNode];
+    [self addChild:_layerHudNode];
+}
+
 -(void)setupBackground{
     
     SKEmitterNode* starBg = [MyScene newStarParticles];
@@ -95,6 +137,9 @@
     
 
 }
+
+
+#pragma mark - Background
 
 +(SKEmitterNode *) newStarParticles
 {
@@ -158,6 +203,9 @@
 
 }
 
+
+
+#pragma mark - Levels
 -(void) level1
 {
     //Setup the enemies from top
@@ -226,10 +274,95 @@
     [self runAction:[SKAction sequence:@[thirdWave]]];
 }
 
--(void) evaluateUpdates
+-(void) levelY
 {
-    //do something with upgrades
+    //Setup the enemies from top
+    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
+    SKAction *waitAction = [SKAction waitForDuration:10 withRange:3];
+    
+    
+    //Setup the enemies from top and left
+    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:30];
+    
+    
+    
+    
+    [self runAction:[SKAction sequence:@[thirdWave]]];
 }
+
+#pragma mark -User Touches
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    CGPoint p=_spaceShip.position;
+    p.y+=5;
+
+    SpaceShipBullet *bullet = [[SpaceShipBullet alloc]initWithPosition:p];
+    [bullet runAction:[self normalSpaceShipBulletAction]];
+    [_layerSpaceShipBulletsNode addChild:bullet];
+    
+}
+
+
+-(SKAction *) normalSpaceShipBulletAction
+{
+    //Move the bullet down the screen and remove it when it is of screen
+    SKAction *moveAction = [SKAction moveToY:1000 duration:3];//TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
+    SKAction *removeBullet= [SKAction removeFromParent];
+    SKAction *bulletSequence = [SKAction sequence:@[moveAction, removeBullet]];
+    return bulletSequence;
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event touchesForView:self.view] anyObject];
+    
+    CGPoint location = [touch locationInNode:self];
+    _spaceShip.position = location;
+}
+
+#pragma mark - Core Methods
+
+
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+    
+    if(_gameRunning) {
+        
+        SKNode *contactNode1 = contact.bodyA.node;
+        SKNode *contactNode2 = contact.bodyB.node;
+        if([contactNode1 isKindOfClass:[GameObject class]]) {
+            [(GameObject *)contactNode1 collidedWith:contact.bodyB contact:contact];
+        }
+        if([contactNode2 isKindOfClass:[GameObject class]]) {
+            [(GameObject *)contactNode2 collidedWith:contact.bodyA contact:contact];
+        }
+    }
+}
+
+- (void)didEndContact:(SKPhysicsContact *)contact
+{    
+    
+}
+
+-(void)update:(CFTimeInterval)currentTime {
+ /* Called before each frame is rendered */
+    
+    _layerSecondBackground.position = CGPointMake(_layerSecondBackground.position.x, _layerSecondBackground.position.y-1);
+    _layerFirstBackground.position = CGPointMake(_layerSecondBackground.position.x, _layerFirstBackground.position.y-1);
+    
+    if(_layerSecondBackground.position.y <= -1*self.size.height)
+        _layerSecondBackground.position = CGPointMake(0, self.size.height);
+    
+    if(_layerFirstBackground.position.y <= -1*self.size.height)
+        _layerFirstBackground.position = CGPointMake(0, self.size.height);
+    [self rotateShipsThatNeedRotation:currentTime];
+    [self fireEnemiesBulletsEveryUpdate:currentTime];
+}
+
+
+
+#pragma mark - Adding Enemies
 
 -(void) addRandomEnemy
 {
@@ -256,8 +389,6 @@
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementNormal]];
 }
 
-
-
 -(void) addXTroyerEnemyRightArc
 {
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementRightArc]];
@@ -273,113 +404,89 @@
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXStar AndTheMovement:EnemyMovementNormal]];
 }
 
+#pragma mark -EnemyBullet And Rotation Handling
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+-(void)rotateShipsThatNeedRotation:(NSTimeInterval)currentTime
 {
-    
-    CGPoint p=_spaceShip.position;
-    p.y+=5;
-
-    SpaceShipBullet *bullet = [[SpaceShipBullet alloc]initWithPosition:p];
-    [bullet runAction:[self normalBulletAction]];
-    [_layerSpaceShipBulletsNode addChild:bullet];
-    
-    
-    
-    
+    NSMutableArray *allEnemies=[self getEnemys:@"EnemyXTroyer"];
+    if ([allEnemies count] > 0)
+    {
+        int allInvadersIndex = arc4random()%([allEnemies count]);
+        EnemyShip* enemy = [allEnemies objectAtIndex:allInvadersIndex];
+        //TODO rotate
+    }
 }
 
-
-//Uncomment to test while moving ship
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+-(void)fireEnemiesBulletsEveryUpdate:(NSTimeInterval)currentTime
 {
-    UITouch *touch = [[event touchesForView:self.view] anyObject];
-    
-    CGPoint location = [touch locationInNode:self];
-    _spaceShip.position = location;
-}
-
-
--(SKAction *) normalBulletAction
-{
-    //Move the bullet down the screen and remove it when it is of screen
-    SKAction *moveAction = [SKAction moveToY:1000 duration:3];//TODO set appropiate numbers (duration and moveTo handle ultamately the speed.. .. used for the upgrade for ex)
-    SKAction *removeBullet= [SKAction removeFromParent];
-    SKAction *bulletSequence = [SKAction sequence:@[moveAction, removeBullet]];
-    return bulletSequence;
-}
-
-
-- (void)didBeginContact:(SKPhysicsContact *)contact {
-    
-    if(_gameRunning) {
-        
-        SKNode *contactNode1 = contact.bodyA.node;
-        SKNode *contactNode2 = contact.bodyB.node;
-        if([contactNode1 isKindOfClass:[GameObject class]]) {
-            [(GameObject *)contactNode1 collidedWith:contact.bodyB contact:contact];
-        }
-        if([contactNode2 isKindOfClass:[GameObject class]]) {
-            [(GameObject *)contactNode2 collidedWith:contact.bodyA contact:contact];
+    NSMutableArray *allEnemies=[self getEnemys];
+    if ([allEnemies count] > 0)
+    {
+        int allInvadersIndex = arc4random()%([allEnemies count]);
+        EnemyShip* enemy = [allEnemies objectAtIndex:allInvadersIndex];
+        double numberBetweenZeroAndOne = drand48();
+        if(numberBetweenZeroAndOne<enemy.probabilityToShoot)
+        {
+            [self HandleEachEnemyShootingTechnique:enemy];
         }
     }
 }
 
-- (void)didEndContact:(SKPhysicsContact *)contact
-{    
-    
-}
 
-- (void)increaseScoreBy:(float)amount
+-(NSMutableArray *)getEnemys
 {
-    _score += amount;
-    _scoreNode.text = [NSString stringWithFormat:@"Score:%1.0f", _score];
+    NSMutableArray* allEnemies = [NSMutableArray array];
+    [_layerEnemiesNode.children enumerateObjectsUsingBlock:^(SKNode *node,NSUInteger idx, BOOL *stop)
+     {
+         NSArray* allNames=[[NSArray alloc] initWithObjects:@"EnemyXRuser",@"EnemyXTroyer", nil];
+         if([allNames containsObject:node.name])
+         {
+              [allEnemies addObject:node];
+         }
+     }];
+    return allEnemies;
 }
 
-
-
--(void)update:(CFTimeInterval)currentTime {
- /* Called before each frame is rendered */
-    
-    _layerSecondBackground.position = CGPointMake(_layerSecondBackground.position.x, _layerSecondBackground.position.y-1);
-    _layerFirstBackground.position = CGPointMake(_layerSecondBackground.position.x, _layerFirstBackground.position.y-1);
-    
-    if(_layerSecondBackground.position.y <= -1*self.size.height)
-        _layerSecondBackground.position = CGPointMake(0, self.size.height);
-    
-    if(_layerFirstBackground.position.y <= -1*self.size.height)
-        _layerFirstBackground.position = CGPointMake(0, self.size.height);
+-(NSMutableArray *)getEnemys:(NSString *) enemyType
+{
+    NSMutableArray* allEnemies = [NSMutableArray array];
+    [_layerEnemiesNode.children enumerateObjectsUsingBlock:^(SKNode *node,NSUInteger idx, BOOL *stop)
+     {
+         if([enemyType isEqualToString:node.name])
+         {
+             [allEnemies addObject:node];
+         }
+     }];
+    return allEnemies;
 }
 
-- (void)setupHUD {
-    //Heads Up Display
-    
-    //Add HUD
-    _layerHudNode = [SKNode new];
-    
-    //setup HUD basics
-    int hudHeight = 25;
-    CGSize bgSize = CGSizeMake(self.size.width, hudHeight);
-    SKColor *bgColor = [SKColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.30];
-    SKSpriteNode *hudBackground = [SKSpriteNode spriteNodeWithColor:bgColor size:bgSize];
-    
-    hudBackground.position = CGPointMake(0, self.size.height - hudHeight);
-    hudBackground.anchorPoint = CGPointZero;
-    [_layerHudNode addChild:hudBackground];
-    
-    _scoreNode = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _scoreNode.fontSize = 12.0;
-    _scoreNode.text = @"Score:0";
-    _scoreNode.name = @"scoreNode";
-    _scoreNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
-    _scoreNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
-    
-    _scoreNode.position = CGPointMake(6, self.size.height - _scoreNode.frame.size.height -2);
-
-    [_layerHudNode addChild:_scoreNode];
-    [self addChild:_layerHudNode];
+-(void) HandleEachEnemyShootingTechnique:(EnemyShip*)enemyShip
+{
+    if([enemyShip isKindOfClass:[XRuser class]])
+    {
+        CGPoint p = CGPointMake(enemyShip.position.x, enemyShip.position.y);
+        SKNode* bullet = [[EnemyShipBullet alloc]initWithPosition:p];
+        CGPoint bulletDestination = CGPointMake(enemyShip.position.x, 0);
+        double duration =enemyShip.position.y/100 *0.5;
+        [self fireBullet:bullet toDestination:bulletDestination withDuration:duration soundFileName:@"InvaderBullet.wav"];
+    }
+    else if([enemyShip isKindOfClass:[XTroyer class]])
+    {
+        CGPoint p = CGPointMake(enemyShip.position.x, enemyShip.position.y);
+        SKNode* bullet = [[EnemyShipBullet alloc]initWithPosition:p];
+        CGPoint bulletDestination = CGPointMake(_spaceShip.position.x, _spaceShip.position.y);
+        double duration =enemyShip.position.y/100 *0.5;
+        [self fireBullet:bullet toDestination:bulletDestination withDuration:duration soundFileName:@"InvaderBullet.wav"];
+    }
 }
 
+-(void)fireBullet:(SKNode*)bullet toDestination:(CGPoint)destination withDuration:(NSTimeInterval)duration soundFileName:(NSString*)soundFileName
+{
+    SKAction* bulletAction = [SKAction sequence:@[[SKAction moveTo:destination duration:duration],
+                                                  [SKAction removeFromParent]]];
+    //SKAction* soundAction  = [SKAction playSoundFileNamed:soundFileName waitForCompletion:YES];
+    [bullet runAction:[SKAction group:@[bulletAction]]];//,soundAction
+    [self addChild:bullet];
+}
 
 @end
