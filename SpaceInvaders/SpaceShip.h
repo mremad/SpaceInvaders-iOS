@@ -10,5 +10,6 @@
 
 @interface SpaceShip : GameObject
 
+-(void)restoreMaxHealth;
 
 @end

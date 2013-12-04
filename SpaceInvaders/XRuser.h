@@ -11,5 +11,4 @@
 
 @interface XRuser : EnemyShip
 
-
 @end

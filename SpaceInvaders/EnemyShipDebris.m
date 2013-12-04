@@ -65,11 +65,6 @@
         distanceTraveled = sqrt(pow(moveToX + self.position.x,2)+pow(self.position.y-moveToY,2));
     }
     
-    
-    
-    
-    
-    
     SKAction* movingAction = [SKAction moveTo:CGPointMake(moveToX, moveToY) duration:distanceTraveled/50.0];
     SKAction* removeAction = [SKAction removeFromParent];
     SKAction* sequence = [SKAction sequence:[NSArray arrayWithObjects:movingAction,removeAction, nil]];
@@ -79,16 +74,25 @@
 
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
 {
-    if(contact.bodyA.categoryBitMask == CollisionTypeEnemyXRuser || contact.bodyB.categoryBitMask == CollisionTypeEnemyXRuser
-       ||contact.bodyA.categoryBitMask  == CollisionTypeSpaceShip || contact.bodyB.categoryBitMask  == CollisionTypeSpaceShip ||
-         contact.bodyA.categoryBitMask  == CollisionTypeEnemyXTroyer || contact.bodyB.categoryBitMask  == CollisionTypeEnemyXTroyer)
+    NSArray *arrayToCheck =[[NSArray alloc]initWithObjects:[NSNumber numberWithInt:CollisionTypeEnemyXRuser],[NSNumber numberWithInt:CollisionTypeSpaceShip],[NSNumber numberWithInt:CollisionTypeEnemyXTroyer], [NSNumber numberWithInt:CollisionTypeSpaceShipBullet],[NSNumber numberWithInt:CollisionTypeDebrisBullet], nil];
+    
+    if([GameObject ContactAOrB:contact collidedWithStuff: arrayToCheck])
     {
+        [self generateSmallExplosionIfBulletFromSpaceShip:contact];
         [self removeAllActions];
         [self removeFromParent];
-
     }
 }
 
+
+-(void) generateSmallExplosionIfBulletFromSpaceShip:(SKPhysicsContact *) contact
+{
+       NSArray *arrayToCheck =[[NSArray alloc]initWithObjects:[NSNumber numberWithInt:CollisionTypeSpaceShip] ,[NSNumber numberWithInt:CollisionTypeSpaceShipBullet], nil];
+      if([GameObject ContactAOrB:contact collidedWithStuff: arrayToCheck])
+        {
+            [self removeNodeWithSmallerEffectsAtContactPoint:contact];
+        }
+}
 
 
 - (void)configureCollisionBody {
@@ -98,9 +102,9 @@
      */
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width-10, self.frame.size.height-20)];
     self.physicsBody.affectedByGravity = NO;
-    self.physicsBody.categoryBitMask = CollisionTypeSpaceShipBullet;
+    self.physicsBody.categoryBitMask = CollisionTypeDebrisBullet;
     self.physicsBody.collisionBitMask = 0;
-    self.physicsBody.contactTestBitMask = CollisionTypeEnemyXRuser|CollisionTypeEnemyXTroyer|CollisionTypeEnemyXStar|CollisionTypeSpaceShip;
+    self.physicsBody.contactTestBitMask = CollisionTypeEnemyXRuser|CollisionTypeEnemyXTroyer|CollisionTypeEnemyXStar|CollisionTypeSpaceShip|CollisionTypeSpaceShipBullet;
 }
 
 + (SKTexture *)createTexture {

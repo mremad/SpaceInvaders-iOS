@@ -15,17 +15,6 @@
     const int enemyMovementRightArcX=-50; //this requires some more work to undersand how the arc is generated , but for now I tried out random numbers till I got it to look good
 
     
-
-
-+ (EnemyFactory *)sharedFactory {
-    static EnemyFactory *sharedFactory = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedFactory = [[self alloc] init];
-    });
-    return sharedFactory;
-}
-
 - (id)init
 {
     self = [super init];
@@ -117,7 +106,8 @@
 
 +(EnemyShip *)CreateEnemyXRuserWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
 {
-    EnemyShip *ship = [[XRuser alloc]initWithPosition:point];
+    EnemyShip *ship =[[XRuser alloc]initWithPosition:point];
+    ship.enemyMovement=movement;
     [self runAppropiateAction:ship WithMovemement:movement];
     return ship;
 }
@@ -132,6 +122,7 @@
 +(EnemyShip *)CreateEnemyXTroyerWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
 {
     EnemyShip *ship = [[XTroyer alloc]initWithPosition:point];
+    ship.enemyMovement=movement;
     [self runAppropiateAction:ship WithMovemement:movement];
     return ship;
 }
@@ -146,6 +137,7 @@
 +(EnemyShip *)CreateEnemyXStarWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
 {
     EnemyShip *ship = [[XStar alloc]initWithPosition:point];
+    ship.enemyMovement=movement;
     [self runAppropiateAction:ship WithMovemement:movement];
     return ship;
 }

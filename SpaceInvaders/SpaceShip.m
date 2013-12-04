@@ -44,6 +44,18 @@
     return [super health];
 }
 
+-(void)restoreMaxHealth
+{
+    [super setHealth:[super maxHealth]];
+    [self removeWarningIndication];
+}
+
+-(void)removeWarningIndication
+{
+    //TODO EMAD
+}
+
+
 
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
 {   //if the SpaceShip collided with anything destory it

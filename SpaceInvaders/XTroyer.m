@@ -10,7 +10,7 @@
 #import "MyScene.h"
 
 @implementation XTroyer
-- (id)initWithPosition:(CGPoint)position {
+- (id)initWithPosition:(CGPoint)position  {
     
     if(self = [super initWithPosition:position]) {
         

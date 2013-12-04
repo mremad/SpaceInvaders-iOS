@@ -7,10 +7,11 @@
 //
 
 #import "GameObject.h"
+#import "define.h"
 
 @interface EnemyShip : GameObject
 
-
 @property (assign, nonatomic) float probabilityToShoot;
+@property  EnemyMovement enemyMovement;
 
 @end

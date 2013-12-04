@@ -12,6 +12,7 @@
 #import "SpaceShipBullet.h"
 #import "EnemyShip.h"
 #import "EnemyFactory.h"
+#import "RandomGenerator.h"
 
 @interface MyScene : SKScene<SKPhysicsContactDelegate>
 

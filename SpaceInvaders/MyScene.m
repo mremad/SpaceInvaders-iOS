@@ -17,6 +17,8 @@
     NSArray  *upgrades;
     BOOL automaticShooting;
     SKLabelNode *_scoreNode;
+    int level;
+    float gameDifficulty;
 }
 
 - (void)increaseScoreBy:(float)amount
@@ -64,15 +66,81 @@
         //spaceShip.position here will return the correct position;
         [_layerPlayerNode addChild:_spaceShip];
         
-        [self levelX];
-        //[self level2];
-
+        [self HandleLevels];
      
         upgrades = [NSArray arrayWithObjects:[NSNumber numberWithInt:UpgradeAutomaticShooting], nil];
         [self evaluateUpdates];
         [self setupHUD];
     }
     return self;
+}
+
+-(void) HandleLevels
+{
+    NSArray *allTopSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXRuserEnemy", @"addXTroyerEnemy", @"addXStarEnemy", nil];
+    NSArray *allLeftArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXRuserEnemyLeftArc", @"addXTroyerEnemyLeftArc", @"addXStarEnemyLeftArc", nil];
+     NSArray *allRightArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXRuserEnemyRightArc", @"addXTroyerEnemyRightArc", @"addXStarEnemyRightArc", nil];
+    NSArray *arrAll = [[NSArray alloc]initWithObjects:allTopSelectorsFromWakestToStrongest,allLeftArcSelectorsFromWakestToStrongest,allRightArcSelectorsFromWakestToStrongest, nil];
+    
+    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
+    NSMutableArray *levelNSActions = [[NSMutableArray alloc]init];
+    
+    int numberOfWaves=[RandomGenerator getNumberOfWaves:level];
+    for(int i=0;i<numberOfWaves;i++)
+    {
+        NSMutableArray *waveNSActions=[[NSMutableArray alloc]init];
+        int sizeOfWave =[RandomGenerator getSizeOfWave:i numberOfWaves:numberOfWaves];
+        for(int j=0;j<sizeOfWave;j++)
+        {
+            SEL sel=[RandomGenerator getSelectorGivenSelectorArrays:arrAll AndLevel:level AndWave:i];
+            SKAction *spawnEnemiesAction1 = [SKAction performSelector:sel onTarget:self];
+            SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
+            [waveNSActions addObject:spawnEnemiesAction1];
+            [waveNSActions addObject:waitAction];
+        }
+        int count = [RandomGenerator getCountOfWave:i numberOfWaves:numberOfWaves];
+        SKAction *ithWave = [SKAction repeatAction:[SKAction sequence:waveNSActions] count:count];
+        [levelNSActions addObject:ithWave];
+        [levelNSActions addObject:waitActionBetweenWaves];
+    }
+    SKAction *annmationLevelEnded = [SKAction performSelector:@selector(addSomeAnimationSayingThatLevelEnded) onTarget:self];
+    [levelNSActions addObject:annmationLevelEnded];
+    [self runAction:[SKAction sequence:levelNSActions]];
+}
+
+-(void) addSomeAnimationSayingThatLevelEnded
+{
+    level++;
+    [_spaceShip restoreMaxHealth];
+    //TODO TEAM
+    
+    //check if spaceship still alive
+    [self HandleLevels];
+}
+
+-(void) level2
+{
+    //Setup the enemies from top
+    //  NSArray *ps =[[NSArray alloc]init];
+    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
+    SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
+    SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:20];
+    
+    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
+    
+    //Setup up the enemies from left
+    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXStarEnemy) onTarget:self];
+    SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction]] count:15];
+    
+    //Setup the enemies from top and left
+    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction]] count:10];
+    
+    //Setup up the enemies from the right and the left
+    SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXTroyerEnemyRightArc) onTarget:self];
+    SKAction *fourthWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction,spawnEnemiesAction3, waitAction]] count:8];
+    
+    
+    [self runAction:[SKAction sequence:@[firstWave ,waitActionBetweenWaves, secondWave,waitActionBetweenWaves, thirdWave ,waitActionBetweenWaves,fourthWave]]];
 }
 
 
@@ -230,9 +298,10 @@
     [self runAction:[SKAction sequence:@[firstWave ,waitActionBetweenWaves, secondWave,waitActionBetweenWaves, thirdWave ,waitActionBetweenWaves,fourthWave]]];
 }
 
--(void) level2
+-(void) level5
 {
     //Setup the enemies from top
+  //  NSArray *ps =[[NSArray alloc]init];
     SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
     SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
     SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:20];
@@ -404,6 +473,16 @@
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXStar AndTheMovement:EnemyMovementNormal]];
 }
 
+-(void) addXStarEnemyRightArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXStar AndTheMovement:EnemyMovementRightArc]];
+}
+
+-(void) addXStarEnemyLeftArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXStar AndTheMovement:EnemyMovementLeftArc]];
+}
+
 #pragma mark -EnemyBullet And Rotation Handling
 
 -(void)rotateShipsThatNeedRotation:(NSTimeInterval)currentTime
@@ -462,7 +541,7 @@
 
 -(void) HandleEachEnemyShootingTechnique:(EnemyShip*)enemyShip
 {
-    if([enemyShip isKindOfClass:[XRuser class]])
+    if(enemyShip.enemyMovement==EnemyMovementNormal)
     {
         CGPoint p = CGPointMake(enemyShip.position.x, enemyShip.position.y);
         SKNode* bullet = [[EnemyShipBullet alloc]initWithPosition:p];
@@ -470,7 +549,7 @@
         double duration =enemyShip.position.y/100 *0.5;
         [self fireBullet:bullet toDestination:bulletDestination withDuration:duration soundFileName:@"InvaderBullet.wav"];
     }
-    else if([enemyShip isKindOfClass:[XTroyer class]])
+    else if(enemyShip.enemyMovement==EnemyMovementLeftArc || enemyShip.enemyMovement==EnemyMovementRightArc)
     {
         CGPoint p = CGPointMake(enemyShip.position.x, enemyShip.position.y);
         SKNode* bullet = [[EnemyShipBullet alloc]initWithPosition:p];

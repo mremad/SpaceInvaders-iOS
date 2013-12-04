@@ -52,6 +52,19 @@
     
 }
 
+-(void) removeNodeWithSmallerEffectsAtContactPoint:(SKPhysicsContact*)contact
+{
+    SKEmitterNode* explosion = [GameObject newExplosionEmitter];
+    
+    explosion.numParticlesToEmit = 20;
+    explosion.position = CGPointMake(self.position.x, self.position.y);
+    
+    [self.parent addChild:explosion];
+    [self removeFromParent];
+    
+}
+
+
 +(SKEmitterNode*)newFuelEmitter
 {
     NSString *fuelPath = [[NSBundle mainBundle] pathForResource:@"FuelBurningParticles" ofType:@"sks"];
@@ -66,6 +79,18 @@
     return smoke;
 }
 
++(BOOL) ContactAOrB:(SKPhysicsContact *)contact collidedWithStuff:(NSArray *) allPossibleContacts
+{
+        for(int i=0;i<allPossibleContacts.count;i++)
+        {
+            if(contact.bodyA.categoryBitMask == (CollisionType)[(NSNumber *)[allPossibleContacts objectAtIndex:i] intValue]|| contact.bodyB.categoryBitMask == (CollisionType)[(NSNumber *)[allPossibleContacts objectAtIndex:i]intValue])
+            {
+                return YES;
+            }
+        }
+        
+        return NO;
+}
 
 
 +(SKEmitterNode *) newExplosionEmitter

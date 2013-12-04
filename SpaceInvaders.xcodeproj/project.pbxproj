@@ -50,6 +50,8 @@
 		D98C1F89184AD73400B25DD6 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D98C1F88184AD73400B25DD6 /* bg.jpg */; };
 		D98C1F8C184ADC0200B25DD6 /* planetStripe_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D98C1F8A184ADC0200B25DD6 /* planetStripe_1.png */; };
 		D98C1F8D184ADC0200B25DD6 /* planetStripe_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D98C1F8B184ADC0200B25DD6 /* planetStripe_2.png */; };
+		D9AC0716184F463D00FFDA49 /* RandomGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AC0715184F463D00FFDA49 /* RandomGenerator.m */; };
+		D9AC0719184F5F8300FFDA49 /* define.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AC0718184F5F8300FFDA49 /* define.m */; };
 		D9CCC2521848E8780066C056 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC24F1848E8780066C056 /* FireParticles.sks */; };
 		D9CCC2531848E8780066C056 /* flame.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC2501848E8780066C056 /* flame.jpg */; };
 		D9CCC2541848E8780066C056 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CCC2511848E8780066C056 /* spark.png */; };
@@ -137,6 +139,10 @@
 		D98C1F88184AD73400B25DD6 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		D98C1F8A184ADC0200B25DD6 /* planetStripe_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planetStripe_1.png; sourceTree = "<group>"; };
 		D98C1F8B184ADC0200B25DD6 /* planetStripe_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planetStripe_2.png; sourceTree = "<group>"; };
+		D9AC0714184F463D00FFDA49 /* RandomGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomGenerator.h; sourceTree = "<group>"; };
+		D9AC0715184F463D00FFDA49 /* RandomGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomGenerator.m; sourceTree = "<group>"; };
+		D9AC0717184F5F8300FFDA49 /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
+		D9AC0718184F5F8300FFDA49 /* define.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = define.m; sourceTree = "<group>"; };
 		D9CCC24F1848E8780066C056 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 		D9CCC2501848E8780066C056 /* flame.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flame.jpg; sourceTree = "<group>"; };
 		D9CCC2511848E8780066C056 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
@@ -290,6 +296,10 @@
 				D91AE7A518461E5200A280E6 /* EnemyFactory.m */,
 				D91AE79B1845FC9300A280E6 /* Upgrade.h */,
 				D91AE79C1845FC9300A280E6 /* Upgrade.m */,
+				D9AC0714184F463D00FFDA49 /* RandomGenerator.h */,
+				D9AC0715184F463D00FFDA49 /* RandomGenerator.m */,
+				D9AC0717184F5F8300FFDA49 /* define.h */,
+				D9AC0718184F5F8300FFDA49 /* define.m */,
 			);
 			name = HelperClasses;
 			sourceTree = "<group>";
@@ -530,9 +540,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AC0716184F463D00FFDA49 /* RandomGenerator.m in Sources */,
 				D91AE7971845F13F00A280E6 /* GameObject.m in Sources */,
 				D915A66418455A6A0084CE6D /* MyScene.m in Sources */,
 				D9E3CFBB184E9B0D0055BE71 /* EnemyShipBullet.m in Sources */,
+				D9AC0719184F5F8300FFDA49 /* define.m in Sources */,
 				D91AE7A318461BDC00A280E6 /* EnemyShip.m in Sources */,
 				D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */,
 				D915A66118455A6A0084CE6D /* GameViewController.m in Sources */,

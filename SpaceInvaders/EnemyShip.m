@@ -11,13 +11,12 @@
 #import "MyScene.h"
 //you can not instantiate Objects from EnemyShip!(it will lead to an Exception)
 @implementation EnemyShip
-- (id)initWithPosition:(CGPoint)position {
+- (id)initWithPosition:(CGPoint)position{
     
     if(self = [super initWithPosition:position]) {
         
         //Name the alien and reduce it's size to 70%--it looks about right.
         self.name = @"EnemyShip";
-        
         _probabilityToShoot=0.01;
         [self setScale:0.02f];
         [self configureCollisionBody];
@@ -28,13 +27,15 @@
 
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
 {
-    if(contact.bodyA.categoryBitMask == CollisionTypeSpaceShipBullet || contact.bodyB.categoryBitMask == CollisionTypeSpaceShipBullet||contact.bodyA.categoryBitMask  == CollisionTypeSpaceShip || contact.bodyB.categoryBitMask  == CollisionTypeSpaceShip)
+    NSArray *arrayToCheck =[[NSArray alloc]initWithObjects:[NSNumber numberWithInt:CollisionTypeSpaceShip],[NSNumber numberWithInt:CollisionTypeSpaceShipBullet], [NSNumber numberWithInt:CollisionTypeDebrisBullet], nil];
+    
+    if([GameObject ContactAOrB:contact collidedWithStuff: arrayToCheck])
     {
         [(MyScene *)self.scene increaseScoreBy:[self increaseScoreAmount]];
         [self removeAllActions];
         [self removeNodeWithEffectsAtContactPoint:contact];
-        
     }
+    
 }
 
 - (float)increaseScoreAmount

@@ -8,19 +8,12 @@
 
 
 #import <SpriteKit/SpriteKit.h>
-
+#import "define.h"
 /**
  Used to identify game object types and is used for object contacts and collisions.
  */
 
-typedef NS_OPTIONS(uint32_t, CollisionType) {
-    CollisionTypeSpaceShip      = 1 << 0,
-    CollisionTypeSpaceShipBullet   = 1 << 1,
-    CollisionTypeEnemyXRuser     = 1 << 2,
-    CollisionTypeEnemyXTroyer      = 1 << 3,
-    CollisionTypeEnemyXStar      = 1 << 4,
-    CollisionTypeEnemyBullet      = 1 << 5,
-};
+
 
 @interface GameObject : SKSpriteNode
 
@@ -55,6 +48,7 @@ typedef NS_OPTIONS(uint32_t, CollisionType) {
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact;
 
 - (void)removeNodeWithEffectsAtContactPoint:(SKPhysicsContact*)contact;
+-(void) removeNodeWithSmallerEffectsAtContactPoint:(SKPhysicsContact*)contact;
 
 /**
  Creates the object with texture that represents this object and will be rendered on screen.
@@ -64,6 +58,7 @@ typedef NS_OPTIONS(uint32_t, CollisionType) {
 + (SKEmitterNode*)newFuelEmitter;
 + (SKEmitterNode *) newBulletEmitter;
 + (SKEmitterNode*)newSmokeEmitter;
++(BOOL) ContactAOrB:(SKPhysicsContact *)contact collidedWithStuff:(NSArray *) allPossibleContacts;
 
 
 @end
