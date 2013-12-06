@@ -112,7 +112,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"shipBlue.png"];
+        texture = [SKTexture textureWithImageNamed:@"WhiteSpaceShip.png"];
         texture.filteringMode = SKTextureFilteringNearest;
         
     });

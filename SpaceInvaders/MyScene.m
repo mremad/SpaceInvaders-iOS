@@ -388,6 +388,7 @@
     UITouch *touch = [[event touchesForView:self.view] anyObject];
     
     CGPoint location = [touch locationInNode:self];
+    location.y+=30;
     _spaceShip.position = location;
 }
 

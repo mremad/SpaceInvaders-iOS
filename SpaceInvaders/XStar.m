@@ -15,7 +15,7 @@
         
         //Name the alien and reduce it's size to 70%--it looks about right.
         self.name = @"EnemyXStar";
-        [self setScale:0.02f]; //TODO TEAM RAVI 
+        [self setScale:0.2f]; //TODO TEAM RAVI 
         [self configureCollisionBody];
     }
     
@@ -45,7 +45,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"Xstar.jpeg"]; //TODO TEAM RAVI
+        texture = [SKTexture textureWithImageNamed:@"XBooster.png"]; //TODO TEAM RAVI
         texture.filteringMode = SKTextureFilteringNearest;
         
     });
