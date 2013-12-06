@@ -1,14 +1,14 @@
 //
-//  XStar.h
+//  XBooster.h
 //  SpaceInvaders
 //
-//  Created by M on 11/27/13.
+//  Created by M on 12/6/13.
 //  Copyright (c) 2013 M. All rights reserved.
 //
+
 #import <Foundation/Foundation.h>
 #import "EnemyShip.h"
 #import "XTroyerDebris.h" //TODO CHANGE
-@interface XStar : EnemyShip
-
+@interface XBooster : EnemyShip
 
 @end

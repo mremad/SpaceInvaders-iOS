@@ -27,8 +27,8 @@
         SKEmitterNode* rightFuel = [GameObject newFuelEmitter];
         rightFuel.position = CGPointMake(self.size.width/2 + 25,self.size.height/2 - 60);
         [self addChild:rightFuel];
-        [self setMaxHealth:3];
-        [self setHealth:3];
+        [self setMaxHealth:30]; //TODO put back to 3
+        [self setHealth:30];
     }
     
     return self;

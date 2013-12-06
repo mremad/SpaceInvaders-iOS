@@ -34,6 +34,7 @@
     EnemyMovement movement = EnemyMovementNormal;
     switch (modulo3Number)
     {
+            //TODO add other ships..
         case 0:
             return [self CreateEnemyXRuserWithMovement:movement AndThePosition:myPoint];
             break;
@@ -68,6 +69,21 @@
                 enemy=[self CreateEnemyXTroyerWithMovement:movement AndThePosition:myPoint];
                 break;
             }
+            case EnemyTypeXBooster:
+            {
+                enemy=[self CreateEnemyXBoosterWithMovement:movement AndThePosition:myPoint];
+                break;
+            }
+            case EnemyTypeXDollar:
+            {
+                enemy=[self CreateEnemyXDollarWithMovement:movement AndThePosition:myPoint];
+                break;
+            }
+            case EnemyTypeXCorner:
+            {
+                enemy=[self CreateEnemyXCornerWithMovement:movement AndThePosition:myPoint];
+                break;
+            }
             default:
             {
                 enemy=[self CreateEnemyXStarWithMovement:movement AndThePosition:myPoint];
@@ -98,11 +114,6 @@
     return [[self CreateEnemies:enemyType AndTheMovement:movement AndTheirAmount:1] objectAtIndex:0];
 }
 
-+(EnemyShip *)CreateEnemyXRuserWithMovement :(EnemyMovement)movement
-{
-    CGPoint p=[self getPossibleCGPoint:movement];
-    return [self CreateEnemyXRuserWithMovement:movement AndThePosition:p];
-}
 
 +(EnemyShip *)CreateEnemyXRuserWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
 {
@@ -110,13 +121,6 @@
     ship.enemyMovement=movement;
     [self runAppropiateAction:ship WithMovemement:movement];
     return ship;
-}
-
-
-+(EnemyShip *)CreateEnemyXTroyerWithMovement :(EnemyMovement)movement
-{
-    CGPoint p=[self getPossibleCGPoint:movement];
-    return [self CreateEnemyXTroyerWithMovement:movement AndThePosition:p];
 }
 
 +(EnemyShip *)CreateEnemyXTroyerWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
@@ -127,16 +131,33 @@
     return ship;
 }
 
-
-+(EnemyShip *)CreateEnemyXStarWithMovement :(EnemyMovement)movement
-{
-    CGPoint p=[self getPossibleCGPoint:movement];
-    return [self CreateEnemyXStarWithMovement:movement AndThePosition:p];
-}
-
 +(EnemyShip *)CreateEnemyXStarWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
 {
     EnemyShip *ship = [[XStar alloc]initWithPosition:point];
+    ship.enemyMovement=movement;
+    [self runAppropiateAction:ship WithMovemement:movement];
+    return ship;
+}
+
++(EnemyShip *)CreateEnemyXBoosterWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
+{
+    EnemyShip *ship = [[XBooster alloc]initWithPosition:point];
+    ship.enemyMovement=movement;
+    [self runAppropiateAction:ship WithMovemement:movement];
+    return ship;
+}
+
++(EnemyShip *)CreateEnemyXDollarWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
+{
+    EnemyShip *ship = [[XDollar alloc]initWithPosition:point];
+    ship.enemyMovement=movement;
+    [self runAppropiateAction:ship WithMovemement:movement];
+    return ship;
+}
+
++(EnemyShip *)CreateEnemyXCornerWithMovement :(EnemyMovement)movement AndThePosition:(CGPoint)point
+{
+    EnemyShip *ship = [[XCorner alloc]initWithPosition:point];
     ship.enemyMovement=movement;
     [self runAppropiateAction:ship WithMovemement:movement];
     return ship;

@@ -11,6 +11,9 @@
 #import "XRuser.h"
 #import "XTroyer.h"
 #import "XStar.h"
+#import "XBooster.h"
+#import "XCorner.h"
+#import "XDollar.h"
 #import "EnemyShipBullet.h"
 #import "define.h"
 

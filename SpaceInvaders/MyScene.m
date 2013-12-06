@@ -75,73 +75,6 @@
     return self;
 }
 
--(void) HandleLevels
-{
-    NSArray *allTopSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXRuserEnemy", @"addXTroyerEnemy", @"addXStarEnemy", nil];
-    NSArray *allLeftArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXRuserEnemyLeftArc", @"addXTroyerEnemyLeftArc", @"addXStarEnemyLeftArc", nil];
-     NSArray *allRightArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXRuserEnemyRightArc", @"addXTroyerEnemyRightArc", @"addXStarEnemyRightArc", nil];
-    NSArray *arrAll = [[NSArray alloc]initWithObjects:allTopSelectorsFromWakestToStrongest,allLeftArcSelectorsFromWakestToStrongest,allRightArcSelectorsFromWakestToStrongest, nil];
-    
-    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
-    NSMutableArray *levelNSActions = [[NSMutableArray alloc]init];
-    
-    int numberOfWaves=[RandomGenerator getNumberOfWaves:level];
-    for(int i=0;i<numberOfWaves;i++)
-    {
-        NSMutableArray *waveNSActions=[[NSMutableArray alloc]init];
-        int sizeOfWave =[RandomGenerator getSizeOfWave:i numberOfWaves:numberOfWaves];
-        for(int j=0;j<sizeOfWave;j++)
-        {
-            SEL sel=[RandomGenerator getSelectorGivenSelectorArrays:arrAll AndLevel:level AndWave:i];
-            SKAction *spawnEnemiesAction1 = [SKAction performSelector:sel onTarget:self];
-            SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
-            [waveNSActions addObject:spawnEnemiesAction1];
-            [waveNSActions addObject:waitAction];
-        }
-        int count = [RandomGenerator getCountOfWave:i numberOfWaves:numberOfWaves];
-        SKAction *ithWave = [SKAction repeatAction:[SKAction sequence:waveNSActions] count:count];
-        [levelNSActions addObject:ithWave];
-        [levelNSActions addObject:waitActionBetweenWaves];
-    }
-    SKAction *annmationLevelEnded = [SKAction performSelector:@selector(addSomeAnimationSayingThatLevelEnded) onTarget:self];
-    [levelNSActions addObject:annmationLevelEnded];
-    [self runAction:[SKAction sequence:levelNSActions]];
-}
-
--(void) addSomeAnimationSayingThatLevelEnded
-{
-    level++;
-    [_spaceShip restoreMaxHealth];
-    //TODO TEAM
-    
-    //check if spaceship still alive
-    [self HandleLevels];
-}
-
--(void) level2
-{
-    //Setup the enemies from top
-    //  NSArray *ps =[[NSArray alloc]init];
-    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
-    SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
-    SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:20];
-    
-    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
-    
-    //Setup up the enemies from left
-    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXStarEnemy) onTarget:self];
-    SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction]] count:15];
-    
-    //Setup the enemies from top and left
-    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction]] count:10];
-    
-    //Setup up the enemies from the right and the left
-    SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXTroyerEnemyRightArc) onTarget:self];
-    SKAction *fourthWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction,spawnEnemiesAction3, waitAction]] count:8];
-    
-    
-    [self runAction:[SKAction sequence:@[firstWave ,waitActionBetweenWaves, secondWave,waitActionBetweenWaves, thirdWave ,waitActionBetweenWaves,fourthWave]]];
-}
 
 
 - (void)setupHUD {
@@ -204,6 +137,50 @@
     [self createFirstBackground];
     
 
+}
+
+#pragma mark - Levels
+-(void) HandleLevels
+{
+    NSArray *allTopSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXBoosterEnemy", @"addXCornerEnemy", @"addXDollarEnemy", @"addXRuserEnemy", @"addXTroyerEnemy", @"addXStarEnemy", nil];
+    NSArray *allLeftArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXBoosterEnemyLeftArc", @"addXCornerEnemyLeftArc", @"addXDollarEnemyLeftArc", @"addXRuserEnemyLeftArc", @"addXTroyerEnemyLeftArc", @"addXStarEnemyLeftArc", nil];
+    NSArray *allRightArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXBoosterEnemyRightArc", @"addXCornerEnemyRightArc", @"addXDollarEnemyRightArc", @"addXRuserEnemyRightArc", @"addXTroyerEnemyRightArc", @"addXStarEnemyRightArc", nil];
+    NSArray *arrAll = [[NSArray alloc]initWithObjects:allTopSelectorsFromWakestToStrongest,allLeftArcSelectorsFromWakestToStrongest,allRightArcSelectorsFromWakestToStrongest, nil];
+    
+    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
+    NSMutableArray *levelNSActions = [[NSMutableArray alloc]init];
+    
+    int numberOfWaves=[RandomGenerator getNumberOfWaves:level];
+    for(int i=0;i<numberOfWaves;i++)
+    {
+        NSMutableArray *waveNSActions=[[NSMutableArray alloc]init];
+        int sizeOfWave =[RandomGenerator getSizeOfWave:i numberOfWaves:numberOfWaves];
+        for(int j=0;j<sizeOfWave;j++)
+        {
+            SEL sel=[RandomGenerator getSelectorGivenSelectorArrays:arrAll AndLevel:level AndWave:i];
+            SKAction *spawnEnemiesAction1 = [SKAction performSelector:sel onTarget:self];
+            SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
+            [waveNSActions addObject:spawnEnemiesAction1];
+            [waveNSActions addObject:waitAction];
+        }
+        int count = [RandomGenerator getCountOfWave:i numberOfWaves:numberOfWaves];
+        SKAction *ithWave = [SKAction repeatAction:[SKAction sequence:waveNSActions] count:count];
+        [levelNSActions addObject:ithWave];
+        [levelNSActions addObject:waitActionBetweenWaves];
+    }
+    SKAction *annmationLevelEnded = [SKAction performSelector:@selector(addSomeAnimationSayingThatLevelEnded) onTarget:self];
+    [levelNSActions addObject:annmationLevelEnded];
+    [self runAction:[SKAction sequence:levelNSActions]];
+}
+
+-(void) addSomeAnimationSayingThatLevelEnded
+{
+    level++;
+    [_spaceShip restoreMaxHealth];
+    //TODO TEAM
+    
+    //check if spaceship still alive
+    [self HandleLevels];
 }
 
 
@@ -273,91 +250,6 @@
 
 
 
-#pragma mark - Levels
--(void) level1
-{
-    //Setup the enemies from top
-    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
-    SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
-    SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:20];
-    
-    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
-    
-    //Setup up the enemies from left
-    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
-    SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction]] count:15];
-    
-    //Setup the enemies from top and left
-    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction]] count:10];
-    
-    //Setup up the enemies from the right and the left
-    SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXRuserEnemyRightArc) onTarget:self];
-    SKAction *fourthWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction,spawnEnemiesAction3, waitAction]] count:8];
-    
-    
-    [self runAction:[SKAction sequence:@[firstWave ,waitActionBetweenWaves, secondWave,waitActionBetweenWaves, thirdWave ,waitActionBetweenWaves,fourthWave]]];
-}
-
--(void) level5
-{
-    //Setup the enemies from top
-  //  NSArray *ps =[[NSArray alloc]init];
-    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXTroyerEnemy) onTarget:self];
-    SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
-    SKAction *firstWave = [SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:20];
-    
-    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
-    
-    //Setup up the enemies from left
-    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXStarEnemy) onTarget:self];
-    SKAction *secondWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction]] count:15];
-    
-    //Setup the enemies from top and left
-    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction]] count:10];
-    
-    //Setup up the enemies from the right and the left
-    SKAction *spawnEnemiesAction3 = [SKAction performSelector:@selector(addXTroyerEnemyRightArc) onTarget:self];
-    SKAction *fourthWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction2, waitAction,spawnEnemiesAction3, waitAction]] count:8];
-    
-    
-    [self runAction:[SKAction sequence:@[firstWave ,waitActionBetweenWaves, secondWave,waitActionBetweenWaves, thirdWave ,waitActionBetweenWaves,fourthWave]]];
-}
-
--(void) levelX
-{
-    //Setup the enemies from top
-    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
-    SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
-  
-    
-    //Setup up the enemies from left
-    SKAction *spawnEnemiesAction2 = [SKAction performSelector:@selector(addXTroyerEnemyRightArc) onTarget:self];
-    SKAction *spawnEnemiesAction5 = [SKAction performSelector:@selector(addXTroyerEnemyLeftArc) onTarget:self];
-    
-    //Setup the enemies from top and left
-    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction,spawnEnemiesAction2, waitAction,spawnEnemiesAction5,waitAction]] count:30];
-    
-    
-   
-    
-    [self runAction:[SKAction sequence:@[thirdWave]]];
-}
-
--(void) levelY
-{
-    //Setup the enemies from top
-    SKAction *spawnEnemiesAction1 = [SKAction performSelector:@selector(addXRuserEnemy) onTarget:self];
-    SKAction *waitAction = [SKAction waitForDuration:10 withRange:3];
-    
-    
-    //Setup the enemies from top and left
-    SKAction *thirdWave =[SKAction repeatAction:[SKAction sequence:@[spawnEnemiesAction1, waitAction]] count:30];
-    
-    
-    
-    
-    [self runAction:[SKAction sequence:@[thirdWave]]];
-}
 
 #pragma mark -User Touches
 
@@ -482,6 +374,51 @@
 -(void) addXStarEnemyLeftArc
 {
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXStar AndTheMovement:EnemyMovementLeftArc]];
+}
+
+-(void) addXBoosterEnemy
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXBooster AndTheMovement:EnemyMovementNormal]];
+}
+
+-(void) addXBoosterEnemyRightArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXBooster AndTheMovement:EnemyMovementRightArc]];
+}
+
+-(void) addXBoosterEnemyLeftArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXBooster AndTheMovement:EnemyMovementLeftArc]];
+}
+
+-(void) addXCornerEnemy
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXCorner AndTheMovement:EnemyMovementNormal]];
+}
+
+-(void) addXCornerEnemyRightArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXCorner AndTheMovement:EnemyMovementRightArc]];
+}
+
+-(void) addXCornerEnemyLeftArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXCorner AndTheMovement:EnemyMovementLeftArc]];
+}
+
+-(void) addXDollarEnemy
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXDollar AndTheMovement:EnemyMovementNormal]];
+}
+
+-(void) addXDollarEnemyRightArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXDollar AndTheMovement:EnemyMovementRightArc]];
+}
+
+-(void) addXDollarEnemyLeftArc
+{
+    [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXDollar AndTheMovement:EnemyMovementLeftArc]];
 }
 
 #pragma mark -EnemyBullet And Rotation Handling

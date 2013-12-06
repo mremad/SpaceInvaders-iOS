@@ -1,21 +1,20 @@
 //
-//  Xtroyer.m
+//  XCorner.m
 //  SpaceInvaders
 //
-//  Created by M on 11/27/13.
+//  Created by M on 12/6/13.
 //  Copyright (c) 2013 M. All rights reserved.
 //
 
-#import "XTroyer.h"
-#import "MyScene.h"
+#import "XCorner.h"
 
-@implementation XTroyer
+@implementation XCorner
 - (id)initWithPosition:(CGPoint)position  {
     
     if(self = [super initWithPosition:position]) {
         
         //Name the alien and reduce it's size to 70%--it looks about right.
-        self.name = @"EnemyXTroyer";
+        self.name = @"EnemyXCorner";
         [self setScale:0.2f]; //TODO TEAM RAVI
         
         SKEmitterNode* fuelLeft = [GameObject newFuelEmitter];
@@ -27,7 +26,7 @@
         fuelRight.emissionAngle = 1.57;
         fuelRight.position = CGPointMake(self.size.width/2 - 40,self.size.height);
         [self addChild:fuelRight];
-
+        
         
         [self configureCollisionBody];
     }
@@ -43,7 +42,7 @@
 
 - (float)increaseScoreAmount
 {
-    return 60;
+    return 20;
 }
 
 
@@ -65,7 +64,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"XTroyer.png"]; //TODO TEAM RAVI
+        texture = [SKTexture textureWithImageNamed:@"XCorner.png"]; //TODO TEAM RAVI
         texture.filteringMode = SKTextureFilteringNearest;
         
     });
