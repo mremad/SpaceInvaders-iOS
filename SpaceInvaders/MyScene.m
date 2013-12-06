@@ -125,7 +125,7 @@
     
     [_starLayerNode addChild:star1];
     [_starLayerNode addChild:star2];
-    [self addChild:_starLayerNode];
+    //[self addChild:_starLayerNode];
     
     _layerFirstBackground = [SKNode new];
     _layerSecondBackground = [SKNode new];
@@ -455,7 +455,7 @@
     NSMutableArray* allEnemies = [NSMutableArray array];
     [_layerEnemiesNode.children enumerateObjectsUsingBlock:^(SKNode *node,NSUInteger idx, BOOL *stop)
      {
-         NSArray* allNames=[[NSArray alloc] initWithObjects:@"EnemyXRuser",@"EnemyXTroyer", nil];
+         NSArray* allNames=[[NSArray alloc] initWithObjects:@"EnemyXRuser",@"EnemyXTroyer",@"EnemyXDollar",@"EnemyXCorner",@"EnemyXBooster",@"EnemyXStar", nil];
          if([allNames containsObject:node.name])
          {
               [allEnemies addObject:node];
