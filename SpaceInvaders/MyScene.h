@@ -8,7 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "SpaceShip.h"
-#import "Upgrade.h"
 #import "SpaceShipBullet.h"
 #import "EnemyShip.h"
 #import "EnemyFactory.h"
@@ -34,11 +33,16 @@
 
 @property (nonatomic, strong) SKNode* layerHudNode;
 
+@property (nonatomic, strong) SKNode* layerUpgradeNode;
+
 @property BOOL gameRunning;
 
 
 /**
  Increases the score by the amount specified. The HUD layer will be updated to reflect the change.
  */
+- (void)shootSideBullets;
+- (void)shootBullet;
 - (void)increaseScoreBy:(float)amount;
+- (void)handleSingleTap:(UIGestureRecognizer*)ges;
 @end

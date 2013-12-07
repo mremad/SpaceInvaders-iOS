@@ -6,18 +6,22 @@
 //  Copyright (c) 2013 M. All rights reserved.
 //
 
+#import "UpgradeCenter.h"
 #import "MyScene.h"
-#import "Upgrade.h"
+
 
 @implementation MyScene
 {
+    //Upgrade Center
+    UpgradeCenter* upgradeCenter;
+    
     //Game Objects
     SpaceShip *_spaceShip;
     float _score;
-    NSArray  *upgrades;
     BOOL automaticShooting;
     SKLabelNode *_scoreNode;
     int level;
+    NSMutableArray *levelNSActions;
     float gameDifficulty;
 }
 
@@ -26,26 +30,15 @@
     _score += amount;
     _scoreNode.text = [NSString stringWithFormat:@"Score:%1.0f", _score];
 }
-
--(void) evaluateUpdates
-{
-    //do something with upgrades
-}
 #pragma mark - Initilization
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         
-        //TODO: Add a nice Background
-        /*
-        SKSpriteNode* bg = [SKSpriteNode spriteNodeWithImageNamed:@"bg.jpg"];
-        bg.position = CGPointMake(self.size.width/2, self.size.height/2);
-        [self addChild:bg];
-         */
+        
+        upgradeCenter = [[UpgradeCenter alloc] initWithScene:self];
         
         //Added Background Particle Node
          [self setupBackground];
-
-        
  
         
         //there is no gravity in space...
@@ -68,14 +61,30 @@
         
         [self HandleLevels];
      
-        upgrades = [NSArray arrayWithObjects:[NSNumber numberWithInt:UpgradeAutomaticShooting], nil];
-        [self evaluateUpdates];
         [self setupHUD];
+        [self setupUpgradeHUD];
     }
     return self;
 }
 
-
+-(void)setupUpgradeHUD
+{
+    _layerUpgradeNode = [SKNode new];
+    
+    int HUDWidth = self.size.width;
+    int HUDHeight = 35;
+    
+    SKSpriteNode *hudBackground = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.30]
+                                                               size:CGSizeMake(HUDWidth, HUDHeight)];
+    hudBackground.position = CGPointMake(0, 0);
+    hudBackground.anchorPoint = CGPointZero;
+    
+    [_layerUpgradeNode addChild:hudBackground];
+    
+    
+    
+    [self addChild:_layerUpgradeNode];
+}
 
 - (void)setupHUD {
     //Heads Up Display
@@ -84,17 +93,18 @@
     _layerHudNode = [SKNode new];
     
     //setup HUD basics
-    int hudHeight = 25;
+    int hudHeight = 35;
     CGSize bgSize = CGSizeMake(self.size.width, hudHeight);
     SKColor *bgColor = [SKColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.30];
     SKSpriteNode *hudBackground = [SKSpriteNode spriteNodeWithColor:bgColor size:bgSize];
     
     hudBackground.position = CGPointMake(0, self.size.height - hudHeight);
     hudBackground.anchorPoint = CGPointZero;
+    
     [_layerHudNode addChild:hudBackground];
     
     _scoreNode = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _scoreNode.fontSize = 12.0;
+    _scoreNode.fontSize = 14.0;
     _scoreNode.text = @"Score:0";
     _scoreNode.name = @"scoreNode";
     _scoreNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
@@ -148,7 +158,7 @@
     NSArray *arrAll = [[NSArray alloc]initWithObjects:allTopSelectorsFromWakestToStrongest,allLeftArcSelectorsFromWakestToStrongest,allRightArcSelectorsFromWakestToStrongest, nil];
     
     SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
-    NSMutableArray *levelNSActions = [[NSMutableArray alloc]init];
+    levelNSActions = [[NSMutableArray alloc]init];
     
     int numberOfWaves=[RandomGenerator getNumberOfWaves:level];
     for(int i=0;i<numberOfWaves;i++)
@@ -170,7 +180,9 @@
     }
     SKAction *annmationLevelEnded = [SKAction performSelector:@selector(addSomeAnimationSayingThatLevelEnded) onTarget:self];
     [levelNSActions addObject:annmationLevelEnded];
-    [self runAction:[SKAction sequence:levelNSActions]];
+
+    [_layerEnemiesNode runAction:[SKAction sequence:levelNSActions]];
+    //for(SKAction* action in levelNSActions)NSLog(@"%@",action);
 }
 
 -(void) addSomeAnimationSayingThatLevelEnded
@@ -256,12 +268,10 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
-    CGPoint p=_spaceShip.position;
-    p.y+=5;
+    
+   
 
-    SpaceShipBullet *bullet = [[SpaceShipBullet alloc]initWithPosition:p];
-    [bullet runAction:[self normalSpaceShipBulletAction]];
-    [_layerSpaceShipBulletsNode addChild:bullet];
+    
     
 }
 
@@ -281,11 +291,68 @@
     
     CGPoint location = [touch locationInNode:self];
     location.y+=30;
-    _spaceShip.position = location;
+    [_spaceShip runAction:[SKAction moveTo:location duration:1]];
+}
+
+-(void)handleSingleTap:(UIGestureRecognizer*)ges
+{
+    upgradeCenter.playerBalance = 1000;
+    
+    [upgradeCenter purchaseUpgrade:UpgradeSideBullets];
+    
+    [upgradeCenter activateUpgrade:UpgradeSideBullets];
+   
+    if(![upgradeCenter isAutomaticShootingActivated])
+        [self shootBullet];
 }
 
 #pragma mark - Core Methods
 
+-(void)shootSideBullets
+{
+    CGPoint p=_spaceShip.position;
+    p.y-=5;
+    p.x -= 15;
+    
+    SKEmitterNode* fireParticlesL = [GameObject newExplosionEmitter];
+    fireParticlesL.position = p;
+    fireParticlesL.particleScale = 0.0001;
+    fireParticlesL.numParticlesToEmit = 20;
+    [_layerSpaceShipBulletsNode addChild:fireParticlesL];
+    
+    SpaceShipBullet *bulletLeft = [[SpaceShipBullet alloc]initWithPosition:p];
+    [bulletLeft runAction:[self normalSpaceShipBulletAction]];
+    [_layerSpaceShipBulletsNode addChild:bulletLeft];
+    
+    p.x += 30;
+    
+    SKEmitterNode* fireParticlesR = [GameObject newExplosionEmitter];
+    fireParticlesR.position = p;
+    fireParticlesR.particleScale = 0.0001;
+    fireParticlesR.numParticlesToEmit = 20;
+    fireParticlesR.particleColor = [UIColor blueColor];
+    [_layerSpaceShipBulletsNode addChild:fireParticlesR];
+    
+    SpaceShipBullet *bulletRight = [[SpaceShipBullet alloc]initWithPosition:p];
+    [bulletRight runAction:[self normalSpaceShipBulletAction]];
+    [_layerSpaceShipBulletsNode addChild:bulletRight];
+}
+
+-(void)shootBullet
+{
+    CGPoint p=_spaceShip.position;
+    p.y+=25;
+    
+    SKEmitterNode* fireParticles = [GameObject newExplosionEmitter];
+    fireParticles.position = p;
+    fireParticles.particleScale = 0.001;
+    fireParticles.numParticlesToEmit = 50;
+    [_layerSpaceShipBulletsNode addChild:fireParticles];
+    
+    SpaceShipBullet *bullet = [[SpaceShipBullet alloc]initWithPosition:p];
+    [bullet runAction:[self normalSpaceShipBulletAction]];
+    [_layerSpaceShipBulletsNode addChild:bullet];
+}
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
     

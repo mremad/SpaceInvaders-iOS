@@ -40,7 +40,7 @@
 		D915A68818455D740084CE6D /* silvercoin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D915A68618455D740084CE6D /* silvercoin.jpg */; };
 		D91AE7971845F13F00A280E6 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7961845F13F00A280E6 /* GameObject.m */; };
 		D91AE79A1845F30100A280E6 /* SpaceShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7991845F30100A280E6 /* SpaceShip.m */; };
-		D91AE79D1845FC9300A280E6 /* Upgrade.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE79C1845FC9300A280E6 /* Upgrade.m */; };
+		D91AE79D1845FC9300A280E6 /* UpgradeCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE79C1845FC9300A280E6 /* UpgradeCenter.m */; };
 		D91AE7A018460E2800A280E6 /* SpaceShipBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */; };
 		D91AE7A318461BDC00A280E6 /* EnemyShip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7A218461BDC00A280E6 /* EnemyShip.m */; };
 		D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7A518461E5200A280E6 /* EnemyFactory.m */; };
@@ -131,8 +131,8 @@
 		D91AE7961845F13F00A280E6 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		D91AE7981845F30100A280E6 /* SpaceShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceShip.h; sourceTree = "<group>"; };
 		D91AE7991845F30100A280E6 /* SpaceShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShip.m; sourceTree = "<group>"; };
-		D91AE79B1845FC9300A280E6 /* Upgrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Upgrade.h; path = ../Upgrade.h; sourceTree = "<group>"; };
-		D91AE79C1845FC9300A280E6 /* Upgrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Upgrade.m; path = ../Upgrade.m; sourceTree = "<group>"; };
+		D91AE79B1845FC9300A280E6 /* UpgradeCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpgradeCenter.h; path = ../UpgradeCenter.h; sourceTree = "<group>"; };
+		D91AE79C1845FC9300A280E6 /* UpgradeCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpgradeCenter.m; path = ../UpgradeCenter.m; sourceTree = "<group>"; };
 		D91AE79E18460E2800A280E6 /* SpaceShipBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceShipBullet.h; sourceTree = "<group>"; };
 		D91AE79F18460E2800A280E6 /* SpaceShipBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShipBullet.m; sourceTree = "<group>"; };
 		D91AE7A118461BDC00A280E6 /* EnemyShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyShip.h; sourceTree = "<group>"; };
@@ -311,8 +311,8 @@
 			children = (
 				D91AE7A418461E5200A280E6 /* EnemyFactory.h */,
 				D91AE7A518461E5200A280E6 /* EnemyFactory.m */,
-				D91AE79B1845FC9300A280E6 /* Upgrade.h */,
-				D91AE79C1845FC9300A280E6 /* Upgrade.m */,
+				D91AE79B1845FC9300A280E6 /* UpgradeCenter.h */,
+				D91AE79C1845FC9300A280E6 /* UpgradeCenter.m */,
 				D9AC0714184F463D00FFDA49 /* RandomGenerator.h */,
 				D9AC0715184F463D00FFDA49 /* RandomGenerator.m */,
 				D9AC0717184F5F8300FFDA49 /* define.h */,
@@ -590,7 +590,7 @@
 				D9E90139184ACC970035376B /* XTroyerDebris.m in Sources */,
 				D91AE7AE1846689C00A280E6 /* XTroyer.m in Sources */,
 				D915A65718455A6A0084CE6D /* main.m in Sources */,
-				D91AE79D1845FC9300A280E6 /* Upgrade.m in Sources */,
+				D91AE79D1845FC9300A280E6 /* UpgradeCenter.m in Sources */,
 				D914A0571852527E00BE720A /* XBooster.m in Sources */,
 				D914A05A185252D700BE720A /* XCorner.m in Sources */,
 			);

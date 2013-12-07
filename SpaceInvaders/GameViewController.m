@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "UpgradeCenter.h"
 #import "MyScene.h"
 
 @implementation GameViewController
@@ -15,14 +16,22 @@
 {
     [super viewDidLoad];
 
+    
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
     
     // Create and configure the scene.
     SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:scene
+                                            action:@selector(handleSingleTap:)];
+    
+    [skView addGestureRecognizer:singleFingerTap];
     
     // Present the scene.
     [skView presentScene:scene];
