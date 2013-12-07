@@ -15,7 +15,9 @@
     if(self = [super initWithPosition:position]) {
         
         self.name = @"EnemyShipDebris";
-
+        
+        self.texture = [self createDebrisTexture];
+        self.size = self.texture.size;
         
         [self setScale:0.2f];
         [self runAction:[self createActions:contact]];
@@ -107,6 +109,11 @@
     self.physicsBody.contactTestBitMask = CollisionTypeEnemyXRuser|CollisionTypeEnemyXTroyer|CollisionTypeEnemyXStar|CollisionTypeSpaceShip|CollisionTypeSpaceShipBullet;
 }
 
+- (SKTexture*)createDebrisTexture
+{
+    return nil;
+}
+
 + (SKTexture *)createTexture {
     
       [self doesNotRecognizeSelector:_cmd]; // without overriding this method, this method is not usable(As If abstract)
@@ -114,6 +121,8 @@
     return nil;
     
 }
+
+
 
 
 @end

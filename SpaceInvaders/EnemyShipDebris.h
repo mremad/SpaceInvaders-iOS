@@ -10,6 +10,7 @@
 @interface EnemyShipDebris : GameObject
 
 - (id)initWithPosition:(CGPoint)position withContact:(SKPhysicsContact*)contact;
+- (SKTexture*)createDebrisTexture;
 
 @end
 

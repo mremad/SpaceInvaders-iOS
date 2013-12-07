@@ -21,12 +21,11 @@
         
         //Add fuel ignition particles
         SKEmitterNode* leftFuel = [GameObject newFuelEmitter];
-        leftFuel.position = CGPointMake(self.size.width/2 - 70,self.size.height/2 - 60);
+        leftFuel.position = CGPointMake(self.size.width/2-20,self.size.height/2 - 130);
+        leftFuel.particleScale = 1;
         [self addChild:leftFuel];
         
-        SKEmitterNode* rightFuel = [GameObject newFuelEmitter];
-        rightFuel.position = CGPointMake(self.size.width/2 + 25,self.size.height/2 - 60);
-        [self addChild:rightFuel];
+       
         [self setMaxHealth:3000]; //TODO put back to 3
         [self setHealth:3000];
     }
@@ -67,7 +66,7 @@
     }
     else
     {
-        [self IndicateWarning];
+        //[self IndicateWarning];
     }
 }
 

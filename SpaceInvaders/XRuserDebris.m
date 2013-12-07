@@ -14,26 +14,28 @@
     
     if(self = [super initWithPosition:position withContact:contact]) {
         
-        
     }
     
     return self;
 }
 
+
+- (SKTexture*)createDebrisTexture
+{
+    static SKTexture *texture = nil;
+
+    int randDebris = (arc4random()%2) +1;
+    NSString* debrisImage = [NSString stringWithFormat:@"debrisRed_%d",randDebris];
+    texture = [SKTexture textureWithImageNamed:debrisImage]; //TODO TEAM RAVI
+    texture.filteringMode = SKTextureFilteringNearest;
+
+    return texture;
+    
+}
+
 + (SKTexture *)createTexture {
     
-    static SKTexture *texture = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        int randDebris = (arc4random()%2) +1;
-        NSString* debrisImage = [NSString stringWithFormat:@"debrisRed_%d",randDebris];
-        texture = [SKTexture textureWithImageNamed:debrisImage]; //TODO TEAM RAVI
-        texture.filteringMode = SKTextureFilteringNearest;
-        
-    });
-    
-    return texture;
+    return nil;
     
 }
 
