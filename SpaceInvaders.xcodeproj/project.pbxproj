@@ -79,6 +79,7 @@
 		D9E90134184A7FFA0035376B /* EnemyShipDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E90133184A7FFA0035376B /* EnemyShipDebris.m */; };
 		D9E90136184A969D0035376B /* debrisRed_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E90135184A969D0035376B /* debrisRed_1.png */; };
 		D9E90139184ACC970035376B /* XTroyerDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E90138184ACC970035376B /* XTroyerDebris.m */; };
+		D9FD05F91854B6C0008CB12A /* EnemyBulletParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9FD05F81854B6C0008CB12A /* EnemyBulletParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +189,7 @@
 		D9E90135184A969D0035376B /* debrisRed_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debrisRed_1.png; sourceTree = "<group>"; };
 		D9E90137184ACC970035376B /* XTroyerDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTroyerDebris.h; sourceTree = "<group>"; };
 		D9E90138184ACC970035376B /* XTroyerDebris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTroyerDebris.m; sourceTree = "<group>"; };
+		D9FD05F81854B6C0008CB12A /* EnemyBulletParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyBulletParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +389,7 @@
 		D9CCC24E1848E8780066C056 /* Particles */ = {
 			isa = PBXGroup;
 			children = (
+				D9FD05F81854B6C0008CB12A /* EnemyBulletParticle.sks */,
 				D9CCC24F1848E8780066C056 /* FireParticles.sks */,
 				D9CCC2501848E8780066C056 /* flame.jpg */,
 				D9CCC2511848E8780066C056 /* spark.png */,
@@ -558,6 +561,7 @@
 				D9CCC26E18498B370066C056 /* BokehParticles.sks in Resources */,
 				D98C1F87184AD2C200B25DD6 /* SmokeParticles.sks in Resources */,
 				D915A65518455A6A0084CE6D /* InfoPlist.strings in Resources */,
+				D9FD05F91854B6C0008CB12A /* EnemyBulletParticle.sks in Resources */,
 				D9CCC26F18498B370066C056 /* bokeh.png in Resources */,
 				D96E887F1854412D00D669E1 /* automatic-sprite.png in Resources */,
 				D915A66818455A6A0084CE6D /* Images.xcassets in Resources */,
