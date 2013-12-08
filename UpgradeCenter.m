@@ -157,6 +157,17 @@
     
     freezeFired = YES;
     _scene.layerEnemiesNode.speed = 0.01;
+    CGSize size = CGSizeMake(_scene.size.width*2, _scene.size.height*2);
+    SKSpriteNode* blueSprite = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:0 green:177 blue:228 alpha:1] size:size];
+    blueSprite.alpha = 0;
+    blueSprite.position = CGPointMake(0, 0);
+    [_scene addChild:blueSprite];
+    SKAction* flash1 = [SKAction fadeAlphaTo:0.1 duration:0.4];
+    SKAction* flash2 = [SKAction fadeAlphaTo:0 duration:0.7];
+    SKAction* removeParent = [SKAction removeFromParent];
+    NSArray* sequence= [NSArray arrayWithObjects:flash1,flash2,removeParent, nil];
+    [blueSprite runAction:[SKAction sequence:sequence]];
+    
     [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(freezeFinished:) userInfo:nil repeats:NO];
     
 }

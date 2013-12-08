@@ -36,7 +36,7 @@
         
         
         upgradeCenter = [[UpgradeCenter alloc] initWithScene:self];
-        
+        upgradeCenter.playerBalance = 10000;
         //Added Background Particle Node
          [self setupBackground];
  
@@ -74,12 +74,46 @@
     int HUDWidth = self.size.width;
     int HUDHeight = 35;
     
-    SKSpriteNode *hudBackground = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.30]
-                                                               size:CGSizeMake(HUDWidth, HUDHeight)];
+    SKSpriteNode *hudBackground = [SKSpriteNode spriteNodeWithImageNamed:@"Upgrade-HUD-bg.jpg"];
     hudBackground.position = CGPointMake(0, 0);
     hudBackground.anchorPoint = CGPointZero;
+    hudBackground.size = CGSizeMake(HUDWidth, HUDHeight);
+    
+    SKSpriteNode *freezeSprite = [SKSpriteNode spriteNodeWithImageNamed:@"freeze-sprite.png"];
+    freezeSprite.position = CGPointMake(4, 7);
+    freezeSprite.anchorPoint = CGPointZero;
+    freezeSprite.size = CGSizeMake(65/2, 45/2);
+    
+    SKSpriteNode *automaticSprite = [SKSpriteNode spriteNodeWithImageNamed:@"automatic-sprite.png"];
+    automaticSprite.position = CGPointMake(4+4+4+(65/2), 7);
+    automaticSprite.anchorPoint = CGPointZero;
+    automaticSprite.size = CGSizeMake(65/2, 45/2);
+    
+    SKSpriteNode *sideBulletsSprite = [SKSpriteNode spriteNodeWithImageNamed:@"sidebullets-sprite.png"];
+    sideBulletsSprite.position = CGPointMake(4+2*4+2*4+(2*65/2), 7);
+    sideBulletsSprite.anchorPoint = CGPointZero;
+    sideBulletsSprite.size = CGSizeMake(65/2, 45/2);
+    
+    SKSpriteNode *explodeAllSprite = [SKSpriteNode spriteNodeWithImageNamed:@"explodeall-sprite.png"];
+    explodeAllSprite.position = CGPointMake(4+3*4+3*4+(3*65/2), 7);
+    explodeAllSprite.anchorPoint = CGPointZero;
+    explodeAllSprite.size = CGSizeMake(65/2, 45/2);
+    
+    //_layerUpgradeNode.userInteractionEnabled = YES;
+    freezeSprite.name = @"Freeze";
+    //freezeSprite.userInteractionEnabled = YES;
+    sideBulletsSprite.name=@"SideBullets";
+    //sideBulletsSprite.userInteractionEnabled = YES;
+    automaticSprite.name = @"AutomaticShooting";
+    //automaticSprite.userInteractionEnabled = YES;
+    explodeAllSprite.name = @"ExplodeAll";
+    //explodeAllSprite.userInteractionEnabled = YES;
     
     [_layerUpgradeNode addChild:hudBackground];
+    [_layerUpgradeNode addChild:freezeSprite];
+    [_layerUpgradeNode addChild:automaticSprite];
+    [_layerUpgradeNode addChild:explodeAllSprite];
+    [_layerUpgradeNode addChild:sideBulletsSprite];
     
     
     
@@ -268,9 +302,32 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
     
+    
+    if ([node.name isEqualToString:@"Freeze"]) {
+        [upgradeCenter purchaseUpgrade:UpgradeFreeze];
+        [upgradeCenter activateUpgrade:UpgradeFreeze];
+        
+    }
+    else if([node.name isEqualToString:@"SideBullets"])
+    {
+        [upgradeCenter purchaseUpgrade:UpgradeSideBullets];
+        [upgradeCenter activateUpgrade:UpgradeSideBullets];
+    }
+    else if([node.name isEqualToString:@"AutomaticShooting"])
+    {
+        [upgradeCenter purchaseUpgrade:UpgradeAutomaticShooting];
+        [upgradeCenter activateUpgrade:UpgradeAutomaticShooting];
+    }
+    else if([node.name isEqualToString:@"ExplodeAll"])
+    {
+        [upgradeCenter purchaseUpgrade:UpgradeDestroyAllEnemys];
+        [upgradeCenter activateUpgrade:UpgradeDestroyAllEnemys];
+    }
    
-
     
     
 }
@@ -291,16 +348,12 @@
     
     CGPoint location = [touch locationInNode:self];
     location.y+=30;
-    [_spaceShip runAction:[SKAction moveTo:location duration:1]];
+    [_spaceShip runAction:[SKAction moveTo:location duration:0.1]];
 }
 
 -(void)handleSingleTap:(UIGestureRecognizer*)ges
 {
-    upgradeCenter.playerBalance = 1000;
     
-    [upgradeCenter purchaseUpgrade:UpgradeSideBullets];
-    
-    [upgradeCenter activateUpgrade:UpgradeSideBullets];
    
     if(![upgradeCenter isAutomaticShootingActivated])
         [self shootBullet];
@@ -492,11 +545,22 @@
 
 -(void)rotateShipsThatNeedRotation:(NSTimeInterval)currentTime
 {
-    NSMutableArray *allEnemies=[self getEnemys:@"EnemyXTroyer"];
+    NSArray *allEnemies=[self.layerEnemiesNode children];
     if ([allEnemies count] > 0)
     {
-        int allInvadersIndex = arc4random()%([allEnemies count]);
-        EnemyShip* enemy = [allEnemies objectAtIndex:allInvadersIndex];
+        SpaceShip* ship = [[_layerPlayerNode children] objectAtIndex:0];
+        for(EnemyShip* enemyShip in allEnemies)
+        {
+            if(![enemyShip isKindOfClass:[EnemyShip class]])
+                continue;
+            float angle = atan((enemyShip.position.y - ship.position.y)/((enemyShip.position.x - ship.position.x)*1.0));
+            
+            if(enemyShip.position.x > ship.position.x)
+            enemyShip.zRotation = angle+3*M_PI/2.0;
+            else enemyShip.zRotation = angle+M_PI/2.0;
+        }
+        
+        //[enemy runAction:[SKAction rotateByAngle:(CGFloat) duration:<#(NSTimeInterval)#>]]
         //TODO rotate
     }
 }
@@ -566,8 +630,16 @@
 
 -(void)fireBullet:(SKNode*)bullet toDestination:(CGPoint)destination withDuration:(NSTimeInterval)duration soundFileName:(NSString*)soundFileName
 {
+    float angle = atan((destination.y-bullet.position.y)/(1.0*(destination.x-bullet.position.x)));
+   
+    if(bullet.position.x<destination.x)
+        angle = angle+M_PI;
+    
+    ((EnemyShipBullet*)bullet).emitter.emissionAngle = angle;
     SKAction* bulletAction = [SKAction sequence:@[[SKAction moveTo:destination duration:duration],
                                                   [SKAction removeFromParent]]];
+    
+    
     //SKAction* soundAction  = [SKAction playSoundFileNamed:soundFileName waitForCompletion:YES];
     [bullet runAction:[SKAction group:@[bulletAction]]];//,soundAction
     [self addChild:bullet];

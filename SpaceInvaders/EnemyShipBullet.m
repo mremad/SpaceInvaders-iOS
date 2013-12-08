@@ -13,15 +13,17 @@
     
     if(self = [super initWithPosition:position]) {
         
-        SKEmitterNode* bulletEmitter = [GameObject newBulletEmitter];
-        bulletEmitter.position = CGPointMake(self.size.width/2, self.size.height);
+        _emitter = [GameObject newBulletEmitter];
+        _emitter.position = CGPointMake(self.size.width/2, self.size.height);
+        _emitter.particleColor = [UIColor redColor];
+        _emitter.particleColorRedRange = 10;
         
         //Name the alien and reduce it's size to 70%--it looks about right.
         self.name = @"EnemyShipBullet";
         [self setSize:CGSizeMake(10, 50)];
         [self setColor:[UIColor clearColor]];
         [self setScale:0.25f];
-        [self addChild:bulletEmitter];
+        [self addChild:_emitter];
         [self configureCollisionBody];
     }
     

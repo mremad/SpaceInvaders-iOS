@@ -10,4 +10,6 @@
 
 @interface EnemyShipBullet : GameObject
 
+@property SKEmitterNode* emitter;
+
 @end

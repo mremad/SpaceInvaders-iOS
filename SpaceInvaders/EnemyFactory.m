@@ -267,7 +267,7 @@
 {
     CGMutablePathRef thePath =CGPathCreateMutable();
     CGPathAddArc(thePath, NULL, 200.f, yPosition, 200.f, M_PI, 0.f, NO);
-    SKAction *moveAction = [SKAction followPath:thePath asOffset:YES orientToPath:YES duration:5];
+    SKAction *moveAction = [SKAction followPath:thePath asOffset:YES orientToPath:NO duration:5];
     SKAction *removeEnemy= [SKAction removeFromParent];
     SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
     return enemySequence;
@@ -277,7 +277,7 @@
 {
     CGMutablePathRef thePath =CGPathCreateMutable();
     CGPathAddArc(thePath, NULL, 200.f, yPosition, 200.f, 0.f, M_PI, YES);//TODO these numbers are probably not the best suitable
-    SKAction *moveAction = [SKAction followPath:thePath asOffset:YES orientToPath:YES duration:5];
+    SKAction *moveAction = [SKAction followPath:thePath asOffset:YES orientToPath:NO duration:5];
     SKAction *removeEnemy= [SKAction removeFromParent];
     SKAction *enemySequence = [SKAction sequence:@[moveAction, removeEnemy]];
     return enemySequence;

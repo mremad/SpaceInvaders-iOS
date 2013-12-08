@@ -17,8 +17,6 @@
 		D914A0571852527E00BE720A /* XBooster.m in Sources */ = {isa = PBXBuildFile; fileRef = D914A0561852527E00BE720A /* XBooster.m */; };
 		D914A05A185252D700BE720A /* XCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = D914A059185252D700BE720A /* XCorner.m */; };
 		D914A05D185252E400BE720A /* XDollar.m in Sources */ = {isa = PBXBuildFile; fileRef = D914A05C185252E400BE720A /* XDollar.m */; };
-		D914A06018525BDF00BE720A /* XCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = D914A05E18525BDF00BE720A /* XCorner.png */; };
-		D914A06118525BDF00BE720A /* XDollar.png in Resources */ = {isa = PBXBuildFile; fileRef = D914A05F18525BDF00BE720A /* XDollar.png */; };
 		D915A64918455A6A0084CE6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64818455A6A0084CE6D /* Foundation.framework */; };
 		D915A64B18455A6A0084CE6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64A18455A6A0084CE6D /* CoreGraphics.framework */; };
 		D915A64D18455A6A0084CE6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64C18455A6A0084CE6D /* UIKit.framework */; };
@@ -47,6 +45,13 @@
 		D91AE7AB1846687E00A280E6 /* XRuser.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AA1846687E00A280E6 /* XRuser.m */; };
 		D91AE7AE1846689C00A280E6 /* XTroyer.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AD1846689C00A280E6 /* XTroyer.m */; };
 		D91AE7B11846690800A280E6 /* XStar.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7B01846690800A280E6 /* XStar.m */; };
+		D96E887618541FAC00D669E1 /* XCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887518541FAC00D669E1 /* XCorner.png */; };
+		D96E887818541FE300D669E1 /* XDollar.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887718541FE300D669E1 /* XDollar.png */; };
+		D96E887F1854412D00D669E1 /* automatic-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887A1854412D00D669E1 /* automatic-sprite.png */; };
+		D96E88801854412D00D669E1 /* explodeall-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887B1854412D00D669E1 /* explodeall-sprite.png */; };
+		D96E88811854412D00D669E1 /* freeze-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887C1854412D00D669E1 /* freeze-sprite.png */; };
+		D96E88821854412D00D669E1 /* sidebullets-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887D1854412D00D669E1 /* sidebullets-sprite.png */; };
+		D96E88831854412D00D669E1 /* Upgrade-HUD-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96E887E1854412D00D669E1 /* Upgrade-HUD-bg.jpg */; };
 		D98C1F80184AD14B00B25DD6 /* debrisPurple_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D98C1F7D184AD14B00B25DD6 /* debrisPurple_1.png */; };
 		D98C1F81184AD14B00B25DD6 /* debrisPurple_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D98C1F7E184AD14B00B25DD6 /* debrisPurple_2.png */; };
 		D98C1F82184AD14B00B25DD6 /* debrisRed_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D98C1F7F184AD14B00B25DD6 /* debrisRed_2.png */; };
@@ -100,8 +105,6 @@
 		D914A059185252D700BE720A /* XCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCorner.m; sourceTree = "<group>"; };
 		D914A05B185252E400BE720A /* XDollar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDollar.h; sourceTree = "<group>"; };
 		D914A05C185252E400BE720A /* XDollar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDollar.m; sourceTree = "<group>"; };
-		D914A05E18525BDF00BE720A /* XCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = XCorner.png; path = ../../XCorner.png; sourceTree = "<group>"; };
-		D914A05F18525BDF00BE720A /* XDollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = XDollar.png; path = ../../XDollar.png; sourceTree = "<group>"; };
 		D915A64518455A6A0084CE6D /* SpaceInvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceInvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D915A64818455A6A0084CE6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D915A64A18455A6A0084CE6D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +148,13 @@
 		D91AE7AD1846689C00A280E6 /* XTroyer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTroyer.m; sourceTree = "<group>"; };
 		D91AE7AF1846690800A280E6 /* XStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStar.h; sourceTree = "<group>"; };
 		D91AE7B01846690800A280E6 /* XStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStar.m; sourceTree = "<group>"; };
+		D96E887518541FAC00D669E1 /* XCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XCorner.png; sourceTree = "<group>"; };
+		D96E887718541FE300D669E1 /* XDollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XDollar.png; sourceTree = "<group>"; };
+		D96E887A1854412D00D669E1 /* automatic-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "automatic-sprite.png"; sourceTree = "<group>"; };
+		D96E887B1854412D00D669E1 /* explodeall-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explodeall-sprite.png"; sourceTree = "<group>"; };
+		D96E887C1854412D00D669E1 /* freeze-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "freeze-sprite.png"; sourceTree = "<group>"; };
+		D96E887D1854412D00D669E1 /* sidebullets-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebullets-sprite.png"; sourceTree = "<group>"; };
+		D96E887E1854412D00D669E1 /* Upgrade-HUD-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Upgrade-HUD-bg.jpg"; sourceTree = "<group>"; };
 		D98C1F7D184AD14B00B25DD6 /* debrisPurple_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debrisPurple_1.png; sourceTree = "<group>"; };
 		D98C1F7E184AD14B00B25DD6 /* debrisPurple_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debrisPurple_2.png; sourceTree = "<group>"; };
 		D98C1F7F184AD14B00B25DD6 /* debrisRed_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debrisRed_2.png; sourceTree = "<group>"; };
@@ -287,6 +297,7 @@
 		D915A68418455D740084CE6D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D96E8879185440FE00D669E1 /* UpgradeHUD images */,
 				D98E2624184BB0EB00EA296E /* Background images */,
 				D98E2623184BB0D000EA296E /* unused images */,
 				D9CCC255184975B90066C056 /* Ships */,
@@ -332,6 +343,18 @@
 				D9E3CFBA184E9B0D0055BE71 /* EnemyShipBullet.m */,
 			);
 			name = EnemyShips;
+			sourceTree = "<group>";
+		};
+		D96E8879185440FE00D669E1 /* UpgradeHUD images */ = {
+			isa = PBXGroup;
+			children = (
+				D96E887A1854412D00D669E1 /* automatic-sprite.png */,
+				D96E887B1854412D00D669E1 /* explodeall-sprite.png */,
+				D96E887C1854412D00D669E1 /* freeze-sprite.png */,
+				D96E887D1854412D00D669E1 /* sidebullets-sprite.png */,
+				D96E887E1854412D00D669E1 /* Upgrade-HUD-bg.jpg */,
+			);
+			name = "UpgradeHUD images";
 			sourceTree = "<group>";
 		};
 		D98E2623184BB0D000EA296E /* unused images */ = {
@@ -380,8 +403,8 @@
 		D9CCC255184975B90066C056 /* Ships */ = {
 			isa = PBXGroup;
 			children = (
-				D914A05E18525BDF00BE720A /* XCorner.png */,
-				D914A05F18525BDF00BE720A /* XDollar.png */,
+				D96E887718541FE300D669E1 /* XDollar.png */,
+				D96E887518541FAC00D669E1 /* XCorner.png */,
 				D99FFEDF184F856B00426361 /* WhiteSpaceShip.png */,
 				D99FFEE0184F856B00426361 /* XBooster.png */,
 				D98C1F7D184AD14B00B25DD6 /* debrisPurple_1.png */,
@@ -525,22 +548,26 @@
 				D99FFEE1184F856B00426361 /* WhiteSpaceShip.png in Resources */,
 				D915A68718455D740084CE6D /* goldcoin.jpg in Resources */,
 				D98C1F8D184ADC0200B25DD6 /* planetStripe_2.png in Resources */,
-				D914A06118525BDF00BE720A /* XDollar.png in Resources */,
+				D96E887818541FE300D669E1 /* XDollar.png in Resources */,
 				D98C1F80184AD14B00B25DD6 /* debrisPurple_1.png in Resources */,
 				D9CCC25D184977860066C056 /* FuelBurningParticles.sks in Resources */,
 				47344A04184CF305002ED615 /* XruserOLD.png in Resources */,
 				D9CCC2541848E8780066C056 /* spark.png in Resources */,
 				D9CCC25A184975B90066C056 /* XTroyer.png in Resources */,
+				D96E88831854412D00D669E1 /* Upgrade-HUD-bg.jpg in Resources */,
 				D9CCC26E18498B370066C056 /* BokehParticles.sks in Resources */,
 				D98C1F87184AD2C200B25DD6 /* SmokeParticles.sks in Resources */,
 				D915A65518455A6A0084CE6D /* InfoPlist.strings in Resources */,
 				D9CCC26F18498B370066C056 /* bokeh.png in Resources */,
+				D96E887F1854412D00D669E1 /* automatic-sprite.png in Resources */,
 				D915A66818455A6A0084CE6D /* Images.xcassets in Resources */,
 				D915A68818455D740084CE6D /* silvercoin.jpg in Resources */,
 				D915A66618455A6A0084CE6D /* Spaceship.png in Resources */,
 				47344A02184CF305002ED615 /* Amigo.png in Resources */,
 				D9CCC2531848E8780066C056 /* flame.jpg in Resources */,
+				D96E88801854412D00D669E1 /* explodeall-sprite.png in Resources */,
 				D9E90136184A969D0035376B /* debrisRed_1.png in Resources */,
+				D96E887618541FAC00D669E1 /* XCorner.png in Resources */,
 				D9CCC2651849814C0066C056 /* BulletParticle.sks in Resources */,
 				478AC7EC184C1A22003E6959 /* star_1_large.png in Resources */,
 				D98C1F82184AD14B00B25DD6 /* debrisRed_2.png in Resources */,
@@ -548,9 +575,10 @@
 				D99FFEE2184F856B00426361 /* XBooster.png in Resources */,
 				D9CCC25B184975B90066C056 /* XRuser.png in Resources */,
 				47344A06184CF305002ED615 /* XtroyerOLD.png in Resources */,
-				D914A06018525BDF00BE720A /* XCorner.png in Resources */,
 				D98C1F8C184ADC0200B25DD6 /* planetStripe_1.png in Resources */,
 				D915A65E18455A6A0084CE6D /* Main.storyboard in Resources */,
+				D96E88811854412D00D669E1 /* freeze-sprite.png in Resources */,
+				D96E88821854412D00D669E1 /* sidebullets-sprite.png in Resources */,
 				47344A03184CF305002ED615 /* BlackKnight.png in Resources */,
 				D98C1F81184AD14B00B25DD6 /* debrisPurple_2.png in Resources */,
 			);
