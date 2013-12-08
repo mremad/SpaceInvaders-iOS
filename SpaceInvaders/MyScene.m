@@ -226,6 +226,7 @@
 {
     level++;
     [_spaceShip restoreMaxHealth];
+    [self storeHighScores:_score];
     //TODO TEAM
     
     //check if spaceship still alive
@@ -643,6 +644,20 @@
     //SKAction* soundAction  = [SKAction playSoundFileNamed:soundFileName waitForCompletion:YES];
     [bullet runAction:[SKAction group:@[bulletAction]]];//,soundAction
     [self addChild:bullet];
+}
+
+-(void)storeHighScores:(float)score {
+    
+    if ([storedScores count] > 0 ) {
+        storedScores = [[NSMutableArray alloc] initWithCapacity:5];
+    }
+    NSSortDescriptor *sortedScores = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];
+    [storedScores sortUsingDescriptors:[NSArray arrayWithObject:sortedScores]];
+    
+    if (score > [[storedScores objectAtIndex:5] floatValue]) {
+        [storedScores replaceObjectAtIndex:5 withObject:[NSNumber numberWithFloat:score]];
+    }
+    
 }
 
 @end

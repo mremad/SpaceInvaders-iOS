@@ -12,6 +12,7 @@
 #import "EnemyShip.h"
 #import "EnemyFactory.h"
 #import "RandomGenerator.h"
+NSMutableArray *storedScores;
 
 @interface MyScene : SKScene<SKPhysicsContactDelegate>
 
