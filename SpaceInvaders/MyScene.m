@@ -211,9 +211,9 @@
 #pragma mark - Levels
 -(void) HandleLevels
 {
-    NSArray *allTopSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXStarEnemy", @"addXCornerEnemy", @"addXDollarEnemy", @"addXRuserEnemy", @"addXTroyerEnemy", @"addXStarEnemy", nil];
-    NSArray *allLeftArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXStarEnemy", @"addXCornerEnemyLeftArc", @"addXDollarEnemyLeftArc", @"addXRuserEnemyLeftArc", @"addXTroyerEnemyLeftArc", @"addXStarEnemyLeftArc", nil];
-    NSArray *allRightArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXStarEnemy", @"addXCornerEnemyRightArc", @"addXDollarEnemyRightArc", @"addXRuserEnemyRightArc", @"addXTroyerEnemyRightArc", @"addXStarEnemyRightArc", nil];
+    NSArray *allTopSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXBoosterEnemy", @"addXCornerEnemy", @"addXDollarEnemy", @"addXRuserEnemy", @"addXTroyerEnemy", @"addXStarEnemy", nil];
+    NSArray *allLeftArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXBoosterEnemyLeftArc", @"addXCornerEnemyLeftArc", @"addXDollarEnemyLeftArc", @"addXRuserEnemyLeftArc", @"addXTroyerEnemyLeftArc", @"addXStarEnemyLeftArc", nil];
+    NSArray *allRightArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXBoosterEnemyRightArc", @"addXCornerEnemyRightArc", @"addXDollarEnemyRightArc", @"addXRuserEnemyRightArc", @"addXTroyerEnemyRightArc", @"addXStarEnemyRightArc", nil];
     NSArray *arrAll = [[NSArray alloc]initWithObjects:allTopSelectorsFromWakestToStrongest,allLeftArcSelectorsFromWakestToStrongest,allRightArcSelectorsFromWakestToStrongest, nil];
     
     SKAction *waitActionBetweenWaves = [SKAction waitForDuration:SECONDS_TO_WAIT_BETWEEN_EACH_WAVE];
