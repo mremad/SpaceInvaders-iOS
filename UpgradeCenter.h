@@ -22,8 +22,9 @@ typedef enum
 {
     UpgradeFreeze = 0,
     UpgradeAutomaticShooting,
-    UpgradeDestroyAllEnemys,
-    UpgradeSideBullets
+    UpgradeSideBullets,
+    UpgradeDestroyAllEnemys
+    
     
     
 } Upgrade;
