@@ -24,9 +24,6 @@
 		D914CE8E1854E55F00E5CFCD /* XDollar.m in Sources */ = {isa = PBXBuildFile; fileRef = D914CE891854E55F00E5CFCD /* XDollar.m */; };
 		D914CE8F1854E55F00E5CFCD /* XStar.m in Sources */ = {isa = PBXBuildFile; fileRef = D914CE8B1854E55F00E5CFCD /* XStar.m */; };
 		D914CE921854E57800E5CFCD /* XTroyerDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D914CE911854E57800E5CFCD /* XTroyerDebris.m */; };
-		D914CE961854E71200E5CFCD /* XRuser.png in Resources */ = {isa = PBXBuildFile; fileRef = D914CE931854E71200E5CFCD /* XRuser.png */; };
-		D914CE971854E71200E5CFCD /* XStar.png in Resources */ = {isa = PBXBuildFile; fileRef = D914CE941854E71200E5CFCD /* XStar.png */; };
-		D914CE981854E71200E5CFCD /* XTroyer.png in Resources */ = {isa = PBXBuildFile; fileRef = D914CE951854E71200E5CFCD /* XTroyer.png */; };
 		D915A64918455A6A0084CE6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64818455A6A0084CE6D /* Foundation.framework */; };
 		D915A64B18455A6A0084CE6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64A18455A6A0084CE6D /* CoreGraphics.framework */; };
 		D915A64D18455A6A0084CE6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64C18455A6A0084CE6D /* UIKit.framework */; };
@@ -131,9 +128,6 @@
 		D914CE8B1854E55F00E5CFCD /* XStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStar.m; sourceTree = "<group>"; };
 		D914CE901854E57800E5CFCD /* XTroyerDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTroyerDebris.h; sourceTree = "<group>"; };
 		D914CE911854E57800E5CFCD /* XTroyerDebris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTroyerDebris.m; sourceTree = "<group>"; };
-		D914CE931854E71200E5CFCD /* XRuser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XRuser.png; sourceTree = "<group>"; };
-		D914CE941854E71200E5CFCD /* XStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XStar.png; sourceTree = "<group>"; };
-		D914CE951854E71200E5CFCD /* XTroyer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XTroyer.png; sourceTree = "<group>"; };
 		D915A64518455A6A0084CE6D /* SpaceInvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceInvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D915A64818455A6A0084CE6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D915A64A18455A6A0084CE6D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -442,9 +436,6 @@
 				D94451451854EA6A0049154F /* xdollarDebris_2.png */,
 				D94451461854EA6A0049154F /* xstarDebris_1.png */,
 				D94451471854EA6A0049154F /* xstarDebris_2.png */,
-				D914CE931854E71200E5CFCD /* XRuser.png */,
-				D914CE941854E71200E5CFCD /* XStar.png */,
-				D914CE951854E71200E5CFCD /* XTroyer.png */,
 				D96E887718541FE300D669E1 /* XDollar.png */,
 				D96E887518541FAC00D669E1 /* XCorner.png */,
 				D99FFEDF184F856B00426361 /* WhiteSpaceShip.png */,
@@ -594,7 +585,6 @@
 				D9CCC2521848E8780066C056 /* FireParticles.sks in Resources */,
 				478AC7ED184C1A22003E6959 /* star_2_small.png in Resources */,
 				D99FFEE1184F856B00426361 /* WhiteSpaceShip.png in Resources */,
-				D914CE961854E71200E5CFCD /* XRuser.png in Resources */,
 				D915A68718455D740084CE6D /* goldcoin.jpg in Resources */,
 				D98C1F8D184ADC0200B25DD6 /* planetStripe_2.png in Resources */,
 				D96E887818541FE300D669E1 /* XDollar.png in Resources */,
@@ -606,7 +596,6 @@
 				D9CCC26E18498B370066C056 /* BokehParticles.sks in Resources */,
 				D98C1F87184AD2C200B25DD6 /* SmokeParticles.sks in Resources */,
 				D915A65518455A6A0084CE6D /* InfoPlist.strings in Resources */,
-				D914CE971854E71200E5CFCD /* XStar.png in Resources */,
 				D9FD05F91854B6C0008CB12A /* EnemyBulletParticle.sks in Resources */,
 				D94451481854EA6A0049154F /* xboosterDebris_1.png in Resources */,
 				D944514D1854EA6A0049154F /* xdollarDebris_2.png in Resources */,
@@ -615,7 +604,6 @@
 				D96E887F1854412D00D669E1 /* automatic-sprite.png in Resources */,
 				D944514F1854EA6A0049154F /* xstarDebris_2.png in Resources */,
 				D915A66818455A6A0084CE6D /* Images.xcassets in Resources */,
-				D914CE981854E71200E5CFCD /* XTroyer.png in Resources */,
 				D915A68818455D740084CE6D /* silvercoin.jpg in Resources */,
 				D915A66618455A6A0084CE6D /* Spaceship.png in Resources */,
 				47344A02184CF305002ED615 /* Amigo.png in Resources */,
