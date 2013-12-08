@@ -18,7 +18,7 @@
     self = [super init];
     if(self==nil)
     {
-        NSLog(@"Error in th initializer of Random Generator");
+        NSLog(@"Error in the initializer of Random Generator");
     }
     return self;
 }

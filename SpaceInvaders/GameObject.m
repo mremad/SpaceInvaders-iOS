@@ -107,6 +107,13 @@
     return bullet;
 }
 
++(SKEmitterNode *) newEnemyBulletEmitter
+{
+    NSString *bulletPath = [[NSBundle mainBundle] pathForResource:@"EnemyBulletParticle" ofType:@"sks"];
+    SKEmitterNode *bullet = [NSKeyedUnarchiver unarchiveObjectWithFile:bulletPath];
+    return bullet;
+}
+
 //to be overridden
 - (void)update:(CFTimeInterval)timeSpan {}
 - (void)configureCollisionBody {}

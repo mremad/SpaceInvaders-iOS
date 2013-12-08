@@ -551,7 +551,7 @@
         SpaceShip* ship = [[_layerPlayerNode children] objectAtIndex:0];
         for(EnemyShip* enemyShip in allEnemies)
         {
-            if(![enemyShip isKindOfClass:[EnemyShip class]])
+            if(![enemyShip isKindOfClass:[EnemyShip class]]||enemyShip.enemyMovement==EnemyMovementNormal)
                 continue;
             float angle = atan((enemyShip.position.y - ship.position.y)/((enemyShip.position.x - ship.position.x)*1.0));
             
@@ -559,9 +559,6 @@
             enemyShip.zRotation = angle+3*M_PI/2.0;
             else enemyShip.zRotation = angle+M_PI/2.0;
         }
-        
-        //[enemy runAction:[SKAction rotateByAngle:(CGFloat) duration:<#(NSTimeInterval)#>]]
-        //TODO rotate
     }
 }
 

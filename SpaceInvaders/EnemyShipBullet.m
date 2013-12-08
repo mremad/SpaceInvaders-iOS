@@ -13,7 +13,7 @@
     
     if(self = [super initWithPosition:position]) {
         
-        _emitter = [GameObject newBulletEmitter];
+        _emitter = [GameObject newEnemyBulletEmitter];
         _emitter.position = CGPointMake(self.size.width/2, self.size.height);
         _emitter.particleColor = [UIColor redColor];
         _emitter.particleColorRedRange = 10;

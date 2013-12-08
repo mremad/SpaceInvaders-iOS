@@ -57,6 +57,7 @@
 + (SKEmitterNode*)newExplosionEmitter;
 + (SKEmitterNode*)newFuelEmitter;
 + (SKEmitterNode *) newBulletEmitter;
++ (SKEmitterNode *) newEnemyBulletEmitter;
 + (SKEmitterNode*)newSmokeEmitter;
 +(BOOL) ContactAOrB:(SKPhysicsContact *)contact collidedWithStuff:(NSArray *) allPossibleContacts;
 
