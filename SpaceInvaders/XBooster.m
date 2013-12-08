@@ -18,11 +18,12 @@
         self.name = @"EnemyXBooster";
         [self setScale:0.2f]; //TODO TEAM RAVI
         
-        SKEmitterNode* fuelLeft = [GameObject newFuelEmitter];
-        fuelLeft.emissionAngle = 1.57;
-        fuelLeft.position = CGPointMake(self.size.width/2-5,self.size.height+15);
-        [self addChild:fuelLeft];
-        
+        SKEmitterNode* fuelMiddle = [GameObject newFuelEmitter];
+        fuelMiddle.emissionAngle = 1.57;
+        fuelMiddle.position = CGPointMake(self.size.width/2-5,self.size.height+15);
+        [self addChild:fuelMiddle];
+        float probabilityToShoot =0.005*(([self increaseScoreAmount]/10)-1)+0.01;
+        [self setProbabilityToShoot:probabilityToShoot];
         
         [self configureCollisionBody];
     }

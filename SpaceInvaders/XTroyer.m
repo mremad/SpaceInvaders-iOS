@@ -20,14 +20,17 @@
         
         SKEmitterNode* fuelLeft = [GameObject newFuelEmitter];
         fuelLeft.emissionAngle = 1.57;
-        fuelLeft.position = CGPointMake(self.size.width/2,self.size.height);
+        fuelLeft.position = CGPointMake(self.size.width/2-10,self.size.height+40);
         [self addChild:fuelLeft];
         
         SKEmitterNode* fuelRight = [GameObject newFuelEmitter];
         fuelRight.emissionAngle = 1.57;
-        fuelRight.position = CGPointMake(self.size.width/2 - 40,self.size.height);
+        fuelRight.position = CGPointMake(self.size.width/2 - 44,self.size.height+40);
         [self addChild:fuelRight];
-
+        
+        
+        float probabilityToShoot =0.005*(([self increaseScoreAmount]/10)-1)+0.01;
+        [self setProbabilityToShoot:probabilityToShoot];
         
         [self configureCollisionBody];
     }

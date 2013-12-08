@@ -11,7 +11,7 @@
 
 @interface EnemyShip : GameObject
 
-@property (assign, nonatomic) float probabilityToShoot;
+@property  float probabilityToShoot;
 @property  EnemyMovement enemyMovement;
 
 - (float)increaseScoreAmount;

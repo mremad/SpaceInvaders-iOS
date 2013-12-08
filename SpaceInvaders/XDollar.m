@@ -28,6 +28,8 @@
         fuelRight.position = CGPointMake(self.size.width/2 - 40,self.size.height);
         [self addChild:fuelRight];
         
+        float probabilityToShoot =0.005*(([self increaseScoreAmount]/10)-1)+0.01;
+        [self setProbabilityToShoot:probabilityToShoot];
         
         [self configureCollisionBody];
     }
