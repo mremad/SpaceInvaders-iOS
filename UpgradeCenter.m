@@ -16,6 +16,15 @@
     BOOL automaticShoot;
     BOOL sideBullets;
     
+    BOOL freezeReady;
+    BOOL automaticReady;
+    BOOL sideBulletsReady;
+    
+    SKSpriteNode *sideBulletTimerSprite;
+    SKSpriteNode *automaticTimerSprite;
+    SKSpriteNode *freezeTimerSprite;
+    SKSpriteNode *explodeTimerSprite;
+
     
     int rateOfFire;
     NSTimer* automaticShootingTimer;
@@ -34,6 +43,11 @@
         destroyAllEnemiesFired = NO;
         automaticShoot = NO;
         sideBullets = NO;
+        
+        sideBulletsReady = YES;
+        freezeReady = YES;
+        automaticReady = YES;
+        
         _upgradeList = (bool*)malloc(4*sizeof(bool));
         for(int i = 0;i<4;i++)
             _upgradeList[i] = NO;
@@ -122,17 +136,33 @@
 
 -(void)activateSideBullets
 {
-    if(sideBullets)
+    if(sideBullets || !sideBulletsReady)
         return;
     
     sideBullets = YES;
+    sideBulletsReady = NO;
     
     sideBulletsTimer = [NSTimer scheduledTimerWithTimeInterval:(1/(sideBulletsRateofFire*1.0))
                                                               target:self
                                                             selector:@selector(sideBulletsRepeater)userInfo:nil repeats:YES];
-    [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(sideBulletsFinished)
+    [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(sideBulletsFinished)
+                                   userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(sideBulletsReady)
                                    userInfo:nil repeats:NO];
     
+    
+    sideBulletTimerSprite = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(65/2, 45/2)];
+    sideBulletTimerSprite.position = CGPointMake(4+UpgradeSideBullets*4+UpgradeSideBullets*4+(UpgradeSideBullets*65/2), 7);
+    sideBulletTimerSprite.anchorPoint = CGPointZero;
+    sideBulletTimerSprite.alpha = 0.4;
+    [sideBulletTimerSprite runAction:[SKAction scaleYTo:0 duration:30]];
+    
+    [_scene.layerUpgradeNode addChild:sideBulletTimerSprite];
+}
+
+-(void)sideBulletsReady
+{
+    sideBulletsReady = YES;
 }
 
 -(void)sideBulletsRepeater
@@ -152,10 +182,12 @@
 
 -(void)activateFreeze
 {
-    if(freezeFired)
+    if(freezeFired || !freezeReady)
         return;
     
     freezeFired = YES;
+    freezeReady = NO;
+    
     _scene.layerEnemiesNode.speed = 0.01;
     CGSize size = CGSizeMake(_scene.size.width*2, _scene.size.height*2);
     SKSpriteNode* blueSprite = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:0 green:177 blue:228 alpha:1] size:size];
@@ -168,10 +200,24 @@
     NSArray* sequence= [NSArray arrayWithObjects:flash1,flash2,removeParent, nil];
     [blueSprite runAction:[SKAction sequence:sequence]];
     
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(freezeFinished:) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(freezeFinished) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:50.0 target:self selector:@selector(freezeReady) userInfo:nil repeats:NO];
+    
+    freezeTimerSprite = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(65/2, 45/2)];
+    freezeTimerSprite.position = CGPointMake(4+UpgradeFreeze*4+UpgradeFreeze*4+(UpgradeFreeze*65/2), 7);
+    freezeTimerSprite.anchorPoint = CGPointZero;
+    freezeTimerSprite.alpha = 0.4;
+    [freezeTimerSprite runAction:[SKAction scaleYTo:0 duration:50]];
+    
+    [_scene.layerUpgradeNode addChild:freezeTimerSprite];
     
 }
--(void)freezeFinished:(NSTimer*)timer
+
+-(void)freezeReady
+{
+    freezeReady = YES;
+}
+-(void)freezeFinished
 {
     _scene.layerEnemiesNode.speed = 1;
     freezeFired = NO;
@@ -193,8 +239,16 @@
         }
     }
     
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(destroyAllEnemiesFinished:)
+    [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(destroyAllEnemiesFinished:)
                                    userInfo:nil repeats:NO];
+    
+    explodeTimerSprite = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(65/2, 45/2)];
+    explodeTimerSprite.position = CGPointMake(4+UpgradeDestroyAllEnemys*4+UpgradeDestroyAllEnemys*4+(UpgradeDestroyAllEnemys*65/2), 7);
+    explodeTimerSprite.anchorPoint = CGPointZero;
+    explodeTimerSprite.alpha = 0.4;
+    [explodeTimerSprite runAction:[SKAction scaleYTo:0 duration:60]];
+    
+    [_scene.layerUpgradeNode addChild:explodeTimerSprite];
     
     destroyAllEnemiesFired = YES;
 }
@@ -206,19 +260,34 @@
 
 -(void)activateAutomaticShooting
 {
-    if(automaticShoot)
+    if(automaticShoot || !automaticReady)
         return;
     
     automaticShoot = YES;
+    automaticReady = NO;
     
     automaticShootingTimer = [NSTimer scheduledTimerWithTimeInterval:(1/(rateOfFire*1.0))
                                                               target:self
                                                                      selector:@selector(automaticShootingRepeater)userInfo:nil repeats:YES];
-    [NSTimer scheduledTimerWithTimeInterval:20.0 target:self selector:@selector(automaticShootingFinished)
+    [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(automaticShootingFinished)
                                    userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(automaticShootingReady)
+                                   userInfo:nil repeats:NO];
+    
+    automaticTimerSprite = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(65/2, 45/2)];
+    automaticTimerSprite.position = CGPointMake(4+UpgradeAutomaticShooting*4+UpgradeAutomaticShooting*4+(UpgradeAutomaticShooting*65/2), 7);
+    automaticTimerSprite.anchorPoint = CGPointZero;
+    automaticTimerSprite.alpha = 0.4;
+    [automaticTimerSprite runAction:[SKAction scaleYTo:0 duration:30]];
+    
+    [_scene.layerUpgradeNode addChild:automaticTimerSprite];
     
 }
 
+-(void)automaticShootingReady
+{
+    automaticReady = YES;
+}
 -(void)automaticShootingRepeater
 {
     [_scene shootBullet];
