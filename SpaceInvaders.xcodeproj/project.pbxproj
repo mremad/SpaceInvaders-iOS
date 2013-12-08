@@ -54,6 +54,14 @@
 		D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7A518461E5200A280E6 /* EnemyFactory.m */; };
 		D91AE7AB1846687E00A280E6 /* XRuser.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AA1846687E00A280E6 /* XRuser.m */; };
 		D91AE7AE1846689C00A280E6 /* XTroyer.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AD1846689C00A280E6 /* XTroyer.m */; };
+		D94451481854EA6A0049154F /* xboosterDebris_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451401854EA6A0049154F /* xboosterDebris_1.png */; };
+		D94451491854EA6A0049154F /* xboosterDebris_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451411854EA6A0049154F /* xboosterDebris_2.png */; };
+		D944514A1854EA6A0049154F /* xcornerDebris_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451421854EA6A0049154F /* xcornerDebris_1.png */; };
+		D944514B1854EA6A0049154F /* xcornerDebris_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451431854EA6A0049154F /* xcornerDebris_2.png */; };
+		D944514C1854EA6A0049154F /* xdollarDebris_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451441854EA6A0049154F /* xdollarDebris_1.png */; };
+		D944514D1854EA6A0049154F /* xdollarDebris_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451451854EA6A0049154F /* xdollarDebris_2.png */; };
+		D944514E1854EA6A0049154F /* xstarDebris_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451461854EA6A0049154F /* xstarDebris_1.png */; };
+		D944514F1854EA6A0049154F /* xstarDebris_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451471854EA6A0049154F /* xstarDebris_2.png */; };
 		D96E887618541FAC00D669E1 /* XCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887518541FAC00D669E1 /* XCorner.png */; };
 		D96E887818541FE300D669E1 /* XDollar.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887718541FE300D669E1 /* XDollar.png */; };
 		D96E887F1854412D00D669E1 /* automatic-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887A1854412D00D669E1 /* automatic-sprite.png */; };
@@ -167,6 +175,14 @@
 		D91AE7AA1846687E00A280E6 /* XRuser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRuser.m; sourceTree = "<group>"; };
 		D91AE7AC1846689C00A280E6 /* XTroyer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTroyer.h; sourceTree = "<group>"; };
 		D91AE7AD1846689C00A280E6 /* XTroyer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTroyer.m; sourceTree = "<group>"; };
+		D94451401854EA6A0049154F /* xboosterDebris_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xboosterDebris_1.png; sourceTree = "<group>"; };
+		D94451411854EA6A0049154F /* xboosterDebris_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xboosterDebris_2.png; sourceTree = "<group>"; };
+		D94451421854EA6A0049154F /* xcornerDebris_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xcornerDebris_1.png; sourceTree = "<group>"; };
+		D94451431854EA6A0049154F /* xcornerDebris_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xcornerDebris_2.png; sourceTree = "<group>"; };
+		D94451441854EA6A0049154F /* xdollarDebris_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xdollarDebris_1.png; sourceTree = "<group>"; };
+		D94451451854EA6A0049154F /* xdollarDebris_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xdollarDebris_2.png; sourceTree = "<group>"; };
+		D94451461854EA6A0049154F /* xstarDebris_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xstarDebris_1.png; sourceTree = "<group>"; };
+		D94451471854EA6A0049154F /* xstarDebris_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xstarDebris_2.png; sourceTree = "<group>"; };
 		D96E887518541FAC00D669E1 /* XCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XCorner.png; sourceTree = "<group>"; };
 		D96E887718541FE300D669E1 /* XDollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XDollar.png; sourceTree = "<group>"; };
 		D96E887A1854412D00D669E1 /* automatic-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "automatic-sprite.png"; sourceTree = "<group>"; };
@@ -418,6 +434,14 @@
 		D9CCC255184975B90066C056 /* Ships */ = {
 			isa = PBXGroup;
 			children = (
+				D94451401854EA6A0049154F /* xboosterDebris_1.png */,
+				D94451411854EA6A0049154F /* xboosterDebris_2.png */,
+				D94451421854EA6A0049154F /* xcornerDebris_1.png */,
+				D94451431854EA6A0049154F /* xcornerDebris_2.png */,
+				D94451441854EA6A0049154F /* xdollarDebris_1.png */,
+				D94451451854EA6A0049154F /* xdollarDebris_2.png */,
+				D94451461854EA6A0049154F /* xstarDebris_1.png */,
+				D94451471854EA6A0049154F /* xstarDebris_2.png */,
 				D914CE931854E71200E5CFCD /* XRuser.png */,
 				D914CE941854E71200E5CFCD /* XStar.png */,
 				D914CE951854E71200E5CFCD /* XTroyer.png */,
@@ -564,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9CCC26B184988040066C056 /* SnowParticles.sks in Resources */,
+				D944514B1854EA6A0049154F /* xcornerDebris_2.png in Resources */,
 				47344A05184CF305002ED615 /* XstarOLD.png in Resources */,
 				D98C1F89184AD73400B25DD6 /* bg.jpg in Resources */,
 				D9CCC2521848E8780066C056 /* FireParticles.sks in Resources */,
@@ -583,8 +608,12 @@
 				D915A65518455A6A0084CE6D /* InfoPlist.strings in Resources */,
 				D914CE971854E71200E5CFCD /* XStar.png in Resources */,
 				D9FD05F91854B6C0008CB12A /* EnemyBulletParticle.sks in Resources */,
+				D94451481854EA6A0049154F /* xboosterDebris_1.png in Resources */,
+				D944514D1854EA6A0049154F /* xdollarDebris_2.png in Resources */,
 				D9CCC26F18498B370066C056 /* bokeh.png in Resources */,
+				D944514C1854EA6A0049154F /* xdollarDebris_1.png in Resources */,
 				D96E887F1854412D00D669E1 /* automatic-sprite.png in Resources */,
+				D944514F1854EA6A0049154F /* xstarDebris_2.png in Resources */,
 				D915A66818455A6A0084CE6D /* Images.xcassets in Resources */,
 				D914CE981854E71200E5CFCD /* XTroyer.png in Resources */,
 				D915A68818455D740084CE6D /* silvercoin.jpg in Resources */,
@@ -595,6 +624,7 @@
 				D9E90136184A969D0035376B /* debrisRed_1.png in Resources */,
 				D96E887618541FAC00D669E1 /* XCorner.png in Resources */,
 				D9CCC2651849814C0066C056 /* BulletParticle.sks in Resources */,
+				D944514E1854EA6A0049154F /* xstarDebris_1.png in Resources */,
 				478AC7EC184C1A22003E6959 /* star_1_large.png in Resources */,
 				D98C1F82184AD14B00B25DD6 /* debrisRed_2.png in Resources */,
 				D99FFEE2184F856B00426361 /* XBooster.png in Resources */,
@@ -605,6 +635,8 @@
 				D96E88821854412D00D669E1 /* sidebullets-sprite.png in Resources */,
 				47344A03184CF305002ED615 /* BlackKnight.png in Resources */,
 				D98C1F81184AD14B00B25DD6 /* debrisPurple_2.png in Resources */,
+				D944514A1854EA6A0049154F /* xcornerDebris_1.png in Resources */,
+				D94451491854EA6A0049154F /* xboosterDebris_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
