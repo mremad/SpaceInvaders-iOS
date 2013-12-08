@@ -12,6 +12,9 @@
 #import "EnemyShip.h"
 #import "EnemyFactory.h"
 #import "RandomGenerator.h"
+
+#define SECONDS_TO_WAIT_BETWEEN_EACH_WAVE   2
+#define SECONDS_TO_WAIT_BETWEEN_EACH_LEVEL  4
 NSMutableArray *storedScores;
 
 

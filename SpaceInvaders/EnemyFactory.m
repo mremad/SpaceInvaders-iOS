@@ -10,7 +10,7 @@
 
 @implementation EnemyFactory
 //some constants
-          int enemyMovementNormalY;
+          int enemyMovementNormalY=500;
     const int enemyMovementLeftArcX=0;
     const int enemyMovementRightArcX=-50; //this requires some more work to undersand how the arc is generated , but for now I tried out random numbers till I got it to look good
 
@@ -20,7 +20,6 @@
     self = [super init];
     if(self==nil)
     {
-        enemyMovementNormalY=[define IPhoneStartsAtThisYPosition] ;
         NSLog(@"Error in th initializer of EnemyFactory");
     }
     return self;

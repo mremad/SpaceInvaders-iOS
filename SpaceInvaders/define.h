@@ -25,5 +25,4 @@ typedef NS_OPTIONS(uint32_t, CollisionType) {
 };
 @interface define : NSObject
 
-+(int) IPhoneStartsAtThisYPosition;
 @end

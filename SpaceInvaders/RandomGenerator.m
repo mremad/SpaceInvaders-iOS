@@ -24,7 +24,7 @@
 }
 
 
-
+//returns how many waves there will be in this level
 +(int)getNumberOfWaves:(int)level
 {
     int minWave = MIN(level%luckynumber,level);
@@ -32,6 +32,7 @@
     return MAX(numberOfWaves,1);
 }
 
+//return a method from the given array of methods depending on the level and the wave
 +(SEL)getSelectorGivenSelectorArrays:(NSArray *)arrOfArrays AndLevel:(int)level AndWave:(int)wave
 {
    
@@ -44,7 +45,7 @@
     return  NSSelectorFromString(str);
 }
 
-
+//
 +(int)getSizeOfWave:(int)indexOfWave numberOfWaves:(int) waves
 {
     int OneOrZero = 2*drand48(); //TODO Check if true

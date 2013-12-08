@@ -216,7 +216,7 @@
     NSArray *allRightArcSelectorsFromWakestToStrongest=[[NSArray alloc]initWithObjects:@"addXBoosterEnemyRightArc", @"addXCornerEnemyRightArc", @"addXDollarEnemyRightArc", @"addXRuserEnemyRightArc", @"addXTroyerEnemyRightArc", @"addXStarEnemyRightArc", nil];
     NSArray *arrAll = [[NSArray alloc]initWithObjects:allTopSelectorsFromWakestToStrongest,allLeftArcSelectorsFromWakestToStrongest,allRightArcSelectorsFromWakestToStrongest, nil];
     
-    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:2];
+    SKAction *waitActionBetweenWaves = [SKAction waitForDuration:SECONDS_TO_WAIT_BETWEEN_EACH_WAVE];
     levelNSActions = [[NSMutableArray alloc]init];
     
     int numberOfWaves=[RandomGenerator getNumberOfWaves:level];
@@ -225,23 +225,22 @@
     for(int i=0;i<numberOfWaves;i++)
     {
         NSMutableArray *waveNSActions=[[NSMutableArray alloc]init];
-        int sizeOfWave =[RandomGenerator getSizeOfWave:i numberOfWaves:numberOfWaves];
-        amountEnemiesInTheCurrentLevel+=sizeOfWave;
+        
         SEL sel=[RandomGenerator getSelectorGivenSelectorArrays:arrAll AndLevel:level AndWave:i];
-        for(int j=0;j<sizeOfWave;j++)
-        {
-            SKAction *spawnEnemiesAction1 = [SKAction performSelector:sel onTarget:self];
-            SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
-            [waveNSActions addObject:spawnEnemiesAction1];
-            [waveNSActions addObject:waitAction];
-        }
-        int count = [RandomGenerator getCountOfWave:i numberOfWaves:numberOfWaves];
-        SKAction *ithWave = [SKAction repeatAction:[SKAction sequence:waveNSActions] count:count];
+        SKAction *spawnEnemiesAction1 = [SKAction performSelector:sel onTarget:self];
+        SKAction *waitAction = [SKAction waitForDuration:1 withRange:2];
+        [waveNSActions addObject:waitAction];
+        [waveNSActions addObject:spawnEnemiesAction1];
+        
+        
+        int amountOfEnemiesInThisWave = [RandomGenerator getCountOfWave:i numberOfWaves:numberOfWaves];
+        amountEnemiesInTheCurrentLevel+=amountOfEnemiesInThisWave;
+        SKAction *ithWave = [SKAction repeatAction:[SKAction sequence:waveNSActions] count:amountOfEnemiesInThisWave];
         [levelNSActions addObject:ithWave];
         [levelNSActions addObject:waitActionBetweenWaves];
     }
-    //SKAction *waitActionBetweenLevels = [SKAction waitForDuration:3];
-    //[levelNSActions addObject:waitActionBetweenLevels];
+    SKAction *waitActionBetweenLevels = [SKAction waitForDuration:SECONDS_TO_WAIT_BETWEEN_EACH_LEVEL];
+    [levelNSActions addObject:waitActionBetweenLevels];
     SKAction *annmationLevelEnded = [SKAction performSelector:@selector(addSomeAnimationSayingThatLevelEnded) onTarget:self];
     [levelNSActions addObject:annmationLevelEnded];
 
@@ -249,11 +248,18 @@
     //for(SKAction* action in levelNSActions)NSLog(@"%@",action);
 }
 
+
+
+-(void) spaceShipIsDestroyed //TODO call somewhere
+{
+    [self storeHighScores:_score];
+}
+
 -(void) addSomeAnimationSayingThatLevelEnded
 {
     level++;
     [_spaceShip restoreMaxHealth];
-    //[self storeHighScores:_score];
+    //
     //TODO TEAM
     
     //check if spaceship still alive
@@ -527,6 +533,8 @@
 
 -(void) addXTroyerEnemyRightArc
 {
+   // EnemyShip *ff=[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementRightArc];
+    
     [_layerEnemiesNode addChild:[EnemyFactory CreateEnemies:EnemyTypeXTroyer AndTheMovement:EnemyMovementRightArc]];
 }
 
