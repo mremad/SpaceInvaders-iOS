@@ -59,9 +59,6 @@ Invaders</string>
                         <color key="backgroundColor" red="0.90346377" green="0.91900900139999997" blue="0.89917163410000001" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="zsF-vJ-lTl"/>
-                    <connections>
-                        <segue destination="mpb-Zf-jnF" kind="push" identifier="Options" id="WrC-KK-hjx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tO-J9-dQl" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,23 +97,6 @@ Invaders</string>
         <scene sceneID="Sii-19-H88">
             <objects>
                 <viewController id="mpb-Zf-jnF" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3Xe-ZI-pRi"/>
-                        <viewControllerLayoutGuide type="bottom" id="xVB-uE-iVH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RRS-Jr-cP3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Options" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lia-6t-vJj">
-                                <rect key="frame" x="139" y="49" width="61" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
                     <navigationItem key="navigationItem" id="1Dq-mE-meP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuQ-Qy-G0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
