@@ -20,6 +20,7 @@
     float _score;
     BOOL automaticShooting;
     SKLabelNode *_scoreNode;
+    SKLabelNode *_upgradeBalanceNode;
     int level;
     int amountEnemiesInTheCurrentLevel;
     int amountDeadEnemiesInTheCurrentLevel;
@@ -29,8 +30,10 @@
 
 - (void)increaseScoreBy:(float)amount
 {
+    upgradeCenter.playerBalance += amount/10.0;
     _score += amount;
     _scoreNode.text = [NSString stringWithFormat:@"Score:%1.0f", _score];
+    _upgradeBalanceNode.text = [NSString stringWithFormat:@"Coins:%d",upgradeCenter.playerBalance];
 }
 #pragma mark - Initilization
 -(id)initWithSize:(CGSize)size {    
@@ -38,7 +41,7 @@
         
         
         upgradeCenter = [[UpgradeCenter alloc] initWithScene:self];
-        upgradeCenter.playerBalance = 10000;
+        upgradeCenter.playerBalance = 0;
         //Added Background Particle Node
         [self setupBackground];
         
@@ -157,6 +160,18 @@
     _scoreNode.position = CGPointMake(6, self.size.height - _scoreNode.frame.size.height -2);
     
     [_layerHudNode addChild:_scoreNode];
+    
+    _upgradeBalanceNode = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    _upgradeBalanceNode.fontSize = 14.0;
+    _upgradeBalanceNode.text = @"Coins:0";
+    _upgradeBalanceNode.name = @"scoreNode";
+    _upgradeBalanceNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    _upgradeBalanceNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    _upgradeBalanceNode.position = CGPointMake(self.size.width - _upgradeBalanceNode.frame.size.width - 6-20, self.size.height - _upgradeBalanceNode.frame.size.height -2);
+    
+    [_layerHudNode addChild:_upgradeBalanceNode];
+    
     [self addChild:_layerHudNode];
 }
 

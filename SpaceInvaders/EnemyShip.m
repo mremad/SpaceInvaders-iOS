@@ -11,6 +11,9 @@
 #import "MyScene.h"
 //you can not instantiate Objects from EnemyShip!(it will lead to an Exception)
 @implementation EnemyShip
+{
+    SKLabelNode* scoreLabel;
+}
 - (id)initWithPosition:(CGPoint)position{
     
     if(self = [super initWithPosition:position]) {
@@ -32,6 +35,21 @@
     if([GameObject ContactAOrB:contact collidedWithStuff: arrayToCheck])
     {
         [(MyScene *)self.scene increaseScoreBy:[self increaseScoreAmount]];
+        scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+        scoreLabel.fontSize = 10.0;
+        scoreLabel.text = [NSString stringWithFormat:@"+%1.0f",[self increaseScoreAmount]/10];
+        scoreLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+        scoreLabel.position = self.position;
+        [self.parent addChild:scoreLabel];
+        
+        SKAction * goUp = [SKAction moveTo:CGPointMake(self.position.x, self.position.y+100) duration:1.0];
+        SKAction * removeFromParent = [SKAction removeFromParent];
+        NSArray* sequence = [NSArray arrayWithObjects:goUp,removeFromParent,nil];
+        
+        [scoreLabel runAction:[SKAction sequence:sequence]];
+        [scoreLabel runAction:[SKAction fadeAlphaTo:0 duration:0.75]];
+        
         [self removeAllActions];
         [self removeNodeWithEffectsAtContactPoint:contact];
     }
