@@ -14,7 +14,9 @@
 #import "RandomGenerator.h"
 NSMutableArray *storedScores;
 
+
 @interface MyScene : SKScene<SKPhysicsContactDelegate>
+
 
 
 /**

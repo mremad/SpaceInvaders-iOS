@@ -14,6 +14,7 @@
 		47344A06184CF305002ED615 /* XtroyerOLD.png in Resources */ = {isa = PBXBuildFile; fileRef = 47344A01184CF305002ED615 /* XtroyerOLD.png */; };
 		478AC7EC184C1A22003E6959 /* star_1_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 478AC7EA184C1A22003E6959 /* star_1_large.png */; };
 		478AC7ED184C1A22003E6959 /* star_2_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 478AC7EB184C1A22003E6959 /* star_2_small.png */; };
+		47BAE5D11855028F00A6FEC2 /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BAE5D01855028F00A6FEC2 /* ScoreViewController.m */; };
 		D914CE7E1854E4CA00E5CFCD /* XBoosterDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D914CE771854E4CA00E5CFCD /* XBoosterDebris.m */; };
 		D914CE7F1854E4CA00E5CFCD /* XCornerDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D914CE791854E4CA00E5CFCD /* XCornerDebris.m */; };
 		D914CE801854E4CA00E5CFCD /* XDollarDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D914CE7B1854E4CA00E5CFCD /* XDollarDebris.m */; };
@@ -112,6 +113,8 @@
 		47344A01184CF305002ED615 /* XtroyerOLD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XtroyerOLD.png; sourceTree = "<group>"; };
 		478AC7EA184C1A22003E6959 /* star_1_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_1_large.png; sourceTree = "<group>"; };
 		478AC7EB184C1A22003E6959 /* star_2_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_2_small.png; sourceTree = "<group>"; };
+		47BAE5CF1855028F00A6FEC2 /* ScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
+		47BAE5D01855028F00A6FEC2 /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
 		D914CE761854E4CA00E5CFCD /* XBoosterDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBoosterDebris.h; sourceTree = "<group>"; };
 		D914CE771854E4CA00E5CFCD /* XBoosterDebris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBoosterDebris.m; sourceTree = "<group>"; };
 		D914CE781854E4CA00E5CFCD /* XCornerDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCornerDebris.h; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 				D915A66318455A6A0084CE6D /* MyScene.m */,
 				D915A66718455A6A0084CE6D /* Images.xcassets */,
 				D915A65118455A6A0084CE6D /* Supporting Files */,
+				47BAE5CF1855028F00A6FEC2 /* ScoreViewController.h */,
+				47BAE5D01855028F00A6FEC2 /* ScoreViewController.m */,
 			);
 			path = SpaceInvaders;
 			sourceTree = "<group>";
@@ -676,6 +681,7 @@
 				D914CE8C1854E55F00E5CFCD /* XBooster.m in Sources */,
 				D914CE831854E50500E5CFCD /* XRuserDebris.m in Sources */,
 				D91AE7AB1846687E00A280E6 /* XRuser.m in Sources */,
+				47BAE5D11855028F00A6FEC2 /* ScoreViewController.m in Sources */,
 				D91AE7A018460E2800A280E6 /* SpaceShipBullet.m in Sources */,
 				D915A65B18455A6A0084CE6D /* AppDelegate.m in Sources */,
 				D91AE7AE1846689C00A280E6 /* XTroyer.m in Sources */,
