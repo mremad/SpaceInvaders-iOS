@@ -45,7 +45,7 @@
         //Added Background Particle Node
         [self setupBackground];
         
-        storedScores = [[NSMutableArray alloc] initWithCapacity:5];
+        storedScores = [[NSMutableArray alloc] initWithCapacity:10];
 
         storedScores = [self readFromPlist:@"Scores.plist"];
  
@@ -709,8 +709,8 @@
     NSSortDescriptor *sortedScores = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];
     [storedScores sortUsingDescriptors:[NSArray arrayWithObject:sortedScores]];
     
-    if (score > [[storedScores objectAtIndex:5] floatValue]) {
-        [storedScores replaceObjectAtIndex:5 withObject:[NSNumber numberWithFloat:score]];
+    if (score > [[storedScores objectAtIndex:9] floatValue]) {
+        [storedScores replaceObjectAtIndex:9 withObject:[NSNumber numberWithFloat:score]];
     }
     
     [self writeToPlist:@"SCores.plist" withData: storedScores];
