@@ -39,7 +39,11 @@
         upgradeCenter = [[UpgradeCenter alloc] initWithScene:self];
         upgradeCenter.playerBalance = 10000;
         //Added Background Particle Node
-         [self setupBackground];
+        [self setupBackground];
+        
+        storedScores = [[NSMutableArray alloc] initWithCapacity:5];
+
+        storedScores = [self readFromPlist:@"Scores.plist"];
  
         
         //there is no gravity in space...
@@ -647,10 +651,7 @@
 }
 
 -(void)storeHighScores:(float)score {
-    
-    if ([storedScores count] > 0 ) {
-        storedScores = [[NSMutableArray alloc] initWithCapacity:5];
-    }
+
     NSSortDescriptor *sortedScores = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];
     [storedScores sortUsingDescriptors:[NSArray arrayWithObject:sortedScores]];
     
@@ -658,6 +659,34 @@
         [storedScores replaceObjectAtIndex:5 withObject:[NSNumber numberWithFloat:score]];
     }
     
+    [self writeToPlist:@"SCores.plist" withData: storedScores];
+    
+    
+}
+
+//method to save the NS Array to Plist
+
+- (void) writeToPlist: (NSString*)fileName withData:(NSMutableArray *)data
+{
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *finalPath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    
+    [data writeToFile:finalPath atomically: YES];
+}
+
+//method to retreive the NS Array to Plist
+- (NSMutableArray *) readFromPlist: (NSString *)fileName {
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *finalPath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:finalPath];
+    
+    if (fileExists) {
+        NSMutableArray *arr = [[NSMutableArray alloc] initWithContentsOfFile:finalPath];
+        return arr;
+    } else {
+        return nil;
+    }
 }
 
 @end
