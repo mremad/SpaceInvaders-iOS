@@ -181,7 +181,7 @@
     [self addChild:_layerFirstBackground];
     [self addChild:_layerSecondBackground];
     _layerFirstBackground.alpha = 0.4;
-    _layerSecondBackground.alpha = 0.4;
+    _layerSecondBackground.alpha = 0.4; 
     [self createSecondBackground];
     [self createFirstBackground];
     
