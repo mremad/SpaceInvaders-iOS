@@ -21,7 +21,8 @@
     BOOL automaticShooting;
     SKLabelNode *_scoreNode;
     int level;
-    int enemiesInTheLevel;
+    int amountEnemiesInTheCurrentLevel;
+    int amountDeadEnemiesInTheCurrentLevel;
     NSMutableArray *levelNSActions;
     float gameDifficulty;
 }
@@ -196,10 +197,13 @@
     levelNSActions = [[NSMutableArray alloc]init];
     
     int numberOfWaves=[RandomGenerator getNumberOfWaves:level];
+    amountEnemiesInTheCurrentLevel=0;
+    amountDeadEnemiesInTheCurrentLevel=0;
     for(int i=0;i<numberOfWaves;i++)
     {
         NSMutableArray *waveNSActions=[[NSMutableArray alloc]init];
         int sizeOfWave =[RandomGenerator getSizeOfWave:i numberOfWaves:numberOfWaves];
+        amountEnemiesInTheCurrentLevel+=sizeOfWave;
         SEL sel=[RandomGenerator getSelectorGivenSelectorArrays:arrAll AndLevel:level AndWave:i];
         for(int j=0;j<sizeOfWave;j++)
         {
@@ -417,6 +421,7 @@
         
         SKNode *contactNode1 = contact.bodyA.node;
         SKNode *contactNode2 = contact.bodyB.node;
+        [self handleDeadEnemies:contact];
         if([contactNode1 isKindOfClass:[GameObject class]]) {
             [(GameObject *)contactNode1 collidedWith:contact.bodyB contact:contact];
         }
@@ -426,9 +431,31 @@
     }
 }
 
+- (void) handleDeadEnemies:(SKPhysicsContact *)contact
+{
+        if([contact.bodyA.node isKindOfClass:[EnemyShip class]]||[contact.bodyB.node isKindOfClass:[EnemyShip class]])
+           {
+                    amountDeadEnemiesInTheCurrentLevel++;
+              }
+    }
+
 - (void)didEndContact:(SKPhysicsContact *)contact
 {    
     
+}
+
+-(void)removeOutOfScreenEnemiesInDeadEnemiesCount:(NSTimeInterval)currentTime
+{
+        NSArray *allEnemies=[self.layerEnemiesNode children];
+        if ([allEnemies count] > 0)
+            {
+                    for(EnemyShip* enemyShip in allEnemies)
+                        {
+                             if(![enemyShip isKindOfClass:[EnemyShip class]])
+                                        continue;
+                             
+                        }
+            }
 }
 
 -(void)update:(CFTimeInterval)currentTime {

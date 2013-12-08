@@ -27,6 +27,12 @@
     return 50;
 }
 
+-(void) removeNodeWithEffectsAtContactPoint:(SKPhysicsContact*)contact
+{
+    [self.parent addChild:[[XStarDebris alloc] initWithPosition:self.position withContact:contact]];
+    [super removeNodeWithEffectsAtContactPoint:contact];
+}
+
 - (void)configureCollisionBody {
     
     /*
