@@ -14,7 +14,7 @@
 #import "RandomGenerator.h"
 
 #define SECONDS_TO_WAIT_BETWEEN_EACH_WAVE   2
-#define SECONDS_TO_WAIT_BETWEEN_EACH_LEVEL  4
+#define SECONDS_TO_WAIT_BETWEEN_EACH_LEVEL  1
 NSMutableArray *storedScores;
 
 

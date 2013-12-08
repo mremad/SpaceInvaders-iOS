@@ -66,7 +66,7 @@
     }
     else
     {
-        //[self IndicateWarning];
+        [self IndicateWarning];
     }
 }
 
