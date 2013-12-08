@@ -42,6 +42,9 @@
                                 <state key="normal" title="Highscores">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="WJ6-hU-ete" kind="push" id="z8Y-jS-fre"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="213" translatesAutoresizingMaskIntoConstraints="NO" id="YF4-Mj-hRp">
                                 <rect key="frame" x="54" y="20" width="213" height="104"/>
@@ -57,7 +60,6 @@ Invaders</string>
                     </view>
                     <navigationItem key="navigationItem" id="zsF-vJ-lTl"/>
                     <connections>
-                        <segue destination="YZo-ma-Xaz" kind="push" identifier="HighScoreInMenu" id="ySu-qV-8Mf"/>
                         <segue destination="mpb-Zf-jnF" kind="push" identifier="Options" id="WrC-KK-hjx"/>
                     </connections>
                 </viewController>
@@ -65,39 +67,34 @@ Invaders</string>
             </objects>
             <point key="canvasLocation" x="691" y="-488"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="gQG-MU-Do9">
+        <!--Table View Controller - Space Invaders-->
+        <scene sceneID="4e6-7m-RHB">
             <objects>
-                <viewController id="YZo-ma-Xaz" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="b9A-4u-fXn"/>
-                        <viewControllerLayoutGuide type="bottom" id="L1L-rr-k82"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gh2-MH-QSo">
+                <tableViewController id="WJ6-hU-ete" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="I36-Fw-wfM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYP-FU-jOs">
-                                <rect key="frame" x="-43" y="118" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Scores" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyq-3L-tef">
-                                <rect key="frame" x="117" y="41" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Nf3-01-Gnk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QOO-Zt-kTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GJs-mF-bwi">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GJs-mF-bwi" id="C0c-Js-0jM">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WJ6-hU-ete" id="fee-Kd-vjA"/>
+                            <outlet property="delegate" destination="WJ6-hU-ete" id="OAG-We-oxM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Space Invaders" id="ygd-p3-3xd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5A-e6-LyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="201"/>
+            <point key="canvasLocation" x="1403" y="288"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Sii-19-H88">
@@ -143,7 +140,7 @@ Invaders</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAh-Pg-fpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="-488"/>
+            <point key="canvasLocation" x="1377" y="-516"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JFU-Ea-vHY">
@@ -219,7 +216,7 @@ Invaders</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fb4-1a-sSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2117" y="-468"/>
+            <point key="canvasLocation" x="1901" y="-1260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kom-8v-FEP">
