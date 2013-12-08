@@ -85,21 +85,25 @@
     freezeSprite.position = CGPointMake(4, 7);
     freezeSprite.anchorPoint = CGPointZero;
     freezeSprite.size = CGSizeMake(65/2, 45/2);
+    freezeSprite.alpha = 0.8;
     
     SKSpriteNode *automaticSprite = [SKSpriteNode spriteNodeWithImageNamed:@"automatic-sprite.png"];
     automaticSprite.position = CGPointMake(4+4+4+(65/2), 7);
     automaticSprite.anchorPoint = CGPointZero;
     automaticSprite.size = CGSizeMake(65/2, 45/2);
+    automaticSprite.alpha = 0.8;
     
     SKSpriteNode *sideBulletsSprite = [SKSpriteNode spriteNodeWithImageNamed:@"sidebullets-sprite.png"];
     sideBulletsSprite.position = CGPointMake(4+2*4+2*4+(2*65/2), 7);
     sideBulletsSprite.anchorPoint = CGPointZero;
     sideBulletsSprite.size = CGSizeMake(65/2, 45/2);
+    sideBulletsSprite.alpha = 0.8;
     
     SKSpriteNode *explodeAllSprite = [SKSpriteNode spriteNodeWithImageNamed:@"explodeall-sprite.png"];
     explodeAllSprite.position = CGPointMake(4+3*4+3*4+(3*65/2), 7);
     explodeAllSprite.anchorPoint = CGPointZero;
     explodeAllSprite.size = CGSizeMake(65/2, 45/2);
+    explodeAllSprite.alpha = 0.8;
     
     //_layerUpgradeNode.userInteractionEnabled = YES;
     freezeSprite.name = @"Freeze";
