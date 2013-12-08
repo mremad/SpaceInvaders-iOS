@@ -61,7 +61,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"XRuser.png"]; //TODO TEAM RAVI 
+        texture = [SKTexture textureWithImageNamed:@"XRusera.png"]; //TODO TEAM RAVI 
         texture.filteringMode = SKTextureFilteringNearest;
         
     });

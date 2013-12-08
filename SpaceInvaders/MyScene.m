@@ -225,8 +225,8 @@
         [levelNSActions addObject:ithWave];
         [levelNSActions addObject:waitActionBetweenWaves];
     }
-    SKAction *waitActionBetweenLevels = [SKAction waitForDuration:8];
-    [levelNSActions addObject:waitActionBetweenLevels];
+    //SKAction *waitActionBetweenLevels = [SKAction waitForDuration:3];
+    //[levelNSActions addObject:waitActionBetweenLevels];
     SKAction *annmationLevelEnded = [SKAction performSelector:@selector(addSomeAnimationSayingThatLevelEnded) onTarget:self];
     [levelNSActions addObject:annmationLevelEnded];
 
@@ -238,7 +238,7 @@
 {
     level++;
     [_spaceShip restoreMaxHealth];
-    [self storeHighScores:_score];
+    //[self storeHighScores:_score];
     //TODO TEAM
     
     //check if spaceship still alive

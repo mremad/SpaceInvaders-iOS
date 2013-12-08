@@ -24,9 +24,9 @@
 		D914CE8E1854E55F00E5CFCD /* XDollar.m in Sources */ = {isa = PBXBuildFile; fileRef = D914CE891854E55F00E5CFCD /* XDollar.m */; };
 		D914CE8F1854E55F00E5CFCD /* XStar.m in Sources */ = {isa = PBXBuildFile; fileRef = D914CE8B1854E55F00E5CFCD /* XStar.m */; };
 		D914CE921854E57800E5CFCD /* XTroyerDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D914CE911854E57800E5CFCD /* XTroyerDebris.m */; };
-		D914CEB51854F0C900E5CFCD /* XRuser.png in Resources */ = {isa = PBXBuildFile; fileRef = D914CEB21854F0C900E5CFCD /* XRuser.png */; };
-		D914CEB61854F0C900E5CFCD /* XStar.png in Resources */ = {isa = PBXBuildFile; fileRef = D914CEB31854F0C900E5CFCD /* XStar.png */; };
-		D914CEB71854F0C900E5CFCD /* XTroyer.png in Resources */ = {isa = PBXBuildFile; fileRef = D914CEB41854F0C900E5CFCD /* XTroyer.png */; };
+		D914CEB51854F0C900E5CFCD /* XRusera.png in Resources */ = {isa = PBXBuildFile; fileRef = D914CEB21854F0C900E5CFCD /* XRusera.png */; };
+		D914CEB61854F0C900E5CFCD /* XStara.png in Resources */ = {isa = PBXBuildFile; fileRef = D914CEB31854F0C900E5CFCD /* XStara.png */; };
+		D914CEB71854F0C900E5CFCD /* XTroyera.png in Resources */ = {isa = PBXBuildFile; fileRef = D914CEB41854F0C900E5CFCD /* XTroyera.png */; };
 		D915A64918455A6A0084CE6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64818455A6A0084CE6D /* Foundation.framework */; };
 		D915A64B18455A6A0084CE6D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64A18455A6A0084CE6D /* CoreGraphics.framework */; };
 		D915A64D18455A6A0084CE6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D915A64C18455A6A0084CE6D /* UIKit.framework */; };
@@ -131,9 +131,9 @@
 		D914CE8B1854E55F00E5CFCD /* XStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStar.m; sourceTree = "<group>"; };
 		D914CE901854E57800E5CFCD /* XTroyerDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTroyerDebris.h; sourceTree = "<group>"; };
 		D914CE911854E57800E5CFCD /* XTroyerDebris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTroyerDebris.m; sourceTree = "<group>"; };
-		D914CEB21854F0C900E5CFCD /* XRuser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XRuser.png; sourceTree = "<group>"; };
-		D914CEB31854F0C900E5CFCD /* XStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XStar.png; sourceTree = "<group>"; };
-		D914CEB41854F0C900E5CFCD /* XTroyer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XTroyer.png; sourceTree = "<group>"; };
+		D914CEB21854F0C900E5CFCD /* XRusera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XRusera.png; sourceTree = "<group>"; };
+		D914CEB31854F0C900E5CFCD /* XStara.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XStara.png; sourceTree = "<group>"; };
+		D914CEB41854F0C900E5CFCD /* XTroyera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XTroyera.png; sourceTree = "<group>"; };
 		D915A64518455A6A0084CE6D /* SpaceInvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceInvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D915A64818455A6A0084CE6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D915A64A18455A6A0084CE6D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -434,9 +434,9 @@
 		D9CCC255184975B90066C056 /* Ships */ = {
 			isa = PBXGroup;
 			children = (
-				D914CEB21854F0C900E5CFCD /* XRuser.png */,
-				D914CEB31854F0C900E5CFCD /* XStar.png */,
-				D914CEB41854F0C900E5CFCD /* XTroyer.png */,
+				D914CEB21854F0C900E5CFCD /* XRusera.png */,
+				D914CEB31854F0C900E5CFCD /* XStara.png */,
+				D914CEB41854F0C900E5CFCD /* XTroyera.png */,
 				D94451401854EA6A0049154F /* xboosterDebris_1.png */,
 				D94451411854EA6A0049154F /* xboosterDebris_2.png */,
 				D94451421854EA6A0049154F /* xcornerDebris_1.png */,
@@ -593,10 +593,10 @@
 				D98C1F89184AD73400B25DD6 /* bg.jpg in Resources */,
 				D9CCC2521848E8780066C056 /* FireParticles.sks in Resources */,
 				478AC7ED184C1A22003E6959 /* star_2_small.png in Resources */,
-				D914CEB51854F0C900E5CFCD /* XRuser.png in Resources */,
+				D914CEB51854F0C900E5CFCD /* XRusera.png in Resources */,
 				D99FFEE1184F856B00426361 /* WhiteSpaceShip.png in Resources */,
 				D915A68718455D740084CE6D /* goldcoin.jpg in Resources */,
-				D914CEB61854F0C900E5CFCD /* XStar.png in Resources */,
+				D914CEB61854F0C900E5CFCD /* XStara.png in Resources */,
 				D98C1F8D184ADC0200B25DD6 /* planetStripe_2.png in Resources */,
 				D96E887818541FE300D669E1 /* XDollar.png in Resources */,
 				D98C1F80184AD14B00B25DD6 /* xtroyerDebris_2.png in Resources */,
@@ -626,7 +626,7 @@
 				D944514E1854EA6A0049154F /* xstarDebris_1.png in Resources */,
 				478AC7EC184C1A22003E6959 /* star_1_large.png in Resources */,
 				D98C1F82184AD14B00B25DD6 /* xruserDebris_1.png in Resources */,
-				D914CEB71854F0C900E5CFCD /* XTroyer.png in Resources */,
+				D914CEB71854F0C900E5CFCD /* XTroyera.png in Resources */,
 				D99FFEE2184F856B00426361 /* XBooster.png in Resources */,
 				47344A06184CF305002ED615 /* XtroyerOLD.png in Resources */,
 				D98C1F8C184ADC0200B25DD6 /* planetStripe_1.png in Resources */,
