@@ -59,6 +59,7 @@ Invaders</string>
                         <color key="backgroundColor" red="0.90346377" green="0.91900900139999997" blue="0.89917163410000001" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="zsF-vJ-lTl"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tO-J9-dQl" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,51 +68,21 @@ Invaders</string>
         <!--Score View Controller - Space Invaders-->
         <scene sceneID="4e6-7m-RHB">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5A-e6-LyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="WJ6-hU-ete" customClass="ScoreViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="I36-Fw-wfM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1hK-zZ-2k1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="o0G-Jw-y0z">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GJs-mF-bwi">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="GJs-mF-bwi" id="C0c-Js-0jM">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lQa-Ih-vrc">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lQa-Ih-vrc" id="QXj-EV-Dix">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bjL-Ec-bA4">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bjL-Ec-bA4" id="tfd-8u-Tsa">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
                         <connections>
-                            <outlet property="dataSource" destination="WJ6-hU-ete" id="fee-Kd-vjA"/>
-                            <outlet property="delegate" destination="WJ6-hU-ete" id="OAG-We-oxM"/>
+                            <outlet property="dataSource" destination="WJ6-hU-ete" id="hrn-0o-Boz"/>
+                            <outlet property="delegate" destination="WJ6-hU-ete" id="BJa-PC-Jlf"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Space Invaders" id="izj-fw-N6z" userLabel="Space Invaders">
                         <barButtonItem key="backBarButtonItem" title="Space" id="2mz-Hr-e9U"/>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g5A-e6-LyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1403" y="288"/>
         </scene>
