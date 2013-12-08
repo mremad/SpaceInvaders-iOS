@@ -21,6 +21,7 @@
     BOOL automaticShooting;
     SKLabelNode *_scoreNode;
     int level;
+    int enemiesInTheLevel;
     NSMutableArray *levelNSActions;
     float gameDifficulty;
 }
@@ -199,9 +200,9 @@
     {
         NSMutableArray *waveNSActions=[[NSMutableArray alloc]init];
         int sizeOfWave =[RandomGenerator getSizeOfWave:i numberOfWaves:numberOfWaves];
+        SEL sel=[RandomGenerator getSelectorGivenSelectorArrays:arrAll AndLevel:level AndWave:i];
         for(int j=0;j<sizeOfWave;j++)
         {
-            SEL sel=[RandomGenerator getSelectorGivenSelectorArrays:arrAll AndLevel:level AndWave:i];
             SKAction *spawnEnemiesAction1 = [SKAction performSelector:sel onTarget:self];
             SKAction *waitAction = [SKAction waitForDuration:1 withRange:3];
             [waveNSActions addObject:spawnEnemiesAction1];
@@ -212,6 +213,8 @@
         [levelNSActions addObject:ithWave];
         [levelNSActions addObject:waitActionBetweenWaves];
     }
+    SKAction *waitActionBetweenLevels = [SKAction waitForDuration:8];
+    [levelNSActions addObject:waitActionBetweenLevels];
     SKAction *annmationLevelEnded = [SKAction performSelector:@selector(addSomeAnimationSayingThatLevelEnded) onTarget:self];
     [levelNSActions addObject:annmationLevelEnded];
 
