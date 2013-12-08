@@ -10,4 +10,9 @@
 
 @implementation define
 
++(int) IPhoneStartsAtThisYPosition
+{
+    return 500;
+}
+
 @end
