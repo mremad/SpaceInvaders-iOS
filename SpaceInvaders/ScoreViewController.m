@@ -8,6 +8,7 @@
 
 
 #import "ScoreViewController.h"
+#import "MyScene.h"
 
 @interface ScoreViewController ()
 
@@ -21,7 +22,20 @@
 {
     [super viewDidLoad];
     // Initialize table data
-     scores = [NSMutableArray arrayWithObjects:@"Score 1", @"Score 2", @"Score 3",@"Score 4", @"Score 5", @"Score 6",@"Score 7", @"Score 8", @"Score 9", nil];
+    NSString *fileName = @"Scores.plist";
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *finalPath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:finalPath];
+    
+    if (fileExists) {
+        scores = [[NSMutableArray alloc] initWithContentsOfFile:finalPath];
+
+    } else {
+             scores = [NSMutableArray arrayWithObjects:@"Score 1", @"Score 2", @"Score 3",@"Score 4", @"Score 5", @"Score 6",@"Score 7", @"Score 8", @"Score 9", nil];
+    }
+    
+
 }
 
 

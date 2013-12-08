@@ -18,6 +18,7 @@
 NSMutableArray *storedScores;
 
 
+
 @interface MyScene : SKScene<SKPhysicsContactDelegate>
 
 
@@ -51,4 +52,5 @@ NSMutableArray *storedScores;
 - (void)shootBullet;
 - (void)increaseScoreBy:(float)amount;
 - (void)handleSingleTap:(UIGestureRecognizer*)ges;
+- (NSMutableArray *) readFromPlist: (NSString *)fileName;
 @end
