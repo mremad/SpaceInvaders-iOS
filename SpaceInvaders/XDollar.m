@@ -37,7 +37,7 @@
 
 -(void) removeNodeWithEffectsAtContactPoint:(SKPhysicsContact*)contact
 {
-    [self.parent addChild:[[XTroyerDebris alloc] initWithPosition:self.position withContact:contact]];
+    [self.parent addChild:[[XDollarDebris alloc] initWithPosition:self.position withContact:contact]];
     [super removeNodeWithEffectsAtContactPoint:contact];
 }
 

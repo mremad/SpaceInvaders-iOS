@@ -14,6 +14,7 @@ typedef enum EnemyMovement {EnemyMovementNormal,
 typedef enum EnemyType{EnemyTypeXBooster,EnemyTypeXCorner,EnemyTypeXDollar,EnemyTypeXRuser,EnemyTypeXTroyer,
     EnemyTypeXStar} EnemyType;
 
+
 typedef NS_OPTIONS(uint32_t, CollisionType) {
     CollisionTypeSpaceShip      = 1 << 0,
     CollisionTypeSpaceShipBullet   = 1 << 1,

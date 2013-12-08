@@ -14,4 +14,6 @@
 @property (assign, nonatomic) float probabilityToShoot;
 @property  EnemyMovement enemyMovement;
 
+- (float)increaseScoreAmount;
+
 @end

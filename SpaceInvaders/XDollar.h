@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "EnemyShip.h"
-#import "XTroyerDebris.h" //TODO CHANGE
+#import "XDollarDebris.h" //TODO CHANGE
 @interface XDollar : EnemyShip
 
 @end

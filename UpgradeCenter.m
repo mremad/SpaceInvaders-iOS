@@ -183,10 +183,14 @@
         return;
     for(EnemyShip* enemyShip in _scene.layerEnemiesNode.children)
     {
+        
         if([enemyShip isKindOfClass:[EnemyShipDebris class]])
             [enemyShip removeNodeWithSmallerEffectsAtContactPoint:nil];
         else if([enemyShip isKindOfClass:[EnemyShip class]])
+        {
             [enemyShip removeNodeWithEffectsAtContactPoint:nil];
+            [_scene increaseScoreBy:[enemyShip increaseScoreAmount]];
+        }
     }
     
     [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(destroyAllEnemiesFinished:)

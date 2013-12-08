@@ -21,7 +21,8 @@
     BOOL automaticShooting;
     SKLabelNode *_scoreNode;
     int level;
-    int enemiesInTheLevel;
+    int amountEnemiesInTheCurrentLevel;
+    int amountDeadEnemiesInTheCurrentLevel;
     NSMutableArray *levelNSActions;
     float gameDifficulty;
 }
@@ -88,21 +89,25 @@
     freezeSprite.position = CGPointMake(4, 7);
     freezeSprite.anchorPoint = CGPointZero;
     freezeSprite.size = CGSizeMake(65/2, 45/2);
+    freezeSprite.alpha = 0.8;
     
     SKSpriteNode *automaticSprite = [SKSpriteNode spriteNodeWithImageNamed:@"automatic-sprite.png"];
     automaticSprite.position = CGPointMake(4+4+4+(65/2), 7);
     automaticSprite.anchorPoint = CGPointZero;
     automaticSprite.size = CGSizeMake(65/2, 45/2);
+    automaticSprite.alpha = 0.8;
     
     SKSpriteNode *sideBulletsSprite = [SKSpriteNode spriteNodeWithImageNamed:@"sidebullets-sprite.png"];
     sideBulletsSprite.position = CGPointMake(4+2*4+2*4+(2*65/2), 7);
     sideBulletsSprite.anchorPoint = CGPointZero;
     sideBulletsSprite.size = CGSizeMake(65/2, 45/2);
+    sideBulletsSprite.alpha = 0.8;
     
     SKSpriteNode *explodeAllSprite = [SKSpriteNode spriteNodeWithImageNamed:@"explodeall-sprite.png"];
     explodeAllSprite.position = CGPointMake(4+3*4+3*4+(3*65/2), 7);
     explodeAllSprite.anchorPoint = CGPointZero;
     explodeAllSprite.size = CGSizeMake(65/2, 45/2);
+    explodeAllSprite.alpha = 0.8;
     
     //_layerUpgradeNode.userInteractionEnabled = YES;
     freezeSprite.name = @"Freeze";
@@ -200,10 +205,13 @@
     levelNSActions = [[NSMutableArray alloc]init];
     
     int numberOfWaves=[RandomGenerator getNumberOfWaves:level];
+    amountEnemiesInTheCurrentLevel=0;
+    amountDeadEnemiesInTheCurrentLevel=0;
     for(int i=0;i<numberOfWaves;i++)
     {
         NSMutableArray *waveNSActions=[[NSMutableArray alloc]init];
         int sizeOfWave =[RandomGenerator getSizeOfWave:i numberOfWaves:numberOfWaves];
+        amountEnemiesInTheCurrentLevel+=sizeOfWave;
         SEL sel=[RandomGenerator getSelectorGivenSelectorArrays:arrAll AndLevel:level AndWave:i];
         for(int j=0;j<sizeOfWave;j++)
         {
@@ -421,6 +429,7 @@
         
         SKNode *contactNode1 = contact.bodyA.node;
         SKNode *contactNode2 = contact.bodyB.node;
+        [self handleDeadEnemies:contact];
         if([contactNode1 isKindOfClass:[GameObject class]]) {
             [(GameObject *)contactNode1 collidedWith:contact.bodyB contact:contact];
         }
@@ -430,9 +439,31 @@
     }
 }
 
+- (void) handleDeadEnemies:(SKPhysicsContact *)contact
+{
+        if([contact.bodyA.node isKindOfClass:[EnemyShip class]]||[contact.bodyB.node isKindOfClass:[EnemyShip class]])
+           {
+                    amountDeadEnemiesInTheCurrentLevel++;
+              }
+    }
+
 - (void)didEndContact:(SKPhysicsContact *)contact
 {    
     
+}
+
+-(void)removeOutOfScreenEnemiesInDeadEnemiesCount:(NSTimeInterval)currentTime
+{
+        NSArray *allEnemies=[self.layerEnemiesNode children];
+        if ([allEnemies count] > 0)
+            {
+                    for(EnemyShip* enemyShip in allEnemies)
+                        {
+                             if(![enemyShip isKindOfClass:[EnemyShip class]])
+                                        continue;
+                             
+                        }
+            }
 }
 
 -(void)update:(CFTimeInterval)currentTime {

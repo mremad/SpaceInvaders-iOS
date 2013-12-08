@@ -25,7 +25,7 @@
     static SKTexture *texture = nil;
 
     int randDebris = (arc4random()%2) +1;
-    NSString* debrisImage = [NSString stringWithFormat:@"debrisRed_%d",randDebris];
+    NSString* debrisImage = [NSString stringWithFormat:@"xruserDebris_%d",randDebris];
     texture = [SKTexture textureWithImageNamed:debrisImage]; //TODO TEAM RAVI
     texture.filteringMode = SKTextureFilteringNearest;
 
