@@ -10,6 +10,7 @@
 #import "MyScene.h"
 
 #import "UpgradeViewController.h"
+#import "AppDelegate.h"
 
 @implementation MyScene
 {
@@ -409,11 +410,11 @@
 
 - (void)moveShipWithxStep:(float)x yStep:(float)y
 {
-    if(x>0.01||y>0.01)
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if((x>0.01||y>0.01)&&appDelegate.tilting)
     {
-    CGPoint position = CGPointMake(_spaceShip.position.x + x*self.size.width, _spaceShip.position.y + y*self.size.height);
-    
-    [_spaceShip runAction:[SKAction moveTo:position duration:0.1]];
+        CGPoint position = CGPointMake(_spaceShip.position.x + x*self.size.width, _spaceShip.position.y + y*self.size.height);
+        [_spaceShip runAction:[SKAction moveTo:position duration:0.1]];
     }
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "OptionsViewController.h"
-
+#import "AppDelegate.h"
 @interface OptionsViewController ()
 
 @end
@@ -24,9 +24,14 @@
 }
 - (IBAction)TiltingValueChanged:(id)sender
 {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     if(_TiltingOutLet.isOn)
     {
-        
+        appDelegate.tilting=YES;
+    }
+    else
+    {
+        appDelegate.tilting=NO;
     }
 }
 
