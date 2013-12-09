@@ -64,11 +64,10 @@ Invaders</string>
             </objects>
             <point key="canvasLocation" x="691" y="-488"/>
         </scene>
-        <!--Score View Controller - Space Invaders-->
+        <!--Score View Controller - scoreView-->
         <scene sceneID="4e6-7m-RHB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g5A-e6-LyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="WJ6-hU-ete" customClass="ScoreViewController" sceneMemberID="viewController">
+                <tableViewController title="scoreView" id="WJ6-hU-ete" customClass="ScoreViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="1hK-zZ-2k1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +110,7 @@ Invaders</string>
                         <barButtonItem key="backBarButtonItem" title="Space" id="2mz-Hr-e9U"/>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5A-e6-LyF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1403" y="288"/>
         </scene>
