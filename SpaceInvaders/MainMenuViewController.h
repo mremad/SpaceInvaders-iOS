@@ -14,5 +14,6 @@
 @interface MainMenuViewController : UIViewController
 
 
+@property (weak, nonatomic) IBOutlet UIButton *HighScoresButon;
 
 @end

@@ -60,6 +60,8 @@
     }
     
 }
+- (IBAction)HighScoresCick:(id)sender {
+}
 
 //- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
 //    return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -74,7 +76,7 @@
     {
         appDelegate.navJumpToScore=NO;
         ScoreViewController *svc = [[ScoreViewController alloc] init];
-        [self.navigationController pushViewController:svc animated:YES];
+        //[self.navigationController pushViewController:svc animated:YES];
     }
 }
 
