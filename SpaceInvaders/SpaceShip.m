@@ -7,6 +7,7 @@
 //
 
 #import "SpaceShip.h"
+#import "MyScene.h"
 
 @implementation SpaceShip
 
@@ -59,9 +60,10 @@
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
 {   //if the SpaceShip collided with anything destory it
     
-    [self setHealth:([self getHealth]-1)];
+    [self setHealth:([self getHealth]-100)];
     if([self getHealth]==0)
     {
+        [(MyScene *)self.scene spaceShipIsDestroyed];
         [self removeNodeWithEffectsAtContactPoint:contact];
     }
     else

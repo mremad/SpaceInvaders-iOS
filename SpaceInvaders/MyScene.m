@@ -713,7 +713,7 @@
         [storedScores replaceObjectAtIndex:9 withObject:[NSNumber numberWithFloat:score]];
     }
     
-    [self writeToPlist:@"SCores.plist" withData: storedScores];
+    [self writeToPlist:@"Scores.plist" withData:storedScores];
     
     
 }

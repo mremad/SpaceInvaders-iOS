@@ -52,5 +52,6 @@ NSMutableArray *storedScores;
 - (void)shootBullet;
 - (void)increaseScoreBy:(float)amount;
 - (void)handleSingleTap:(UIGestureRecognizer*)ges;
+- (void)spaceShipIsDestroyed;
 - (NSMutableArray *) readFromPlist: (NSString *)fileName;
 @end

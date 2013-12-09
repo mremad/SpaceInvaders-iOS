@@ -35,6 +35,8 @@
              scores = [NSMutableArray arrayWithObjects:@"Score 1", @"Score 2", @"Score 3",@"Score 4", @"Score 5", @"Score 6",@"Score 7", @"Score 8", @"Score 9",@"Score 10", nil];
     }
     
+    NSSortDescriptor *sortedScores = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];
+    [scores sortUsingDescriptors:[NSArray arrayWithObject:sortedScores]];
 
 }
 
