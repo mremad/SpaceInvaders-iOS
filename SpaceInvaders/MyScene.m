@@ -402,7 +402,10 @@
 
 - (void)moveShipWithxStep:(float)x yStep:(float)y
 {
-    _spaceShip.position = CGPointMake(_spaceShip.position.x + x, _spaceShip.position.y + y);
+    CGPoint position = CGPointMake(_spaceShip.position.x + x*self.size.width, _spaceShip.position.y + y*self.size.height);
+    
+    
+    [_spaceShip runAction:[SKAction moveTo:position duration:0.3]];
 }
 
 -(void)handleSingleTap:(UIGestureRecognizer*)ges
