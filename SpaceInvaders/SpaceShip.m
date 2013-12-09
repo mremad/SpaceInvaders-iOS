@@ -27,8 +27,8 @@
         [self addChild:leftFuel];
         
        
-        [self setMaxHealth:3000]; //TODO put back to 3
-        [self setHealth:3000];
+        [self setMaxHealth:5]; //TODO put back to 3
+        [self setHealth:5];
     }
     
     return self;
@@ -52,7 +52,8 @@
 
 -(void)removeWarningIndication
 {
-    //TODO EMAD
+    ((SKEffectNode*)self.parent).filter = nil;
+    [((SKEffectNode*)self.parent) removeActionForKey:@"BlinkingAction"];
 }
 
 
@@ -68,7 +69,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"GameComplete" object:nil];
         [self removeNodeWithEffectsAtContactPoint:contact];
     }
-    else
+    else if([self getHealth] == 2)
     {
         [self IndicateWarning];
     }
@@ -78,10 +79,7 @@
 -(void) IndicateWarning
 {
     
-    static BOOL warnedForLowHealth = NO;
-  
-    if(!warnedForLowHealth)
-    {
+
         CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
         ((SKEffectNode*)self.parent).filter = filter;
         ((SKEffectNode*)self.parent).shouldEnableEffects = NO;
@@ -91,10 +89,7 @@
         
         SKAction* sequence = [SKAction repeatActionForever: [SKAction sequence:[NSArray arrayWithObjects:blinkAction,waitAction, nil]]];
         
-        [self runAction:sequence];
-        warnedForLowHealth = YES;
-    }
-    
+        [self runAction:sequence withKey:@"BlinkingAction"];
 }
 
 

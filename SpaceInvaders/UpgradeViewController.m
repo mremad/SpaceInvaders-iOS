@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *automaticCost;
 @property (strong, nonatomic) IBOutlet UIButton *automaticBuy;
 
+
 @end
 
 @implementation UpgradeViewController
@@ -32,22 +33,22 @@
     }
     return self;
 }
-- (IBAction)freezeBuyUpgrade:(id)sender
+- (IBAction)freezeBuy:(id)sender
 {
     [_upgradeCenter purchaseUpgrade:UpgradeFreeze];
     [self updateView];
 }
-- (IBAction)sideBuyUpgrade:(id)sender
+- (IBAction)sideBuy:(id)sender
 {
     [_upgradeCenter purchaseUpgrade:UpgradeSideBullets];
     [self updateView];
 }
-- (IBAction)automaticBuyUpgrade:(id)sender
+- (IBAction)automaticBuy:(id)sender
 {
     [_upgradeCenter purchaseUpgrade:UpgradeAutomaticShooting];
     [self updateView];
 }
-- (IBAction)explodeBuyUpgrade:(id)sender
+- (IBAction)explodeBuy:(id)sender
 {
     [_upgradeCenter purchaseUpgrade:UpgradeDestroyAllEnemys];
     [self updateView];

@@ -55,6 +55,8 @@
 		D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7A518461E5200A280E6 /* EnemyFactory.m */; };
 		D91AE7AB1846687E00A280E6 /* XRuser.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AA1846687E00A280E6 /* XRuser.m */; };
 		D91AE7AE1846689C00A280E6 /* XTroyer.m in Sources */ = {isa = PBXBuildFile; fileRef = D91AE7AD1846689C00A280E6 /* XTroyer.m */; };
+		D9274F05185574FE00577088 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9274F02185574FE00577088 /* MainMenuViewController.m */; };
+		D9274F06185574FE00577088 /* UpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9274F04185574FE00577088 /* UpgradeViewController.m */; };
 		D94451481854EA6A0049154F /* xboosterDebris_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451401854EA6A0049154F /* xboosterDebris_1.png */; };
 		D94451491854EA6A0049154F /* xboosterDebris_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451411854EA6A0049154F /* xboosterDebris_2.png */; };
 		D944514A1854EA6A0049154F /* xcornerDebris_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451421854EA6A0049154F /* xcornerDebris_1.png */; };
@@ -178,6 +180,10 @@
 		D91AE7AA1846687E00A280E6 /* XRuser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRuser.m; sourceTree = "<group>"; };
 		D91AE7AC1846689C00A280E6 /* XTroyer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTroyer.h; sourceTree = "<group>"; };
 		D91AE7AD1846689C00A280E6 /* XTroyer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTroyer.m; sourceTree = "<group>"; };
+		D9274F01185574FE00577088 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		D9274F02185574FE00577088 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		D9274F03185574FE00577088 /* UpgradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeViewController.h; sourceTree = "<group>"; };
+		D9274F04185574FE00577088 /* UpgradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeViewController.m; sourceTree = "<group>"; };
 		D94451401854EA6A0049154F /* xboosterDebris_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xboosterDebris_1.png; sourceTree = "<group>"; };
 		D94451411854EA6A0049154F /* xboosterDebris_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xboosterDebris_2.png; sourceTree = "<group>"; };
 		D94451421854EA6A0049154F /* xcornerDebris_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xcornerDebris_1.png; sourceTree = "<group>"; };
@@ -290,6 +296,10 @@
 				D915A65C18455A6A0084CE6D /* Main.storyboard */,
 				D915A65F18455A6A0084CE6D /* GameViewController.h */,
 				D915A66018455A6A0084CE6D /* GameViewController.m */,
+				D9274F01185574FE00577088 /* MainMenuViewController.h */,
+				D9274F02185574FE00577088 /* MainMenuViewController.m */,
+				D9274F03185574FE00577088 /* UpgradeViewController.h */,
+				D9274F04185574FE00577088 /* UpgradeViewController.m */,
 				D915A66218455A6A0084CE6D /* MyScene.h */,
 				D915A66318455A6A0084CE6D /* MyScene.m */,
 				D915A66718455A6A0084CE6D /* Images.xcassets */,
@@ -678,8 +688,10 @@
 				D914CE8E1854E55F00E5CFCD /* XDollar.m in Sources */,
 				D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */,
 				D9E90134184A7FFA0035376B /* EnemyShipDebris.m in Sources */,
+				D9274F06185574FE00577088 /* UpgradeViewController.m in Sources */,
 				D914CE8C1854E55F00E5CFCD /* XBooster.m in Sources */,
 				D914CE831854E50500E5CFCD /* XRuserDebris.m in Sources */,
+				D9274F05185574FE00577088 /* MainMenuViewController.m in Sources */,
 				D91AE7AB1846687E00A280E6 /* XRuser.m in Sources */,
 				47BAE5D11855028F00A6FEC2 /* ScoreViewController.m in Sources */,
 				D91AE7A018460E2800A280E6 /* SpaceShipBullet.m in Sources */,

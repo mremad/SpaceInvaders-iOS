@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="4iV-8D-AfZ">
             <objects>
-                <viewController id="D4A-7E-Q4Z" sceneMemberID="viewController">
+                <viewController id="D4A-7E-Q4Z" customClass="MainMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="loC-fV-toE"/>
                         <viewControllerLayoutGuide type="bottom" id="xKn-gI-5UJ"/>
@@ -28,15 +28,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lc-4d-EMh">
-                                <rect key="frame" x="89" y="315" width="142" height="46"/>
+                                <rect key="frame" x="89" y="365" width="142" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="22"/>
                                 <state key="normal" title="Options">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzl-Cl-Uda">
+                                <rect key="frame" x="89" y="306" width="142" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="22"/>
+                                <state key="normal" title="Upgrades">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gaN-K4-2Vf" kind="modal" identifier="segueToUpgradeView" id="xPz-xY-31X"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHB-VK-1qK">
-                                <rect key="frame" x="89" y="383" width="142" height="46"/>
+                                <rect key="frame" x="89" y="433" width="142" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="22"/>
                                 <state key="normal" title="Highscores">
@@ -114,16 +125,6 @@ Invaders</string>
             </objects>
             <point key="canvasLocation" x="1403" y="288"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Sii-19-H88">
-            <objects>
-                <viewController id="mpb-Zf-jnF" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="1Dq-mE-meP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vuQ-Qy-G0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1377" y="-1190"/>
-        </scene>
         <!--Game View Controller-->
         <scene sceneID="6kO-pW-4N6">
             <objects>
@@ -142,6 +143,193 @@ Invaders</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAh-Pg-fpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1377" y="-516"/>
+        </scene>
+        <!--Upgrade View Controller-->
+        <scene sceneID="jhx-Kd-VLz">
+            <objects>
+                <viewController id="gaN-K4-2Vf" customClass="UpgradeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RaF-9e-4Cs"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zqa-PM-iWC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jzr-Ov-ZyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Slq-8R-5OG">
+                                <rect key="frame" x="40" y="72" width="115" height="93"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Freeze!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-uK-76c">
+                                        <rect key="frame" x="9" y="7" width="56" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost:100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gr-6h-GMv">
+                                        <rect key="frame" x="2" y="67" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSf-S7-eJp">
+                                        <rect key="frame" x="80" y="63" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Buy">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="freezeBuy:" destination="gaN-K4-2Vf" eventType="touchUpInside" id="d7H-Qn-JtU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kH2-0b-qJM">
+                                <rect key="frame" x="163" y="72" width="115" height="93"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Side Bullets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETZ-W8-Pu6">
+                                        <rect key="frame" x="9" y="7" width="92" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost:100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk0-q8-dhM">
+                                        <rect key="frame" x="2" y="67" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxj-cY-FcM">
+                                        <rect key="frame" x="80" y="63" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Buy">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sideBuy:" destination="gaN-K4-2Vf" eventType="touchUpInside" id="QyO-HC-pyc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C52-CY-KzK">
+                                <rect key="frame" x="40" y="173" width="115" height="93"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Automatic Shooting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBe-UP-GEd">
+                                        <rect key="frame" x="9" y="7" width="152" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost:100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-dE-fl4">
+                                        <rect key="frame" x="2" y="67" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFW-zT-fb2">
+                                        <rect key="frame" x="80" y="63" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Buy">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="automaticBuy:" destination="gaN-K4-2Vf" eventType="touchUpInside" id="F7Y-Ez-53F"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i1d-7o-l8q">
+                                <rect key="frame" x="163" y="173" width="115" height="93"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explode All" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzh-IK-lE1">
+                                        <rect key="frame" x="9" y="7" width="87" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost:100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOJ-Iy-cKt">
+                                        <rect key="frame" x="2" y="67" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdo-bn-wR2">
+                                        <rect key="frame" x="80" y="63" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Buy">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="explodeBuy:" destination="gaN-K4-2Vf" eventType="touchUpInside" id="WS3-Dg-3Fw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcT-0g-XcW">
+                                <rect key="frame" x="137" y="518" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackToMain:" destination="gaN-K4-2Vf" eventType="touchUpInside" id="IRG-pu-cKm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coins:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRz-ih-UqZ">
+                                <rect key="frame" x="40" y="27" width="238" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zqa-PM-iWC" firstAttribute="top" secondItem="JcT-0g-XcW" secondAttribute="bottom" constant="20" id="1IK-mR-0P8"/>
+                            <constraint firstItem="C52-CY-KzK" firstAttribute="centerY" secondItem="Slq-8R-5OG" secondAttribute="centerY" constant="101" id="2On-Cj-9N8"/>
+                            <constraint firstAttribute="trailing" secondItem="C52-CY-KzK" secondAttribute="trailing" constant="171" id="5fy-OP-lFP"/>
+                            <constraint firstItem="i1d-7o-l8q" firstAttribute="leading" secondItem="Jzr-Ov-ZyQ" secondAttribute="leading" constant="157" id="CIw-xu-eAD"/>
+                            <constraint firstItem="i1d-7o-l8q" firstAttribute="leading" secondItem="C52-CY-KzK" secondAttribute="trailing" constant="8" id="HwD-vM-wA3"/>
+                            <constraint firstAttribute="trailing" secondItem="eRz-ih-UqZ" secondAttribute="trailing" constant="42" id="LkW-eq-bK4"/>
+                            <constraint firstAttribute="trailing" secondItem="JcT-0g-XcW" secondAttribute="trailing" constant="146" id="PZF-vv-bqg"/>
+                            <constraint firstItem="eRz-ih-UqZ" firstAttribute="top" secondItem="RaF-9e-4Cs" secondAttribute="bottom" constant="27" id="PiQ-mc-1Ve"/>
+                            <constraint firstItem="i1d-7o-l8q" firstAttribute="centerY" secondItem="kH2-0b-qJM" secondAttribute="centerY" constant="101" id="RMb-Ft-1Bm"/>
+                            <constraint firstItem="JcT-0g-XcW" firstAttribute="leading" secondItem="Jzr-Ov-ZyQ" secondAttribute="leading" constant="137" id="dKl-y9-Ywo"/>
+                            <constraint firstItem="kH2-0b-qJM" firstAttribute="leading" secondItem="Jzr-Ov-ZyQ" secondAttribute="leading" constant="157" id="hb9-WM-pl4"/>
+                            <constraint firstAttribute="trailing" secondItem="Slq-8R-5OG" secondAttribute="trailing" constant="171" id="irk-KT-xQN"/>
+                            <constraint firstItem="kH2-0b-qJM" firstAttribute="leading" secondItem="Slq-8R-5OG" secondAttribute="trailing" constant="8" id="uXn-6U-Tut"/>
+                            <constraint firstItem="eRz-ih-UqZ" firstAttribute="leading" secondItem="Jzr-Ov-ZyQ" secondAttribute="leading" constant="40" id="w5s-E7-0dk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="automaticBuy" destination="oFW-zT-fb2" id="J99-9f-fJs"/>
+                        <outlet property="automaticCost" destination="RX1-dE-fl4" id="7m6-BA-1qe"/>
+                        <outlet property="explodeBuy" destination="hdo-bn-wR2" id="0dR-TH-AZc"/>
+                        <outlet property="explodeCost" destination="aOJ-Iy-cKt" id="SpM-T2-Vbw"/>
+                        <outlet property="freezeBuy" destination="jSf-S7-eJp" id="gYc-n0-XP2"/>
+                        <outlet property="freezeCost" destination="3gr-6h-GMv" id="INX-WC-axp"/>
+                        <outlet property="playerBalanceLabel" destination="eRz-ih-UqZ" id="V9l-tw-bxP"/>
+                        <outlet property="sideBuy" destination="bxj-cY-FcM" id="tiA-6L-0Y1"/>
+                        <outlet property="sideCost" destination="rk0-q8-dhM" id="PHw-Yq-ff8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2F-4D-4Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1367" y="-1225"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JFU-Ea-vHY">
@@ -252,6 +440,6 @@ Invaders</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Nap-fF-aes"/>
+        <segue reference="7B5-Nm-e6s"/>
     </inferredMetricsTieBreakers>
 </document>

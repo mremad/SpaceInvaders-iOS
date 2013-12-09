@@ -7,11 +7,14 @@
 //
 
 #import "GameViewController.h"
-#import "UpgradeCenter.h"
+
 #import "MyScene.h"
 #import "ScoreViewController.h"
 
 @implementation GameViewController
+{
+    MyScene* scene;
+}
 
 - (void)viewDidLoad
 {
@@ -25,14 +28,22 @@
     skView.showsNodeCount = NO;
     
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    [scene setUpgradeCenter:self.upgradeCenter];
     
     UITapGestureRecognizer *singleFingerTap =
     [[UITapGestureRecognizer alloc] initWithTarget:scene
                                             action:@selector(handleSingleTap:)];
     
     [skView addGestureRecognizer:singleFingerTap];
+    
+    CMMotionManager* motionManager = [[CMMotionManager alloc] init];
+    motionManager.accelerometerUpdateInterval = .2;
+    
+    [motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+        [scene moveShipWithxStep:accelerometerData.acceleration.x yStep:accelerometerData.acceleration.y];
+    }];
     
     // Present the scene.
     [skView presentScene:scene];
@@ -46,7 +57,7 @@
 
 - (BOOL)shouldAutorotate
 {
-    return YES;
+    return NO;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{

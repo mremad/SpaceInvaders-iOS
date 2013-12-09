@@ -35,13 +35,18 @@
     _scoreNode.text = [NSString stringWithFormat:@"Score:%1.0f", _score];
     _upgradeBalanceNode.text = [NSString stringWithFormat:@"Coins:%d",upgradeCenter.playerBalance];
 }
+
+-(void)setUpgradeCenter:(id)upCenter
+{
+    upgradeCenter = (UpgradeCenter*)upCenter;
+    upgradeCenter.scene = self;
+}
+
 #pragma mark - Initilization
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         
         
-        upgradeCenter = [[UpgradeCenter alloc] initWithScene:self];
-        upgradeCenter.playerBalance = 0;
         //Added Background Particle Node
         [self setupBackground];
         
@@ -352,24 +357,24 @@
     
     
     if ([node.name isEqualToString:@"Freeze"]) {
-        [upgradeCenter purchaseUpgrade:UpgradeFreeze];
-        [upgradeCenter activateUpgrade:UpgradeFreeze];
+        if(upgradeCenter.upgradeList[UpgradeFreeze])
+            [upgradeCenter activateUpgrade:UpgradeFreeze];
         
     }
     else if([node.name isEqualToString:@"SideBullets"])
     {
-        [upgradeCenter purchaseUpgrade:UpgradeSideBullets];
-        [upgradeCenter activateUpgrade:UpgradeSideBullets];
+        if(upgradeCenter.upgradeList[UpgradeSideBullets])
+            [upgradeCenter activateUpgrade:UpgradeSideBullets];
     }
     else if([node.name isEqualToString:@"AutomaticShooting"])
     {
-        [upgradeCenter purchaseUpgrade:UpgradeAutomaticShooting];
-        [upgradeCenter activateUpgrade:UpgradeAutomaticShooting];
+        if(upgradeCenter.upgradeList[UpgradeAutomaticShooting])
+            [upgradeCenter activateUpgrade:UpgradeAutomaticShooting];
     }
     else if([node.name isEqualToString:@"ExplodeAll"])
     {
-        [upgradeCenter purchaseUpgrade:UpgradeDestroyAllEnemys];
-        [upgradeCenter activateUpgrade:UpgradeDestroyAllEnemys];
+        if(upgradeCenter.upgradeList[UpgradeDestroyAllEnemys])
+            [upgradeCenter activateUpgrade:UpgradeDestroyAllEnemys];
     }
    
     
@@ -393,6 +398,11 @@
     CGPoint location = [touch locationInNode:self];
     location.y+=30;
     [_spaceShip runAction:[SKAction moveTo:location duration:0.1]];
+}
+
+- (void)moveShipWithxStep:(float)x yStep:(float)y
+{
+    _spaceShip.position = CGPointMake(_spaceShip.position.x + x, _spaceShip.position.y + y);
 }
 
 -(void)handleSingleTap:(UIGestureRecognizer*)ges

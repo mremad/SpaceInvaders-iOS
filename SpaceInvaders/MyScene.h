@@ -12,6 +12,7 @@
 #import "EnemyShip.h"
 #import "EnemyFactory.h"
 #import "RandomGenerator.h"
+#import <CoreMotion/CoreMotion.h>
 
 #define SECONDS_TO_WAIT_BETWEEN_EACH_WAVE   2
 #define SECONDS_TO_WAIT_BETWEEN_EACH_LEVEL  1
@@ -48,10 +49,12 @@ NSMutableArray *storedScores;
 /**
  Increases the score by the amount specified. The HUD layer will be updated to reflect the change.
  */
+- (void)moveShipWithxStep:(float)x yStep:(float)y;
 - (void)shootSideBullets;
 - (void)shootBullet;
 - (void)increaseScoreBy:(float)amount;
 - (void)handleSingleTap:(UIGestureRecognizer*)ges;
+- (void)setUpgradeCenter:(id)upCenter;
 - (void)spaceShipIsDestroyed;
 - (NSMutableArray *) readFromPlist: (NSString *)fileName;
 @end
