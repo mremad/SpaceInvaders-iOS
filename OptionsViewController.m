@@ -22,6 +22,13 @@
     }
     return self;
 }
+- (IBAction)TiltingValueChanged:(id)sender
+{
+    if(_TiltingOutLet.isOn)
+    {
+        
+    }
+}
 
 - (void)viewDidLoad
 {
