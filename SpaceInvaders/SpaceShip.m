@@ -60,7 +60,7 @@
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
 {   //if the SpaceShip collided with anything destory it
     
-    [self setHealth:([self getHealth]-100)];
+    [self setHealth:([self getHealth]-500)];
     if([self getHealth]==0)
     {
         [(MyScene *)self.scene spaceShipIsDestroyed];

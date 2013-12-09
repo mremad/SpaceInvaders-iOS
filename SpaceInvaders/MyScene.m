@@ -45,9 +45,16 @@
         //Added Background Particle Node
         [self setupBackground];
         
-        storedScores = [[NSMutableArray alloc] initWithCapacity:10];
+        
 
         storedScores = [self readFromPlist:@"Scores.plist"];
+        if (storedScores == nil) {
+            storedScores = [[NSMutableArray alloc] initWithCapacity:10];
+            for (int i=0; i < 10; i++) {
+                storedScores[i] = [NSNumber numberWithInt:0];
+            }
+        }
+        
  
         
         //there is no gravity in space...
@@ -724,8 +731,16 @@
 {
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *finalPath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    NSError *error = nil;
+    NSLog(@"%@", data);
     
-    [data writeToFile:finalPath atomically: YES];
+    BOOL OK = [data writeToFile:finalPath atomically: YES];
+    
+    if(OK){
+        NSLog(@"Fail: %@", [error localizedDescription]);
+    }
+    
+    
 }
 
 //method to retreive the NS Array to Plist

@@ -29,11 +29,14 @@
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:finalPath];
     
     if (fileExists) {
+        
         scores = [[NSMutableArray alloc] initWithContentsOfFile:finalPath];
+        NSLog(@"%@", scores);
 
-    } else {
-             scores = [NSMutableArray arrayWithObjects:@"Score 1", @"Score 2", @"Score 3",@"Score 4", @"Score 5", @"Score 6",@"Score 7", @"Score 8", @"Score 9",@"Score 10", nil];
     }
+//    else {
+//             scores = [NSMutableArray arrayWithObjects:@"Score 1", @"Score 2", @"Score 3",@"Score 4", @"Score 5", @"Score 6",@"Score 7", @"Score 8", @"Score 9",@"Score 10", nil];
+//    }
     
     NSSortDescriptor *sortedScores = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];
     [scores sortUsingDescriptors:[NSArray arrayWithObject:sortedScores]];
@@ -66,8 +69,9 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
-    cell.textLabel.text = [scores objectAtIndex:indexPath.row];
+    NSLog(@"%@", indexPath);
+    cell.textLabel.text = [NSString stringWithFormat:@"%d",[[scores objectAtIndex:indexPath.row] integerValue]];
+
     return cell;
 }
 
