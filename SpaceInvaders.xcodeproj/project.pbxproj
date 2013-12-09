@@ -96,7 +96,7 @@
 		D9E90134184A7FFA0035376B /* EnemyShipDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E90133184A7FFA0035376B /* EnemyShipDebris.m */; };
 		D9E90136184A969D0035376B /* xruserDebris_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E90135184A969D0035376B /* xruserDebris_2.png */; };
 		D9EA81611855908700A1D799 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA81601855908600A1D799 /* OptionsViewController.m */; };
-		D9EA816418559B9100A1D799 /* OurNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA816318559B9100A1D799 /* OurNavigationController.m */; };
+		D9EA81671855A39C00A1D799 /* OurNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA81661855A39C00A1D799 /* OurNavigationController.m */; };
 		D9FD05F91854B6C0008CB12A /* EnemyBulletParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9FD05F81854B6C0008CB12A /* EnemyBulletParticle.sks */; };
 /* End PBXBuildFile section */
 
@@ -232,8 +232,8 @@
 		D9E90135184A969D0035376B /* xruserDebris_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xruserDebris_2.png; sourceTree = "<group>"; };
 		D9EA815F1855908600A1D799 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptionsViewController.h; path = ../OptionsViewController.h; sourceTree = "<group>"; };
 		D9EA81601855908600A1D799 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionsViewController.m; path = ../OptionsViewController.m; sourceTree = "<group>"; };
-		D9EA816218559B9100A1D799 /* OurNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OurNavigationController.h; sourceTree = "<group>"; };
-		D9EA816318559B9100A1D799 /* OurNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OurNavigationController.m; sourceTree = "<group>"; };
+		D9EA81651855A39C00A1D799 /* OurNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OurNavigationController.h; path = SpaceInvaders/OurNavigationController.h; sourceTree = "<group>"; };
+		D9EA81661855A39C00A1D799 /* OurNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OurNavigationController.m; path = SpaceInvaders/OurNavigationController.m; sourceTree = "<group>"; };
 		D9FD05F81854B6C0008CB12A /* EnemyBulletParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyBulletParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,8 +266,8 @@
 		D915A63C18455A6A0084CE6D = {
 			isa = PBXGroup;
 			children = (
-				D9EA816218559B9100A1D799 /* OurNavigationController.h */,
-				D9EA816318559B9100A1D799 /* OurNavigationController.m */,
+				D9EA81651855A39C00A1D799 /* OurNavigationController.h */,
+				D9EA81661855A39C00A1D799 /* OurNavigationController.m */,
 				D915A65018455A6A0084CE6D /* SpaceInvaders */,
 				D915A67418455A6A0084CE6D /* SpaceInvadersTests */,
 				D915A64718455A6A0084CE6D /* Frameworks */,
@@ -701,7 +701,7 @@
 				D915A66118455A6A0084CE6D /* GameViewController.m in Sources */,
 				D914CE8E1854E55F00E5CFCD /* XDollar.m in Sources */,
 				D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */,
-				D9EA816418559B9100A1D799 /* OurNavigationController.m in Sources */,
+				D9EA81671855A39C00A1D799 /* OurNavigationController.m in Sources */,
 				D9EA81611855908700A1D799 /* OptionsViewController.m in Sources */,
 				D9E90134184A7FFA0035376B /* EnemyShipDebris.m in Sources */,
 				D9274F06185574FE00577088 /* UpgradeViewController.m in Sources */,

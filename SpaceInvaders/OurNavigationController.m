@@ -8,6 +8,7 @@
 
 #import "OurNavigationController.h"
 
+#import "GameViewController.h"
 @interface OurNavigationController ()
 
 @end
@@ -40,7 +41,7 @@
     [super viewDidLayoutSubviews];
     
     UIViewController *rootViewController = self.viewControllers[0];
-    if([self.visibleViewController isEqual:rootViewController])
+    if([self.visibleViewController isEqual:rootViewController]||[self.visibleViewController isKindOfClass:[GameViewController class]])
     {
         [self setNavigationBarHidden:YES animated:NO];
     }
