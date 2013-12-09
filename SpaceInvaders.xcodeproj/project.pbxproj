@@ -65,6 +65,7 @@
 		D944514D1854EA6A0049154F /* xdollarDebris_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451451854EA6A0049154F /* xdollarDebris_2.png */; };
 		D944514E1854EA6A0049154F /* xstarDebris_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451461854EA6A0049154F /* xstarDebris_1.png */; };
 		D944514F1854EA6A0049154F /* xstarDebris_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D94451471854EA6A0049154F /* xstarDebris_2.png */; };
+		D94678C3185590EA00D5FEAC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94678C2185590EA00D5FEAC /* CoreMotion.framework */; };
 		D96E887618541FAC00D669E1 /* XCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887518541FAC00D669E1 /* XCorner.png */; };
 		D96E887818541FE300D669E1 /* XDollar.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887718541FE300D669E1 /* XDollar.png */; };
 		D96E887F1854412D00D669E1 /* automatic-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E887A1854412D00D669E1 /* automatic-sprite.png */; };
@@ -193,6 +194,7 @@
 		D94451451854EA6A0049154F /* xdollarDebris_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xdollarDebris_2.png; sourceTree = "<group>"; };
 		D94451461854EA6A0049154F /* xstarDebris_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xstarDebris_1.png; sourceTree = "<group>"; };
 		D94451471854EA6A0049154F /* xstarDebris_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xstarDebris_2.png; sourceTree = "<group>"; };
+		D94678C2185590EA00D5FEAC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D96E887518541FAC00D669E1 /* XCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XCorner.png; sourceTree = "<group>"; };
 		D96E887718541FE300D669E1 /* XDollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XDollar.png; sourceTree = "<group>"; };
 		D96E887A1854412D00D669E1 /* automatic-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "automatic-sprite.png"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94678C3185590EA00D5FEAC /* CoreMotion.framework in Frameworks */,
 				D915A64B18455A6A0084CE6D /* CoreGraphics.framework in Frameworks */,
 				D915A64D18455A6A0084CE6D /* UIKit.framework in Frameworks */,
 				D915A64F18455A6A0084CE6D /* SpriteKit.framework in Frameworks */,
@@ -279,6 +282,7 @@
 		D915A64718455A6A0084CE6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D94678C2185590EA00D5FEAC /* CoreMotion.framework */,
 				D915A64818455A6A0084CE6D /* Foundation.framework */,
 				D915A64A18455A6A0084CE6D /* CoreGraphics.framework */,
 				D915A64C18455A6A0084CE6D /* UIKit.framework */,

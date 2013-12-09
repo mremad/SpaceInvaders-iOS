@@ -38,10 +38,10 @@
     
     [skView addGestureRecognizer:singleFingerTap];
     
-    CMMotionManager* motionManager = [[CMMotionManager alloc] init];
-    motionManager.accelerometerUpdateInterval = .2;
+    self.motionManager = [[CMMotionManager alloc] init];
+    self.motionManager.accelerometerUpdateInterval = .2;
     
-    [motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
         [scene moveShipWithxStep:accelerometerData.acceleration.x yStep:accelerometerData.acceleration.y];
     }];
     

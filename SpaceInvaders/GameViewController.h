@@ -14,5 +14,6 @@
 @interface GameViewController : UIViewController
 
 @property UpgradeCenter* upgradeCenter;
+@property (strong, nonatomic) CMMotionManager *motionManager;
 
 @end
