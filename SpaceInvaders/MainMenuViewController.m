@@ -75,7 +75,8 @@
     if(appDelegate.navJumpToScore)
     {
         appDelegate.navJumpToScore=NO;
-        ScoreViewController *svc = [[ScoreViewController alloc] init];
+        [_HighScoresButon sendActionsForControlEvents: UIControlEventTouchUpInside];
+        //ScoreViewController *svc = [[ScoreViewController alloc] init];
         //[self.navigationController pushViewController:svc animated:YES];
     }
 }

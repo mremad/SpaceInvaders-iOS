@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="38m-ip-46P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="38m-ip-46P">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Main Menu View Controller-->
@@ -97,17 +97,6 @@ Invaders</string>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y7V-7j-3Zb">
-                            <rect key="frame" x="0.0" y="216" width="320" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
-                            <state key="normal" title="Start Game">
-                                <color key="titleColor" red="0.27040257570366677" green="0.25410981469448268" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <segue destination="aYe-k8-gw2" kind="push" id="Nap-fF-aes"/>
-                            </connections>
-                        </button>
                         <prototypes>
                             <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScoreCell" id="HQt-pC-qTa">
                                 <rect key="frame" x="0.0" y="162" width="320" height="44"/>
@@ -124,7 +113,7 @@ Invaders</string>
                             <outlet property="delegate" destination="WJ6-hU-ete" id="BJa-PC-Jlf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Space Invaders" id="izj-fw-N6z" userLabel="Space Invaders">
+                    <navigationItem key="navigationItem" id="izj-fw-N6z" userLabel="Space Invaders">
                         <barButtonItem key="backBarButtonItem" title="Space" id="2mz-Hr-e9U"/>
                     </navigationItem>
                 </tableViewController>
@@ -483,7 +472,4 @@ Invaders</string>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="7B5-Nm-e6s"/>
-    </inferredMetricsTieBreakers>
 </document>
