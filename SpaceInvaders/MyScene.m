@@ -267,9 +267,12 @@
 -(void) spaceShipIsDestroyed //TODO call somewhere
 {
     [self storeHighScores:_score];
-    UIViewController *scoreView = [[UIViewController alloc] init];
-    //UINavigationController *p ;
-  // UINavigationController *nvc= [UIApplication sharedApplication].keyWindow.rootViewController;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+   
+    appDelegate.navJumpToScore=YES;
+     OurNavigationController *nvc=(OurNavigationController *) [UIApplication sharedApplication].keyWindow.rootViewController;
+    [nvc popToRootViewControllerAnimated:YES];
+    
    // [nvc popViewControllerAnimated:NO];
     //[nvc pushViewController:scoreView animated:YES];
     
@@ -497,6 +500,7 @@
    // {
      //   [self spaceShipIsDestroyed];
    // }
+    
 }
 
 - (void) handleDeadEnemies:(SKPhysicsContact *)contact

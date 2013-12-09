@@ -10,4 +10,8 @@
 
 @interface OurNavigationController : UINavigationController
 
+@property BOOL jumpToScore;
+
+@property BOOL jumpToScorse;
+
 @end

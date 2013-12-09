@@ -7,7 +7,8 @@
 //
 
 #import "OurNavigationController.h"
-
+#import "ScoreViewController.h"
+#import "AppDelegate.h"
 @interface OurNavigationController ()
 
 @end
@@ -50,6 +51,8 @@
     }
     
 }
+
+
 
 
 

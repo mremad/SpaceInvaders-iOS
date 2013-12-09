@@ -14,4 +14,6 @@
 
 @property BOOL tilting;
 
+@property BOOL navJumpToScore;
+
 @end

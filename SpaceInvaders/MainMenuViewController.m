@@ -7,6 +7,7 @@
 //
 
 #import "MainMenuViewController.h"
+#import "AppDelegate.h"
 
 @interface MainMenuViewController ()
 
@@ -64,6 +65,18 @@
 //    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 //}
 //
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if(appDelegate.navJumpToScore)
+    {
+        appDelegate.navJumpToScore=NO;
+        ScoreViewController *svc = [[ScoreViewController alloc] init];
+        [self.navigationController pushViewController:svc animated:YES];
+    }
+}
 
 
 - (NSUInteger)supportedInterfaceOrientations
