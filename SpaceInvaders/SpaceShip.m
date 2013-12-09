@@ -60,10 +60,12 @@
 - (void)collidedWith:(SKPhysicsBody *)body contact:(SKPhysicsContact *)contact
 {   //if the SpaceShip collided with anything destory it
     
-    [self setHealth:([self getHealth]-500)];
+    [self setHealth:([self getHealth]-1)];
     if([self getHealth]==0)
     {
+        //Updating High Scores when Spaceship destroyed and letting Game View Controller know
         [(MyScene *)self.scene spaceShipIsDestroyed];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"GameComplete" object:nil];
         [self removeNodeWithEffectsAtContactPoint:contact];
     }
     else
@@ -121,5 +123,6 @@
     return texture;
     
 }
+     
 @end
 

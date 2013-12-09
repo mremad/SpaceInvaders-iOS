@@ -747,16 +747,9 @@
 {
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *finalPath = [documentsDirectory stringByAppendingPathComponent:fileName];
-    NSError *error = nil;
-    NSLog(@"%@", data);
     
-    BOOL OK = [data writeToFile:finalPath atomically: YES];
-    
-    if(OK){
-        NSLog(@"Fail: %@", [error localizedDescription]);
-    }
-    
-    
+    [data writeToFile:finalPath atomically: YES];
+
 }
 
 //method to retreive the NS Array to Plist

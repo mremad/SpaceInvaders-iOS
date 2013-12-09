@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 #import "UpgradeCenter.h"
 #import "MyScene.h"
+#import "ScoreViewController.h"
 
 @implementation GameViewController
 
@@ -35,6 +36,12 @@
     
     // Present the scene.
     [skView presentScene:scene];
+    
+    //Registering for notification
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(eventListenerDidReceiveNotification:)
+                                                 name:@"GameComplete"
+                                               object:nil];
 }
 
 - (BOOL)shouldAutorotate
@@ -63,4 +70,13 @@
     return YES;
 }
 
-@end
+//Getting information on SpaceShip Destruction
+- (void)eventListenerDidReceiveNotification:(NSNotification *)notification
+{
+    if ([[notification name] isEqualToString:@"GameComplete"])
+    {
+        NSLog(@"Poof!");
+
+
+    }
+}@end
