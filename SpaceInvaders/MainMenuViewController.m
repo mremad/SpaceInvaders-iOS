@@ -33,7 +33,7 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     upgradeCenter = [[UpgradeCenter alloc] initWithScene:nil];
-    upgradeCenter.playerBalance = 1000;
+    upgradeCenter.playerBalance = 2000;
 	// Do any additional setup after loading the view.
 }
 

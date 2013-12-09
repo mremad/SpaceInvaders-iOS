@@ -27,8 +27,8 @@
         [self addChild:leftFuel];
         
        
-        [self setMaxHealth:5]; //TODO put back to 3
-        [self setHealth:5];
+        [self setMaxHealth:10]; //TODO put back to 3
+        [self setHealth:10];
     }
     
     return self;

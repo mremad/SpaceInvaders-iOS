@@ -93,6 +93,10 @@
 {
     [super viewDidLoad];
 	[self.view setBackgroundColor:[UIColor grayColor]];
+    [_upgradeCenter purchaseUpgrade:UpgradeDestroyAllEnemys];
+    [_upgradeCenter purchaseUpgrade:UpgradeSideBullets];
+    [_upgradeCenter purchaseUpgrade:UpgradeFreeze];
+    
     [self updateView];
     
 

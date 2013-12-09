@@ -23,6 +23,7 @@
     BOOL automaticShooting;
     SKLabelNode *_scoreNode;
     SKLabelNode *_upgradeBalanceNode;
+    SKLabelNode *_levelNode;
     int level;
     int amountEnemiesInTheCurrentLevel;
     int amountDeadEnemiesInTheCurrentLevel;
@@ -36,12 +37,16 @@
     _score += amount;
     _scoreNode.text = [NSString stringWithFormat:@"Score:%1.0f", _score];
     _upgradeBalanceNode.text = [NSString stringWithFormat:@"Coins:%d",upgradeCenter.playerBalance];
+    _levelNode.text =[NSString stringWithFormat:@"Level %d",level+1];
 }
 
 -(void)setUpgradeCenter:(id)upCenter
 {
     upgradeCenter = (UpgradeCenter*)upCenter;
     upgradeCenter.scene = self;
+    [upgradeCenter purchaseUpgrade:UpgradeDestroyAllEnemys];
+    [upgradeCenter purchaseUpgrade:UpgradeSideBullets];
+    [upgradeCenter purchaseUpgrade:UpgradeFreeze];
 }
 
 #pragma mark - Initilization
@@ -185,6 +190,17 @@
     _upgradeBalanceNode.position = CGPointMake(self.size.width - _upgradeBalanceNode.frame.size.width - 6-20, self.size.height - _upgradeBalanceNode.frame.size.height -2);
     
     [_layerHudNode addChild:_upgradeBalanceNode];
+    
+    _levelNode = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    _levelNode.fontSize = 14.0;
+    _levelNode.text = @"Level:1";
+    _levelNode.name = @"levelNode";
+    _levelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    _levelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    _levelNode.position = CGPointMake(self.size.width - _levelNode.frame.size.width - 6-20-70, self.size.height - _levelNode.frame.size.height -2);
+    
+    [_layerHudNode addChild:_levelNode];
     
     [self addChild:_layerHudNode];
 }
