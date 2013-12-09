@@ -485,12 +485,26 @@
         NSArray *allEnemies=[self.layerEnemiesNode children];
         if ([allEnemies count] > 0)
             {
-                    for(EnemyShip* enemyShip in allEnemies)
-                        {
-                             if(![enemyShip isKindOfClass:[EnemyShip class]])
-                                        continue;
-                             
-                        }
+                for(EnemyShip* enemyShip in allEnemies)
+                {
+                    if(![enemyShip isKindOfClass:[EnemyShip class]])
+                        continue;
+                    if(enemyShip.enemyMovement==EnemyMovementNormal && enemyShip.position.y<=1)
+                    {
+                        [enemyShip removeFromParent];
+                        amountDeadEnemiesInTheCurrentLevel++;
+                    }
+                    else  if(enemyShip.enemyMovement==EnemyMovementRightArc && enemyShip.position.x<=-5)
+                    {
+                        [enemyShip removeFromParent];
+                        amountDeadEnemiesInTheCurrentLevel++;
+                    }
+                    else if(enemyShip.enemyMovement==EnemyMovementLeftArc && enemyShip.position.x>=325)
+                    {
+                        [enemyShip removeFromParent];
+                        amountDeadEnemiesInTheCurrentLevel++;
+                    }
+                }
             }
 }
 
@@ -507,6 +521,7 @@
         _layerFirstBackground.position = CGPointMake(0, self.size.height);
     [self rotateShipsThatNeedRotation:currentTime];
     [self fireEnemiesBulletsEveryUpdate:currentTime];
+    [self removeOutOfScreenEnemiesInDeadEnemiesCount:currentTime];
 }
 
 
@@ -711,6 +726,7 @@
     [self addChild:bullet];
 }
 
+#pragma mark - Handle High Scores
 -(void)storeHighScores:(float)score {
 
     NSSortDescriptor *sortedScores = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];
