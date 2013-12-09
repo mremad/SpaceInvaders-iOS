@@ -60,9 +60,9 @@
     return NO;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+//    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+//}
 
 - (NSUInteger)supportedInterfaceOrientations
 {

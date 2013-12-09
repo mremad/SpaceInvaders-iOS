@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     upgradeCenter = [[UpgradeCenter alloc] initWithScene:nil];
     upgradeCenter.playerBalance = 1000;
 	// Do any additional setup after loading the view.
@@ -59,9 +60,11 @@
     
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+//    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+//}
+//
+
 
 - (NSUInteger)supportedInterfaceOrientations
 {
