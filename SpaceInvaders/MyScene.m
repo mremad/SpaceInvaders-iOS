@@ -9,6 +9,7 @@
 #import "UpgradeCenter.h"
 #import "MyScene.h"
 
+#import "UpgradeViewController.h"
 
 @implementation MyScene
 {
@@ -265,6 +266,12 @@
 -(void) spaceShipIsDestroyed //TODO call somewhere
 {
     [self storeHighScores:_score];
+    UIViewController *scoreView = [[UIViewController alloc] init];
+    //UINavigationController *p ;
+  // UINavigationController *nvc= [UIApplication sharedApplication].keyWindow.rootViewController;
+   // [nvc popViewControllerAnimated:NO];
+    //[nvc pushViewController:scoreView animated:YES];
+    
 }
 
 -(void) addSomeAnimationSayingThatLevelEnded
@@ -468,6 +475,7 @@
         SKNode *contactNode1 = contact.bodyA.node;
         SKNode *contactNode2 = contact.bodyB.node;
         [self handleDeadEnemies:contact];
+        [self handleSpaceShipDestroyed:contact];
         if([contactNode1 isKindOfClass:[GameObject class]]) {
             [(GameObject *)contactNode1 collidedWith:contact.bodyB contact:contact];
         }
@@ -475,6 +483,14 @@
             [(GameObject *)contactNode2 collidedWith:contact.bodyA contact:contact];
         }
     }
+}
+
+- (void) handleSpaceShipDestroyed:(SKPhysicsContact *)contact
+{
+    //if(([contact.bodyA.node isKindOfClass:[SpaceShip class]]&&((SpaceShip *)contact.bodyA.node).health==1)||([contact.bodyB.node isKindOfClass:[EnemyShip class]]&&((SpaceShip *)contact.bodyB.node).health==1))
+   // {
+     //   [self spaceShipIsDestroyed];
+   // }
 }
 
 - (void) handleDeadEnemies:(SKPhysicsContact *)contact

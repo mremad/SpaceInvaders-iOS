@@ -94,6 +94,7 @@
 		D9E3CFBB184E9B0D0055BE71 /* EnemyShipBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E3CFBA184E9B0D0055BE71 /* EnemyShipBullet.m */; };
 		D9E90134184A7FFA0035376B /* EnemyShipDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E90133184A7FFA0035376B /* EnemyShipDebris.m */; };
 		D9E90136184A969D0035376B /* xruserDebris_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E90135184A969D0035376B /* xruserDebris_2.png */; };
+		D9EA81611855908700A1D799 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA81601855908600A1D799 /* OptionsViewController.m */; };
 		D9FD05F91854B6C0008CB12A /* EnemyBulletParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9FD05F81854B6C0008CB12A /* EnemyBulletParticle.sks */; };
 /* End PBXBuildFile section */
 
@@ -226,6 +227,8 @@
 		D9E90132184A7FFA0035376B /* EnemyShipDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyShipDebris.h; sourceTree = "<group>"; };
 		D9E90133184A7FFA0035376B /* EnemyShipDebris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyShipDebris.m; sourceTree = "<group>"; };
 		D9E90135184A969D0035376B /* xruserDebris_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xruserDebris_2.png; sourceTree = "<group>"; };
+		D9EA815F1855908600A1D799 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptionsViewController.h; path = ../OptionsViewController.h; sourceTree = "<group>"; };
+		D9EA81601855908600A1D799 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionsViewController.m; path = ../OptionsViewController.m; sourceTree = "<group>"; };
 		D9FD05F81854B6C0008CB12A /* EnemyBulletParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyBulletParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,6 +303,8 @@
 				D9274F02185574FE00577088 /* MainMenuViewController.m */,
 				D9274F03185574FE00577088 /* UpgradeViewController.h */,
 				D9274F04185574FE00577088 /* UpgradeViewController.m */,
+				D9EA815F1855908600A1D799 /* OptionsViewController.h */,
+				D9EA81601855908600A1D799 /* OptionsViewController.m */,
 				D915A66218455A6A0084CE6D /* MyScene.h */,
 				D915A66318455A6A0084CE6D /* MyScene.m */,
 				D915A66718455A6A0084CE6D /* Images.xcassets */,
@@ -687,6 +692,7 @@
 				D915A66118455A6A0084CE6D /* GameViewController.m in Sources */,
 				D914CE8E1854E55F00E5CFCD /* XDollar.m in Sources */,
 				D91AE7A618461E5200A280E6 /* EnemyFactory.m in Sources */,
+				D9EA81611855908700A1D799 /* OptionsViewController.m in Sources */,
 				D9E90134184A7FFA0035376B /* EnemyShipDebris.m in Sources */,
 				D9274F06185574FE00577088 /* UpgradeViewController.m in Sources */,
 				D914CE8C1854E55F00E5CFCD /* XBooster.m in Sources */,
