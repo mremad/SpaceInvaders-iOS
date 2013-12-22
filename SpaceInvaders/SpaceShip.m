@@ -22,9 +22,14 @@
         
         //Add fuel ignition particles
         SKEmitterNode* leftFuel = [GameObject newFuelEmitter];
-        leftFuel.position = CGPointMake(self.size.width/2-20,self.size.height/2 - 130);
-        leftFuel.particleScale = 1;
+        leftFuel.position = CGPointMake(self.size.width/2-70,self.size.height/2 - 65);
+        leftFuel.particleScale = 0.7;
         [self addChild:leftFuel];
+        
+        SKEmitterNode* rightFuel = [GameObject newFuelEmitter];
+        rightFuel.position = CGPointMake(self.size.width/2+30,self.size.height/2 - 65);
+        rightFuel.particleScale = 0.7;
+        [self addChild:rightFuel];
         
        
         [self setMaxHealth:10]; //TODO put back to 3
@@ -62,6 +67,12 @@
 {   //if the SpaceShip collided with anything destory it
     
     [self setHealth:([self getHealth]-1)];
+    SKEmitterNode* fireParticles = [GameObject newExplosionEmitter];
+    fireParticles.position = contact.contactPoint;
+    fireParticles.particleScale = 0.001;
+    fireParticles.numParticlesToEmit = 50;
+    [self.parent addChild:fireParticles];
+    
     if([self getHealth]==0)
     {
         //Updating High Scores when Spaceship destroyed and letting Game View Controller know
@@ -110,7 +121,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        texture = [SKTexture textureWithImageNamed:@"WhiteSpaceShip.png"];
+        texture = [SKTexture textureWithImageNamed:@"mainship.png"];
         texture.filteringMode = SKTextureFilteringNearest;
         
     });

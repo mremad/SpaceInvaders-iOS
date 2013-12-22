@@ -743,6 +743,7 @@
 
 -(void) HandleEachEnemyShootingTechnique:(EnemyShip*)enemyShip
 {
+    /*
     if(enemyShip.enemyMovement==EnemyMovementNormal)
     {
         CGPoint p = CGPointMake(enemyShip.position.x, enemyShip.position.y);
@@ -758,7 +759,54 @@
         CGPoint bulletDestination = CGPointMake(_spaceShip.position.x, _spaceShip.position.y);
         double duration =enemyShip.position.y/100 *0.5;
         [self fireBullet:bullet toDestination:bulletDestination withDuration:duration soundFileName:@"InvaderBullet.wav"];
+    }*/
+    
+    
+    ////////////////////
+    
+    if(enemyShip.enemyMovement==EnemyMovementNormal)
+    {
+        CGPoint p = CGPointMake(enemyShip.position.x, enemyShip.position.y);
+        SKNode* bullet = [[EnemyShipBullet alloc]initWithPosition:p];
+        CGPoint bulletDestination = CGPointMake(enemyShip.position.x, 0);
+        double duration =enemyShip.position.y/100 *0.5;
+        [self fireBullet:bullet toDestination:bulletDestination withDuration:duration soundFileName:@"InvaderBullet.wav"];
     }
+    else
+    {
+    CGPoint p = CGPointMake(enemyShip.position.x, enemyShip.position.y);
+    SKNode* bullet = [[EnemyShipBullet alloc]initWithPosition:p];
+    CGPoint bulletDestination;
+    int x1,x2,y1,y2,a,b,moveToX,moveToY,distanceTraveled;
+    
+    x1 = enemyShip.position.x;
+    y1 = enemyShip.position.y;
+    x2 = _spaceShip.position.x;
+    y2 = _spaceShip.position.y;
+    
+    a = (y2 - y1)/(1.0*(x2-x1));
+    b = ((y1*x2)-(y2*x1))/(1.0*(x2-x1));
+    
+    if(x1 < x2)
+    {
+        moveToX = self.view.bounds.size.width + 50;
+        moveToY = a*moveToX + b;
+        distanceTraveled = sqrt(pow(moveToX - enemyShip.position.x,2)+pow(enemyShip.position.y-moveToY,2));
+    }
+    else
+    {
+        moveToX = -50;
+        moveToY = a*moveToX + b;
+        distanceTraveled = sqrt(pow(moveToX + enemyShip.position.x,2)+pow(enemyShip.position.y-moveToY,2));
+    }
+    bulletDestination = CGPointMake(moveToX, moveToY);
+    double duration =distanceTraveled/150;
+    
+    [self fireBullet:bullet toDestination:bulletDestination withDuration:duration soundFileName:@"InvaderBullet.wav"];
+    }
+    
+    ///////////////////
+    
 }
 
 -(void)fireBullet:(SKNode*)bullet toDestination:(CGPoint)destination withDuration:(NSTimeInterval)duration soundFileName:(NSString*)soundFileName
@@ -767,6 +815,8 @@
    
     if(bullet.position.x<destination.x)
         angle = angle+M_PI;
+    else if(bullet.position.x == destination.x)
+        angle = M_PI/2;
     
     ((EnemyShipBullet*)bullet).emitter.emissionAngle = angle;
     SKAction* bulletAction = [SKAction sequence:@[[SKAction moveTo:destination duration:duration],

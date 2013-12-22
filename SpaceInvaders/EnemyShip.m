@@ -46,10 +46,10 @@
         SKAction * goUp = [SKAction moveTo:CGPointMake(self.position.x, self.position.y+100) duration:1.0];
         SKAction * removeFromParent = [SKAction removeFromParent];
         NSArray* sequence = [NSArray arrayWithObjects:goUp,removeFromParent,nil];
-        
+
         [scoreLabel runAction:[SKAction sequence:sequence]];
         [scoreLabel runAction:[SKAction fadeAlphaTo:0 duration:0.75]];
-        
+
         [self removeAllActions];
         [self removeNodeWithEffectsAtContactPoint:contact];
     }
